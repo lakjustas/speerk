@@ -17,10 +17,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        VideoCapture capWebcam = null;
+
+        VideoCapture capVideo = null;
         bool blnCapturingInProcess = false;
         Image<Bgr, Byte> imgOriginal;
         Image<Gray, Byte> imgProcessed;
+        Image<Gray, Byte> imgBlack;
 
 
         public Form1()
@@ -33,7 +35,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                capWebcam = new VideoCapture();
+                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.MOV");
             }
             catch (NullReferenceException except)
             {
@@ -41,35 +43,41 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            Application.Idle += processFrameAndUpdateGUI;
+            Application.Idle += ProcessFrameAndUpdateGUI;
             blnCapturingInProcess = true;
 
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (capWebcam != null)
+            if (capVideo != null)
             {
-                capWebcam.Dispose();
+                capVideo.Dispose();
             }
         }
 
-        void processFrameAndUpdateGUI(object sender, EventArgs arg)
+        void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-            imgOriginal = capWebcam.QueryFrame().ToImage<Bgr, Byte>();
+            imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
             if (imgOriginal == null) return;
 
-            imgProcessed = imgOriginal.InRange(new Bgr(0, 70, 175),
+            imgProcessed = imgOriginal.InRange(new Bgr(0, 70, 220),
                                                new Bgr(100, 160, 256));
+            /*
+            imgBlack = imgOriginal.InRange(new Bgr(0, 0, 0),
+                                           new Bgr(20, 20, 20));
 
             imgProcessed = imgProcessed.SmoothGaussian(9);
 
-            CircleF[] circles = imgProcessed.HoughCircles(new Gray(100),
+            imgBlack = imgBlack.SmoothGaussian(9);
+
+            /*CircleF[] circles = imgProcessed.HoughCircles(new Gray(100),
                                                           new Gray(50),
                                                           2,
                                                           imgProcessed.Height / 4,
                                                           10,
                                                           400)[0];
+            
             foreach (CircleF circle in circles)
             {
                 if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
@@ -91,23 +99,24 @@ namespace WindowsFormsApp1
 
                 imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
             }
+            */
 
             ibOriginal.Image = imgOriginal;
             ibProcessed.Image = imgProcessed;
 
         }
 
-        private void btnPauseOrResume_Click(object sender, EventArgs e)
+        private void BtnPauseOrResume_Click(object sender, EventArgs e)
         {
             if (blnCapturingInProcess == true)
             {
-                Application.Idle -= processFrameAndUpdateGUI;
+                Application.Idle -= ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = false;
                 btnPauseOrResume.Text = "resume";
             }
             else
             {
-                Application.Idle += processFrameAndUpdateGUI;
+                Application.Idle += ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = true;
                 btnPauseOrResume.Text = "pause";
             }

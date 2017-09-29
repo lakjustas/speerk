@@ -39,49 +39,54 @@
             // 
             // ibOriginal
             // 
-            this.ibOriginal.Location = new System.Drawing.Point(3, 2);
+            this.ibOriginal.Location = new System.Drawing.Point(4, 2);
+            this.ibOriginal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ibOriginal.Name = "ibOriginal";
-            this.ibOriginal.Size = new System.Drawing.Size(640, 480);
+            this.ibOriginal.Size = new System.Drawing.Size(853, 591);
             this.ibOriginal.TabIndex = 2;
             this.ibOriginal.TabStop = false;
             // 
             // ibProcessed
             // 
-            this.ibProcessed.Location = new System.Drawing.Point(649, 2);
+            this.ibProcessed.Location = new System.Drawing.Point(865, 2);
+            this.ibProcessed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ibProcessed.Name = "ibProcessed";
-            this.ibProcessed.Size = new System.Drawing.Size(640, 480);
+            this.ibProcessed.Size = new System.Drawing.Size(853, 591);
             this.ibProcessed.TabIndex = 2;
             this.ibProcessed.TabStop = false;
             // 
             // btnPauseOrResume
             // 
-            this.btnPauseOrResume.Location = new System.Drawing.Point(89, 530);
+            this.btnPauseOrResume.Location = new System.Drawing.Point(119, 652);
+            this.btnPauseOrResume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPauseOrResume.Name = "btnPauseOrResume";
-            this.btnPauseOrResume.Size = new System.Drawing.Size(123, 56);
+            this.btnPauseOrResume.Size = new System.Drawing.Size(164, 69);
             this.btnPauseOrResume.TabIndex = 3;
             this.btnPauseOrResume.Text = "pause";
             this.btnPauseOrResume.UseVisualStyleBackColor = true;
-            this.btnPauseOrResume.Click += new System.EventHandler(this.btnPauseOrResume_Click);
+            this.btnPauseOrResume.Click += new System.EventHandler(this.BtnPauseOrResume_Click);
             // 
             // txtXYRadius
             // 
-            this.txtXYRadius.Location = new System.Drawing.Point(357, 506);
+            this.txtXYRadius.Location = new System.Drawing.Point(476, 623);
+            this.txtXYRadius.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtXYRadius.Multiline = true;
             this.txtXYRadius.Name = "txtXYRadius";
             this.txtXYRadius.ReadOnly = true;
             this.txtXYRadius.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtXYRadius.Size = new System.Drawing.Size(932, 127);
+            this.txtXYRadius.Size = new System.Drawing.Size(1241, 155);
             this.txtXYRadius.TabIndex = 4;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 636);
+            this.ClientSize = new System.Drawing.Size(1748, 783);
             this.Controls.Add(this.txtXYRadius);
             this.Controls.Add(this.btnPauseOrResume);
             this.Controls.Add(this.ibProcessed);
             this.Controls.Add(this.ibOriginal);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
