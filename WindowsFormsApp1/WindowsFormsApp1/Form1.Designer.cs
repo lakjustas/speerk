@@ -33,6 +33,7 @@
             this.ibProcessed = new Emgu.CV.UI.ImageBox();
             this.btnPauseOrResume = new System.Windows.Forms.Button();
             this.txtXYRadius = new System.Windows.Forms.TextBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ibOriginal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ibProcessed)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             // btnPauseOrResume
             // 
-            this.btnPauseOrResume.Location = new System.Drawing.Point(89, 530);
+            this.btnPauseOrResume.Location = new System.Drawing.Point(224, 488);
             this.btnPauseOrResume.Name = "btnPauseOrResume";
             this.btnPauseOrResume.Size = new System.Drawing.Size(123, 56);
             this.btnPauseOrResume.TabIndex = 3;
@@ -73,11 +74,22 @@
             this.txtXYRadius.Size = new System.Drawing.Size(932, 127);
             this.txtXYRadius.TabIndex = 4;
             // 
+            // btnUpload
+            // 
+            this.btnUpload.Location = new System.Drawing.Point(16, 488);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(184, 56);
+            this.btnUpload.TabIndex = 5;
+            this.btnUpload.Text = "upload video";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 636);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.txtXYRadius);
             this.Controls.Add(this.btnPauseOrResume);
             this.Controls.Add(this.ibProcessed);
@@ -98,6 +110,7 @@
         private Emgu.CV.UI.ImageBox ibProcessed;
         private System.Windows.Forms.Button btnPauseOrResume;
         private System.Windows.Forms.TextBox txtXYRadius;
+        private System.Windows.Forms.Button btnUpload;
     }
 }
 
