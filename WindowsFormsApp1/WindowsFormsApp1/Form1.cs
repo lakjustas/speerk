@@ -12,17 +12,27 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
+using Emgu.CV.Util;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-
+        Mat imgBgr = new Mat();
+        Mat imgHsv = new Mat();
+        Mat imgProc = new Mat();
         VideoCapture capVideo = null;
         bool blnCapturingInProcess = false;
-        Image<Bgr, Byte> imgOriginal;
-        Image<Gray, Byte> imgProcessed;
-        Image<Gray, Byte> imgBlack;
+        Image<Gray, Byte> frame;
+
+        int iLowH = 0;
+        int iHighH = 15;
+
+        int iLowS = 160;
+        int iHighS = 250;
+
+        int iLowV = 180;
+        int iHighV = 255;
 
 
         public Form1()
@@ -58,23 +68,37 @@ namespace WindowsFormsApp1
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-            imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
-            if (imgOriginal == null) return;
 
-            imgProcessed = imgOriginal.InRange(new Bgr(0, 70, 220),
-                                               new Bgr(100, 160, 256));
-            /*
-            imgBlack = imgOriginal.InRange(new Bgr(0, 0, 0),
-                                           new Bgr(20, 20, 20));
+            imgBgr = capVideo.QueryFrame();
+            if (imgBgr == null) return;
+            CvInvoke.CvtColor(imgBgr, imgHsv, ColorConversion.Bgr2Hsv);
 
-            imgProcessed = imgProcessed.SmoothGaussian(9);
+            CvInvoke.InRange(imgHsv, 
+                             new ScalarArray(new MCvScalar(iLowH, iLowS, iLowV)), 
+                             new ScalarArray(new MCvScalar(iHighH, iHighS, iHighV)), 
+                             imgProc);
 
-            imgBlack = imgBlack.SmoothGaussian(9);
+            CvInvoke.GaussianBlur(imgProc, imgProc, new Size(5, 5), 1, 0, BorderType.Default);
 
-            /*CircleF[] circles = imgProcessed.HoughCircles(new Gray(100),
+            Mat element = CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(3, 3), new Point(-1, -1));
+
+            CvInvoke.Erode(imgProc, imgProc, element, new Point(-1, -1), 2, BorderType.Reflect, default(MCvScalar));
+            CvInvoke.Dilate(imgProc, imgProc, element, new Point(-1, -1), 2, BorderType.Reflect, default(MCvScalar));
+
+            /*VectorOfVectorOfPoint cntr = new VectorOfVectorOfPoint();
+
+            CvInvoke.FindContours(imgProc, cntr, new Mat() , RetrType.Ccomp, ChainApproxMethod.ChainApproxNone, default(Point));
+            Console.WriteLine(cntr.Size.ToString());*/
+            //CircleF circles =  CvInvoke.MinEnclosingCircle(cntr);
+
+
+            /*CircleF[] circles = CvInvoke.HoughCircles(imgProc, HoughType.Gradient, 1, 3);*/
+            frame = imgProc.ToImage<Gray, Byte>();
+
+            CircleF[] circles = frame.HoughCircles(new Gray(100),
                                                           new Gray(50),
                                                           2,
-                                                          imgProcessed.Height / 4,
+                                                          frame.Height / 4,
                                                           10,
                                                           400)[0];
             
@@ -88,7 +112,7 @@ namespace WindowsFormsApp1
                 txtXYRadius.ScrollToCaret();
 
 
-                CvInvoke.Circle(imgOriginal,
+                CvInvoke.Circle(imgBgr,
                                 new Point((int)circle.Center.X, (int)circle.Center.Y),
                                 3,
                                 new MCvScalar(0, 255, 0),
@@ -97,13 +121,14 @@ namespace WindowsFormsApp1
                                 0);
 
 
-                imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
+                //imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
+                CvInvoke.Circle(imgBgr, new Point((int)circle.Center.X, (int)circle.Center.Y), 30, new MCvScalar(0, 0, 255), 3);
             }
-            */
-
-            ibOriginal.Image = imgOriginal;
-            ibProcessed.Image = imgProcessed;
-
+            
+            
+            ibOriginal.Image = imgBgr;
+            ibProcessed.Image = imgProc;
+            
         }
 
         private void BtnPauseOrResume_Click(object sender, EventArgs e)
@@ -121,5 +146,6 @@ namespace WindowsFormsApp1
                 btnPauseOrResume.Text = "pause";
             }
         }
+     
     }
 }

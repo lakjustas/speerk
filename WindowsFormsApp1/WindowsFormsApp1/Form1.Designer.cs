@@ -40,7 +40,7 @@
             // ibOriginal
             // 
             this.ibOriginal.Location = new System.Drawing.Point(4, 2);
-            this.ibOriginal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ibOriginal.Margin = new System.Windows.Forms.Padding(4);
             this.ibOriginal.Name = "ibOriginal";
             this.ibOriginal.Size = new System.Drawing.Size(853, 591);
             this.ibOriginal.TabIndex = 2;
@@ -49,7 +49,7 @@
             // ibProcessed
             // 
             this.ibProcessed.Location = new System.Drawing.Point(865, 2);
-            this.ibProcessed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ibProcessed.Margin = new System.Windows.Forms.Padding(4);
             this.ibProcessed.Name = "ibProcessed";
             this.ibProcessed.Size = new System.Drawing.Size(853, 591);
             this.ibProcessed.TabIndex = 2;
@@ -58,7 +58,7 @@
             // btnPauseOrResume
             // 
             this.btnPauseOrResume.Location = new System.Drawing.Point(119, 652);
-            this.btnPauseOrResume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPauseOrResume.Margin = new System.Windows.Forms.Padding(4);
             this.btnPauseOrResume.Name = "btnPauseOrResume";
             this.btnPauseOrResume.Size = new System.Drawing.Size(164, 69);
             this.btnPauseOrResume.TabIndex = 3;
@@ -69,7 +69,7 @@
             // txtXYRadius
             // 
             this.txtXYRadius.Location = new System.Drawing.Point(476, 623);
-            this.txtXYRadius.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtXYRadius.Margin = new System.Windows.Forms.Padding(4);
             this.txtXYRadius.Multiline = true;
             this.txtXYRadius.Name = "txtXYRadius";
             this.txtXYRadius.ReadOnly = true;
@@ -86,7 +86,7 @@
             this.Controls.Add(this.btnPauseOrResume);
             this.Controls.Add(this.ibProcessed);
             this.Controls.Add(this.ibOriginal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
