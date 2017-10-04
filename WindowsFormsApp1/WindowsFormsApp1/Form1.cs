@@ -23,7 +23,8 @@ namespace WindowsFormsApp1
         Mat imgProc = new Mat();
         VideoCapture capVideo = null;
         bool blnCapturingInProcess = false;
-        Image<Gray, Byte> frame;
+        bool goal, goal2;
+        //Image<Gray, Byte> frame;
 
         int iLowH = 0;
         int iHighH = 15;
@@ -45,7 +46,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
+                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.MOV");
             }
             catch (NullReferenceException except)
             {
@@ -71,7 +72,9 @@ namespace WindowsFormsApp1
             imgBgr = capVideo.QueryFrame();
             if (imgBgr == null) return;
             CvInvoke.CvtColor(imgBgr, imgHsv, ColorConversion.Bgr2Hsv);
-
+            //-----
+            Image<Gray, Byte> imgGate = imgBgr.ToImage<Bgr, Byte>().InRange(new Bgr(0, 2, 4), new Bgr(10, 20, 30));
+            //-----
             CvInvoke.InRange(imgHsv, 
                              new ScalarArray(new MCvScalar(iLowH, iLowS, iLowV)), 
                              new ScalarArray(new MCvScalar(iHighH, iHighS, iHighV)), 
@@ -92,53 +95,64 @@ namespace WindowsFormsApp1
             double dM10 = moments.M10;
             double dArea = moments.M00;
 
+            int posX = (int)(dM10 / dArea);
+            int posY = (int)(dM01 / dArea);
+
+            
+
             CvInvoke.Circle(imgBgr, new Point((int)(dM10 / dArea), (int)(dM01 / dArea)), 3, new MCvScalar(0, 255, 0), -1, LineType.AntiAlias, 0);
 
+            if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
+            txtXYRadius.AppendText("Ball position: x= " + posX.ToString().PadLeft(4) +
+                                       "  y= " + posY.ToString().PadLeft(4));
+            txtXYRadius.ScrollToCaret();
+            //--------------------------------------------------------------------------------------------------------------------
 
-            //CvInvoke.Circle(imgBgr, new Point(posX, posY), 30, new MCvScalar(0, 0, 255), 3);
-            /*VectorOfVectorOfPoint cntr = new VectorOfVectorOfPoint();
+            imgGate = imgGate.SmoothGaussian(9);
+            imgGate = imgGate.SmoothBlur(9, 9);
 
-            CvInvoke.FindContours(imgProc, cntr, new Mat() , RetrType.Ccomp, ChainApproxMethod.ChainApproxNone, default(Point));
-            Console.WriteLine(cntr.Size.ToString());*/
-            //CircleF circles =  CvInvoke.MinEnclosingCircle(cntr);
-
-
-            /*CircleF[] circles = CvInvoke.HoughCircles(imgProc, HoughType.Gradient, 1, 3);
-            frame = imgProc.ToImage<Gray, Byte>();
-
-            CircleF[] circles = frame.HoughCircles(new Gray(100),
-                                                          new Gray(50),
+            LineSegment2D[] lines = imgGate.HoughLinesBinary(2.5,
+                                                          2.5,
                                                           2,
-                                                          frame.Height / 4,
-                                                          10,
-                                                          400)[0];
+                                                          imgGate.Height / 4,
+                                                          10)[0];
+            //goal = false;
+            int plusminus = 3;
 
-            foreach (CircleF circle in circles)
+            foreach (LineSegment2D line in lines)
             {
                 if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
 
-                txtXYRadius.AppendText("ball position = x" + circle.Center.X.ToString().PadLeft(4) +
-                                       ", y =" + circle.Center.Y.ToString().PadLeft(4) +
-                                       ", radius =" + circle.Radius.ToString("###.000").PadLeft(7));
+                txtXYRadius.AppendText("Gates position Top =" + line.P1.ToString().PadLeft(4) +
+                                       ", Bottom =" + line.P2.ToString().PadLeft(4));
                 txtXYRadius.ScrollToCaret();
 
 
-                CvInvoke.Circle(imgBgr,
-                                new Point((int)circle.Center.X, (int)circle.Center.Y),
-                                3,
-                                new MCvScalar(0, 255, 0),
-                                -1,
+                CvInvoke.Line(imgBgr,
+                                line.P1,
+                                line.P2,
+                                new MCvScalar(255, 0, 0),
+                                1,
                                 LineType.AntiAlias,
                                 0);
+                if (line.P1.X <= (posX + plusminus) && line.P1.Y > posY && line.P2.Y < posY && goal == false)
+                {
+                    txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
+                    txtXYRadius.ScrollToCaret();
+                    goal = true;
+                }
+
+                if (line.P1.X >= (posX - plusminus) && line.P1.Y > posY && line.P2.Y < posY && goal2 == false)
+                {
+                    txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
+                    txtXYRadius.ScrollToCaret();
+                    goal2 = true;
+                }
 
 
-                //imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
-                CvInvoke.Circle(imgBgr, new Point((int)circle.Center.X, (int)circle.Center.Y), 30, new MCvScalar(0, 0, 255), 3);
-            }*/
-
-
+            }
             ibOriginal.Image = imgBgr;
-            ibProcessed.Image = imgProc;
+            //ibProcessed.Image = imgGate;
             
         }
 
