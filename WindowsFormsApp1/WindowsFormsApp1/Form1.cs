@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.MOV");
+                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
             }
             catch (NullReferenceException except)
             {
@@ -68,7 +68,6 @@ namespace WindowsFormsApp1
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-
             imgBgr = capVideo.QueryFrame();
             if (imgBgr == null) return;
             CvInvoke.CvtColor(imgBgr, imgHsv, ColorConversion.Bgr2Hsv);
@@ -80,11 +79,23 @@ namespace WindowsFormsApp1
 
             CvInvoke.GaussianBlur(imgProc, imgProc, new Size(5, 5), 1, 0, BorderType.Default);
 
-            Mat element = CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(3, 3), new Point(-1, -1));
+            Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(3, 3), new Point(-1, -1));
 
-            CvInvoke.Erode(imgProc, imgProc, element, new Point(-1, -1), 2, BorderType.Reflect, default(MCvScalar));
-            CvInvoke.Dilate(imgProc, imgProc, element, new Point(-1, -1), 2, BorderType.Reflect, default(MCvScalar));
+            CvInvoke.Erode(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
+            CvInvoke.Dilate(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
+            CvInvoke.Dilate(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
+            CvInvoke.Erode(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
 
+            MCvMoments moments = CvInvoke.Moments(imgProc);
+
+            double dM01 = moments.M01;
+            double dM10 = moments.M10;
+            double dArea = moments.M00;
+
+            CvInvoke.Circle(imgBgr, new Point((int)(dM10 / dArea), (int)(dM01 / dArea)), 3, new MCvScalar(0, 255, 0), -1, LineType.AntiAlias, 0);
+
+
+            //CvInvoke.Circle(imgBgr, new Point(posX, posY), 30, new MCvScalar(0, 0, 255), 3);
             /*VectorOfVectorOfPoint cntr = new VectorOfVectorOfPoint();
 
             CvInvoke.FindContours(imgProc, cntr, new Mat() , RetrType.Ccomp, ChainApproxMethod.ChainApproxNone, default(Point));
@@ -92,7 +103,7 @@ namespace WindowsFormsApp1
             //CircleF circles =  CvInvoke.MinEnclosingCircle(cntr);
 
 
-            /*CircleF[] circles = CvInvoke.HoughCircles(imgProc, HoughType.Gradient, 1, 3);*/
+            /*CircleF[] circles = CvInvoke.HoughCircles(imgProc, HoughType.Gradient, 1, 3);
             frame = imgProc.ToImage<Gray, Byte>();
 
             CircleF[] circles = frame.HoughCircles(new Gray(100),
@@ -101,7 +112,7 @@ namespace WindowsFormsApp1
                                                           frame.Height / 4,
                                                           10,
                                                           400)[0];
-            
+
             foreach (CircleF circle in circles)
             {
                 if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
@@ -123,9 +134,9 @@ namespace WindowsFormsApp1
 
                 //imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
                 CvInvoke.Circle(imgBgr, new Point((int)circle.Center.X, (int)circle.Center.Y), 30, new MCvScalar(0, 0, 255), 3);
-            }
-            
-            
+            }*/
+
+
             ibOriginal.Image = imgBgr;
             ibProcessed.Image = imgProc;
             
