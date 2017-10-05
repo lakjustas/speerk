@@ -23,8 +23,9 @@ namespace WindowsFormsApp1
         BallTracker ballTracker = new BallTracker();
         GateTracker gateTracker = new GateTracker();
         bool blnCapturingInProcess = false;
-        bool goal, goal2;
-        //Image<Gray, Byte> frame
+        Team teamLeft = new Team("Kairioji komanda", 0);
+        Team teamRight = new Team("Dešinioji komanda", 0);
+        bool goal = false;
 
         public Form1()
         {
@@ -44,6 +45,9 @@ namespace WindowsFormsApp1
                 return;
             }
 
+            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
+            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+
             Application.Idle += ProcessFrameAndUpdateGUI;
             blnCapturingInProcess = true;
 
@@ -55,6 +59,7 @@ namespace WindowsFormsApp1
             {
                 capVideo.Dispose();
             }
+
         }
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
@@ -68,41 +73,60 @@ namespace WindowsFormsApp1
             LineSegment2D[] lines = gateTracker.GetGates(imgBgr);
             gateTracker.MarkGates(imgBgr, lines);
             
-            if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
+            /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
             txtXYRadius.AppendText("Ball position: x= " + ballCoord.X.ToString().PadLeft(4) +
                                        "  y= " + ballCoord.Y.ToString().PadLeft(4));
-            txtXYRadius.ScrollToCaret();
+            txtXYRadius.ScrollToCaret();*/
             
-            //goal = false;
-            int plusminus = 3;
+            int plusminus = 5;
 
             foreach (LineSegment2D line in lines)
             {
-                if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
+                /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
 
                 txtXYRadius.AppendText("Gates position Top =" + line.P1.ToString().PadLeft(4) +
                                        ", Bottom =" + line.P2.ToString().PadLeft(4));
-                txtXYRadius.ScrollToCaret();
+                txtXYRadius.ScrollToCaret();*/
 
 
-                if (line.P1.X == (ballCoord.X + plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false)
+                if ((line.P1.X - plusminus) <= ballCoord.X && line.P1.X >= ballCoord.X  && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X > 400)
                 {
+                    Goal(teamLeft);
                     txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
                 }
 
-                if (line.P1.X == (ballCoord.X - plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal2 == false)
+                if ((line.P1.X + plusminus >= ballCoord.X) && line.P1.X <= ballCoord.X && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X < 400)
                 {
+                    Goal(teamRight);
                     txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
-                    goal2 = true;
+                    goal = true;
                 }
 
 
             }
             ibOriginal.Image = imgBgr;
-            //ibProcessed.Image = imgGate
+        }
+
+        private void GoalLeft_Click(object sender, EventArgs e)
+        {
+            teamLeft.Goal();
+            teamLeftBox.Clear();
+            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
+        }
+
+        private void GoalRight_Click(object sender, EventArgs e)
+        {
+            teamRight.Goal();
+            teamRightBox.Clear();
+            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+        }
+
+        private void ResetGoalCounter_Click(object sender, EventArgs e)
+        {
+            goal = false;
         }
 
         private void BtnPauseOrResume_Click(object sender, EventArgs e)
@@ -111,14 +135,25 @@ namespace WindowsFormsApp1
             {
                 Application.Idle -= ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = false;
-                btnPauseOrResume.Text = "resume";
+                btnPauseOrResume.Text = "Resume";
             }
             else
             {
                 Application.Idle += ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = true;
-                btnPauseOrResume.Text = "pause";
+                btnPauseOrResume.Text = "Pause";
             }
+        }
+
+        private void Goal(Team team)
+        {
+            team.Goal();
+
+            teamRightBox.Clear();
+            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+
+            teamLeftBox.Clear();
+            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
         }
      
     }
