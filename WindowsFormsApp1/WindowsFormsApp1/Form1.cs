@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         Mat imgBgr = new Mat();
         VideoCapture capVideo = null;
         BallTracker ballTracker = new BallTracker();
+        GateTracker gateTracker = new GateTracker();
         bool blnCapturingInProcess = false;
         bool goal, goal2;
         //Image<Gray, Byte> frame
@@ -60,26 +61,18 @@ namespace WindowsFormsApp1
         {
             imgBgr = capVideo.QueryFrame();
             if (imgBgr == null) return;
+
             Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
             ballTracker.MarkBall(imgBgr, ballCoord);
-            //-----
-            Image<Gray, Byte> imgGate = imgBgr.ToImage<Bgr, Byte>().InRange(new Bgr(0, 2, 4), new Bgr(10, 20, 30));
-            //-----
+
+            LineSegment2D[] lines = gateTracker.GetGates(imgBgr);
+            gateTracker.MarkGates(imgBgr, lines);
             
             if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
             txtXYRadius.AppendText("Ball position: x= " + ballCoord.X.ToString().PadLeft(4) +
                                        "  y= " + ballCoord.Y.ToString().PadLeft(4));
             txtXYRadius.ScrollToCaret();
-            //--------------------------------------------------------------------------------------------------------------------
-
-            imgGate = imgGate.SmoothGaussian(9);
-            imgGate = imgGate.SmoothBlur(9, 9);
-
-            LineSegment2D[] lines = imgGate.HoughLinesBinary(2.5,
-                                                          2.5,
-                                                          2,
-                                                          imgGate.Height / 4,
-                                                          10)[0];
+            
             //goal = false;
             int plusminus = 3;
 
@@ -92,21 +85,14 @@ namespace WindowsFormsApp1
                 txtXYRadius.ScrollToCaret();
 
 
-                CvInvoke.Line(imgBgr,
-                                line.P1,
-                                line.P2,
-                                new MCvScalar(255, 0, 0),
-                                1,
-                                LineType.AntiAlias,
-                                0);
-                if (line.P1.X <= (ballCoord.X + plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false)
+                if (line.P1.X == (ballCoord.X + plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false)
                 {
                     txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
                 }
 
-                if (line.P1.X >= (ballCoord.X - plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal2 == false)
+                if (line.P1.X == (ballCoord.X - plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal2 == false)
                 {
                     txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
@@ -116,8 +102,7 @@ namespace WindowsFormsApp1
 
             }
             ibOriginal.Image = imgBgr;
-            //ibProcessed.Image = imgGate;
-            
+            //ibProcessed.Image = imgGate
         }
 
         private void BtnPauseOrResume_Click(object sender, EventArgs e)
