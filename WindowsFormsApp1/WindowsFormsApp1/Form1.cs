@@ -42,7 +42,6 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             
-
         }
         
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -90,7 +89,6 @@ namespace WindowsFormsApp1
                                        ", radius =" + circle.Radius.ToString("###.000").PadLeft(7));
                 txtXYRadius.ScrollToCaret();
 
-
                 CvInvoke.Circle(imgOriginal,
                                 new Point((int)circle.Center.X, (int)circle.Center.Y),
                                 3,
@@ -98,14 +96,15 @@ namespace WindowsFormsApp1
                                 -1,
                                 LineType.AntiAlias,
                                 0);
-
-
+                
                 imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
             }
 
             ibOriginal.Image = imgOriginal;
             ibProcessed.Image = imgProcessed;
+
             gatesRecognition();
+
 
         }
 
@@ -149,8 +148,6 @@ namespace WindowsFormsApp1
             try
             {
                 capVideo = new VideoCapture(fileDir);               //Video playing
-                
-
             }
             catch (NullReferenceException except)
             {
@@ -158,17 +155,7 @@ namespace WindowsFormsApp1
                 return;
             }
             
-
-
-
-
-
-
-
-
-
         }
-
         
     }
 }
