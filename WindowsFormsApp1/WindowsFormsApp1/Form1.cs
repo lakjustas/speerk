@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
         bool blnCapturingInProcess = false;             //check if video playing
         Image<Bgr, Byte> imgOriginal;
         Image<Gray, Byte> imgProcessed;
+        
         string fileDir = "";
 
         public CapProp FrameWidth { get; private set; }
@@ -54,7 +55,19 @@ namespace WindowsFormsApp1
 
         void processFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-            imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
+
+
+            try
+            {
+                imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
+
+            }
+            catch (Exception)
+            {
+            }
+
+
+
             if (imgOriginal == null) return;
 
             imgProcessed = imgOriginal.InRange(new Bgr(0, 70, 220),
@@ -92,6 +105,7 @@ namespace WindowsFormsApp1
 
             ibOriginal.Image = imgOriginal;
             ibProcessed.Image = imgProcessed;
+            gatesRecognition();
 
         }
 
