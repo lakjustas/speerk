@@ -56,6 +56,7 @@ namespace WindowsFormsApp1
         void processFrameAndUpdateGUI(object sender, EventArgs arg)
         {
 
+
             try
             {
                 imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
@@ -64,6 +65,7 @@ namespace WindowsFormsApp1
             catch (Exception)
             {
             }
+
 
 
             if (imgOriginal == null) return;
