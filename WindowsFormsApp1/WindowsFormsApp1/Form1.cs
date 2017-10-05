@@ -19,22 +19,11 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         Mat imgBgr = new Mat();
-        Mat imgHsv = new Mat();
-        Mat imgProc = new Mat();
         VideoCapture capVideo = null;
+        BallTracker ballTracker = new BallTracker();
         bool blnCapturingInProcess = false;
         bool goal, goal2;
-        //Image<Gray, Byte> frame;
-
-        int iLowH = 0;
-        int iHighH = 15;
-
-        int iLowS = 160;
-        int iHighS = 250;
-
-        int iLowV = 180;
-        int iHighV = 255;
-
+        //Image<Gray, Byte> frame
 
         public Form1()
         {
@@ -46,7 +35,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.MOV");
+                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
             }
             catch (NullReferenceException except)
             {
@@ -71,40 +60,15 @@ namespace WindowsFormsApp1
         {
             imgBgr = capVideo.QueryFrame();
             if (imgBgr == null) return;
-            CvInvoke.CvtColor(imgBgr, imgHsv, ColorConversion.Bgr2Hsv);
+            Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
+            ballTracker.MarkBall(imgBgr, ballCoord);
             //-----
             Image<Gray, Byte> imgGate = imgBgr.ToImage<Bgr, Byte>().InRange(new Bgr(0, 2, 4), new Bgr(10, 20, 30));
             //-----
-            CvInvoke.InRange(imgHsv, 
-                             new ScalarArray(new MCvScalar(iLowH, iLowS, iLowV)), 
-                             new ScalarArray(new MCvScalar(iHighH, iHighS, iHighV)), 
-                             imgProc);
-
-            CvInvoke.GaussianBlur(imgProc, imgProc, new Size(5, 5), 1, 0, BorderType.Default);
-
-            Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(3, 3), new Point(-1, -1));
-
-            CvInvoke.Erode(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
-            CvInvoke.Dilate(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
-            CvInvoke.Dilate(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
-            CvInvoke.Erode(imgProc, imgProc, element, new Point(-1, -1), 1, BorderType.Constant, default(MCvScalar));
-
-            MCvMoments moments = CvInvoke.Moments(imgProc);
-
-            double dM01 = moments.M01;
-            double dM10 = moments.M10;
-            double dArea = moments.M00;
-
-            int posX = (int)(dM10 / dArea);
-            int posY = (int)(dM01 / dArea);
-
             
-
-            CvInvoke.Circle(imgBgr, new Point((int)(dM10 / dArea), (int)(dM01 / dArea)), 3, new MCvScalar(0, 255, 0), -1, LineType.AntiAlias, 0);
-
             if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-            txtXYRadius.AppendText("Ball position: x= " + posX.ToString().PadLeft(4) +
-                                       "  y= " + posY.ToString().PadLeft(4));
+            txtXYRadius.AppendText("Ball position: x= " + ballCoord.X.ToString().PadLeft(4) +
+                                       "  y= " + ballCoord.Y.ToString().PadLeft(4));
             txtXYRadius.ScrollToCaret();
             //--------------------------------------------------------------------------------------------------------------------
 
@@ -135,14 +99,14 @@ namespace WindowsFormsApp1
                                 1,
                                 LineType.AntiAlias,
                                 0);
-                if (line.P1.X <= (posX + plusminus) && line.P1.Y > posY && line.P2.Y < posY && goal == false)
+                if (line.P1.X <= (ballCoord.X + plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false)
                 {
                     txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
                 }
 
-                if (line.P1.X >= (posX - plusminus) && line.P1.Y > posY && line.P2.Y < posY && goal2 == false)
+                if (line.P1.X >= (ballCoord.X - plusminus) && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal2 == false)
                 {
                     txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
