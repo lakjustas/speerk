@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
         bool blnCapturingInProcess = false;             //check if video playing
         Image<Bgr, Byte> imgOriginal;
         Image<Gray, Byte> imgProcessed;
+        
         string fileDir = "";
 
         public CapProp FrameWidth { get; private set; }

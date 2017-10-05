@@ -26,6 +26,9 @@ namespace WindowsFormsApp1
         void gatesRecognition()
         {
 
+            Image<Hsv, Byte> imgOriginalHsv;
+            Image<Hsv, Byte> imgProcessedHsv;
+
             try
             {
                 imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
@@ -35,24 +38,44 @@ namespace WindowsFormsApp1
             {
             }
 
+            try
+            {
+                imgOriginalHsv = capVideo.QueryFrame().ToImage<Hsv, Byte>();
+
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            if (imgOriginal == null) return;
+
+            imgProcessedHsv = imgOriginalHsv.Convert<Hsv, byte>();
+
+
 
             if (imgOriginal == null) return;
 
-            imgProcessed = imgOriginal.InRange(new Bgr(0, 2, 4),
-                                               new Bgr(10, 20, 30));
+            Hsv min = new Hsv(0, 5, 10);
+
+            Hsv max = new Hsv(0, 10, 20);
+
+            imgProcessed = imgProcessedHsv.InRange(min,
+                                                    max);
             imgProcessed = imgProcessed.SmoothGaussian(9);
             imgProcessed = imgProcessed.SmoothBlur(9, 9);
 
-            LineSegment2D[] lines = imgProcessed.HoughLinesBinary(2.5,
-                                                          2.5,
-                                                          2,
-                                                          imgProcessed.Height / 4,
-                                                          10)[0];
+            LineSegment2D[] lines = imgProcessed.HoughLines(10,
+                                                          10,
+                                                          5,
+                                                          5,
+                                                          100,
+                                                          0,
+                                                          0)[0];
             foreach (LineSegment2D line in lines)
             {
                 if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
 
-                txtXYRadius.AppendText("Gates position Top =" + line.P1.ToString().PadLeft(4)/* +
+                txtXYRadius.AppendText("Gates position Top =" + line.P2.ToString().PadLeft(4)/* +
                                        ", Bottom =" + line.P2.ToString().PadLeft(4)*/);
                 txtXYRadius.ScrollToCaret();
 
