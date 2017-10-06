@@ -66,7 +66,13 @@ namespace WindowsFormsApp1
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
             imgBgr = capVideo.QueryFrame();
-            if (imgBgr == null) return;
+            if (imgBgr == null)
+            {
+                MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
+                Application.Idle -= ProcessFrameAndUpdateGUI;
+                return;
+            }
+            
 
             Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
             ballTracker.MarkBall(imgBgr, ballCoord);
