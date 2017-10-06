@@ -37,6 +37,8 @@
             this.teamLeftBox = new System.Windows.Forms.RichTextBox();
             this.teamRightBox = new System.Windows.Forms.RichTextBox();
             this.resetGoalCounter = new System.Windows.Forms.Button();
+            this.selectGameVideo = new System.Windows.Forms.Button();
+            this.openGameVideo = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ibOriginal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             this.btnPauseOrResume.Name = "btnPauseOrResume";
             this.btnPauseOrResume.Size = new System.Drawing.Size(160, 70);
             this.btnPauseOrResume.TabIndex = 3;
-            this.btnPauseOrResume.Text = "Pause";
+            this.btnPauseOrResume.Text = "Start";
             this.btnPauseOrResume.UseVisualStyleBackColor = true;
             this.btnPauseOrResume.Click += new System.EventHandler(this.BtnPauseOrResume_Click);
             // 
@@ -124,11 +126,26 @@
             this.resetGoalCounter.UseVisualStyleBackColor = true;
             this.resetGoalCounter.Click += new System.EventHandler(this.ResetGoalCounter_Click);
             // 
+            // selectGameVideo
+            // 
+            this.selectGameVideo.Location = new System.Drawing.Point(1181, 397);
+            this.selectGameVideo.Name = "selectGameVideo";
+            this.selectGameVideo.Size = new System.Drawing.Size(160, 70);
+            this.selectGameVideo.TabIndex = 10;
+            this.selectGameVideo.Text = "Select game video";
+            this.selectGameVideo.UseVisualStyleBackColor = true;
+            this.selectGameVideo.Click += new System.EventHandler(this.SelectGameVideo_Click);
+            // 
+            // openGameVideo
+            // 
+            this.openGameVideo.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1373, 877);
+            this.Controls.Add(this.selectGameVideo);
             this.Controls.Add(this.resetGoalCounter);
             this.Controls.Add(this.teamRightBox);
             this.Controls.Add(this.teamLeftBox);
@@ -157,6 +174,8 @@
         private System.Windows.Forms.RichTextBox teamLeftBox;
         private System.Windows.Forms.RichTextBox teamRightBox;
         private System.Windows.Forms.Button resetGoalCounter;
+        private System.Windows.Forms.Button selectGameVideo;
+        private System.Windows.Forms.OpenFileDialog openGameVideo;
     }
 }
 

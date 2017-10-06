@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
         Team teamLeft = new Team("Kairioji komanda", 0);
         Team teamRight = new Team("Dešinioji komanda", 0);
         bool goal = false;
+        String videoFileDir;
 
         public Form1()
         {
@@ -35,7 +36,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            try
+            /*try
             {
                 capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
             }
@@ -43,13 +44,13 @@ namespace WindowsFormsApp1
             {
                 txtXYRadius.Text = except.Message;
                 return;
-            }
+            }*/
 
             teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
             teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
 
-            Application.Idle += ProcessFrameAndUpdateGUI;
-            blnCapturingInProcess = true;
+            /*Application.Idle += ProcessFrameAndUpdateGUI;
+            blnCapturingInProcess = true;*/
 
         }
 
@@ -80,6 +81,8 @@ namespace WindowsFormsApp1
             
             int plusminus = 5;
 
+            goal = false;
+
             foreach (LineSegment2D line in lines)
             {
                 /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
@@ -95,6 +98,7 @@ namespace WindowsFormsApp1
                     txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
+                    break;
                 }
 
                 if ((line.P1.X + plusminus >= ballCoord.X) && line.P1.X <= ballCoord.X && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X < 400)
@@ -103,6 +107,7 @@ namespace WindowsFormsApp1
                     txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
+                    break;
                 }
 
 
@@ -155,6 +160,23 @@ namespace WindowsFormsApp1
             teamLeftBox.Clear();
             teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
         }
-     
+
+        private void SelectGameVideo_Click(object sender, EventArgs e)
+        {
+            openGameVideo.ShowDialog();
+
+            videoFileDir = openGameVideo.InitialDirectory + openGameVideo.FileName;
+
+            try
+            {
+                capVideo = new VideoCapture(videoFileDir);
+            }
+            catch (NullReferenceException except)
+            {
+                txtXYRadius.Text = except.Message;
+                return;
+            }
+        }
+
     }
 }
