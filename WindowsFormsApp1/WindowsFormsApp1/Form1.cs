@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using Emgu.CV;
 using Emgu.CV.CvEnum;
@@ -32,7 +33,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -53,7 +54,7 @@ namespace WindowsFormsApp1
             blnCapturingInProcess = true;*/
 
         }
-
+        
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (capVideo != null)
@@ -115,8 +116,6 @@ namespace WindowsFormsApp1
                     goal = true;
                     break;
                 }
-
-
             }
             ibOriginal.Image = imgBgr;
         }
@@ -183,6 +182,5 @@ namespace WindowsFormsApp1
                 return;
             }
         }
-
     }
 }
