@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Komandos));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFirstTeam = new System.Windows.Forms.TextBox();
+            this.txtSecondTeam = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,21 +59,21 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Komandos";
             // 
-            // textBox1
+            // txtFirstTeam
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(146, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtFirstTeam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtFirstTeam.Location = new System.Drawing.Point(146, 114);
+            this.txtFirstTeam.Name = "txtFirstTeam";
+            this.txtFirstTeam.Size = new System.Drawing.Size(150, 20);
+            this.txtFirstTeam.TabIndex = 10;
             // 
-            // textBox2
+            // txtSecondTeam
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox2.Location = new System.Drawing.Point(146, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtSecondTeam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtSecondTeam.Location = new System.Drawing.Point(146, 179);
+            this.txtSecondTeam.Name = "txtSecondTeam";
+            this.txtSecondTeam.Size = new System.Drawing.Size(150, 20);
+            this.txtSecondTeam.TabIndex = 11;
             // 
             // pictureBox1
             // 
@@ -95,16 +95,16 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "VS";
             // 
-            // button1
+            // btnConfirm
             // 
-            this.button1.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(176, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 32);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Patvirtinti";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnConfirm.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(176, 228);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(90, 32);
+            this.btnConfirm.TabIndex = 14;
+            this.btnConfirm.Text = "Patvirtinti";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.button1_Click);
             // 
             // Komandos
             // 
@@ -112,11 +112,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(447, 357);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSecondTeam);
+            this.Controls.Add(this.txtFirstTeam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Komandos";
@@ -131,10 +131,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFirstTeam;
+        private System.Windows.Forms.TextBox txtSecondTeam;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }
