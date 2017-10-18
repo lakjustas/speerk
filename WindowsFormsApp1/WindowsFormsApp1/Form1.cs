@@ -66,7 +66,18 @@ namespace WindowsFormsApp1
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-            imgBgr = capVideo.QueryFrame();
+
+            try
+            {
+                imgBgr = capVideo.QueryFrame();
+            }
+            catch (NullReferenceException e)
+            {
+                txtXYRadius.AppendText("File not chosen");
+                Application.Idle -= ProcessFrameAndUpdateGUI;
+                return;
+            }
+
             if (imgBgr == null)
             {
                 MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
@@ -86,7 +97,7 @@ namespace WindowsFormsApp1
                                        "  y= " + ballCoord.Y.ToString().PadLeft(4));
             txtXYRadius.ScrollToCaret();*/
             
-            int plusminus = 5;
+            int plusminus = 3;
 
             goal = false;
 
