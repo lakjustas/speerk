@@ -20,7 +20,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class Video : Form
+    public partial class Form1 : Form
     {
         VideoCapture capVideo = null;                  //original video source
         bool blnCapturingInProcess = false;             //check if video playing
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         //Capture capt;
 
-        public Video()
+        public Form1()
         {
             InitializeComponent();
         }

@@ -20,7 +20,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class Video : Form
+    public partial class Form1 : Form
     {
 
         void gatesRecognition()
