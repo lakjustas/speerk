@@ -14,20 +14,25 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.Util;
+using Emgu.CV.Cvb;
+using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        Mat imgBgr = new Mat();
-        VideoCapture capVideo = null;
-        BallTracker ballTracker = new BallTracker();
-        GateTracker gateTracker = new GateTracker();
-        bool blnCapturingInProcess = false;
-        Team teamLeft = new Team("Kairioji komanda", 0);
-        Team teamRight = new Team("Dešinioji komanda", 0);
-        bool goal = false;
-        String videoFileDir;
+        VideoCapture capVideo = null;                  //original video source
+        bool blnCapturingInProcess = false;             //check if video playing
+        Image<Bgr, Byte> imgOriginal;
+        Image<Gray, Byte> imgProcessed;
+        
+        string fileDir = "";
+
+        public CapProp FrameWidth { get; private set; }
+        public CapProp FrameHeight { get; private set; }
+
+        //Capture capt;
 
         public Form1()
         {
@@ -36,23 +41,7 @@ namespace WindowsFormsApp1
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            /*try
-            {
-                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
-            }
-            catch (NullReferenceException except)
-            {
-                txtXYRadius.Text = except.Message;
-                return;
-            }*/
-
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
-
-            /*Application.Idle += ProcessFrameAndUpdateGUI;
-            blnCapturingInProcess = true;*/
-
+            
         }
         
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,126 +50,121 @@ namespace WindowsFormsApp1
             {
                 capVideo.Dispose();
             }
-
         }
 
-        void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
+        void processFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-            imgBgr = capVideo.QueryFrame();
-            if (imgBgr == null)
-            {
-                MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
-                Application.Idle -= ProcessFrameAndUpdateGUI;
-                return;
-            }
-            
 
-            Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
-            ballTracker.MarkBall(imgBgr, ballCoord);
-
-            LineSegment2D[] lines = gateTracker.GetGates(imgBgr);
-            gateTracker.MarkGates(imgBgr, lines);
-            
-            /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-            txtXYRadius.AppendText("Ball position: x= " + ballCoord.X.ToString().PadLeft(4) +
-                                       "  y= " + ballCoord.Y.ToString().PadLeft(4));
-            txtXYRadius.ScrollToCaret();*/
-            
-            int plusminus = 5;
-
-            goal = false;
-
-            foreach (LineSegment2D line in lines)
-            {
-                /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-
-                txtXYRadius.AppendText("Gates position Top =" + line.P1.ToString().PadLeft(4) +
-                                       ", Bottom =" + line.P2.ToString().PadLeft(4));
-                txtXYRadius.ScrollToCaret();*/
-
-
-                if ((line.P1.X - plusminus) <= ballCoord.X && line.P1.X >= ballCoord.X  && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X > 400)
-                {
-                    Goal(teamLeft);
-                    txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
-                    txtXYRadius.ScrollToCaret();
-                    goal = true;
-                    break;
-                }
-
-                if ((line.P1.X + plusminus >= ballCoord.X) && line.P1.X <= ballCoord.X && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X < 400)
-                {
-                    Goal(teamRight);
-                    txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
-                    txtXYRadius.ScrollToCaret();
-                    goal = true;
-                    break;
-                }
-            }
-            ibOriginal.Image = imgBgr;
-        }
-
-        private void GoalLeft_Click(object sender, EventArgs e)
-        {
-            teamLeft.Goal();
-            teamLeftBox.Clear();
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
-        }
-
-        private void GoalRight_Click(object sender, EventArgs e)
-        {
-            teamRight.Goal();
-            teamRightBox.Clear();
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
-        }
-
-        private void ResetGoalCounter_Click(object sender, EventArgs e)
-        {
-            goal = false;
-        }
-
-        private void BtnPauseOrResume_Click(object sender, EventArgs e)
-        {
-            if (blnCapturingInProcess == true)
-            {
-                Application.Idle -= ProcessFrameAndUpdateGUI;
-                blnCapturingInProcess = false;
-                btnPauseOrResume.Text = "Resume";
-            }
-            else
-            {
-                Application.Idle += ProcessFrameAndUpdateGUI;
-                blnCapturingInProcess = true;
-                btnPauseOrResume.Text = "Pause";
-            }
-        }
-
-        private void Goal(Team team)
-        {
-            team.Goal();
-
-            teamRightBox.Clear();
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
-
-            teamLeftBox.Clear();
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
-        }
-
-        private void SelectGameVideo_Click(object sender, EventArgs e)
-        {
-            openGameVideo.ShowDialog();
-
-            videoFileDir = openGameVideo.InitialDirectory + openGameVideo.FileName;
 
             try
             {
-                capVideo = new VideoCapture(videoFileDir);
+                imgOriginal = capVideo.QueryFrame().ToImage<Bgr, Byte>();
+
+            }
+            catch (Exception)
+            {
+            }
+
+
+
+            if (imgOriginal == null) return;
+
+            imgProcessed = imgOriginal.InRange(new Bgr(0, 70, 220),
+                                               new Bgr(100, 160, 256));
+
+            imgProcessed = imgProcessed.SmoothGaussian(9);
+
+            CircleF[] circles = imgProcessed.HoughCircles(new Gray(100),
+                                                          new Gray(50),
+                                                          2,
+                                                          imgProcessed.Height / 4,
+                                                          10,
+                                                          400)[0];
+            foreach (CircleF circle in circles)
+            {
+                if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
+
+                txtXYRadius.AppendText("ball position = x" + circle.Center.X.ToString().PadLeft(4) +
+                                       ", y =" + circle.Center.Y.ToString().PadLeft(4) +
+                                       ", radius =" + circle.Radius.ToString("###.000").PadLeft(7));
+                txtXYRadius.ScrollToCaret();
+
+                CvInvoke.Circle(imgOriginal,
+                                new Point((int)circle.Center.X, (int)circle.Center.Y),
+                                3,
+                                new MCvScalar(0, 255, 0),
+                                -1,
+                                LineType.AntiAlias,
+                                0);
+                
+                imgOriginal.Draw(circle, new Bgr(Color.Red), 3);
+            }
+
+            ibOriginal.Image = imgOriginal;
+            ibProcessed.Image = imgProcessed;
+
+            gatesRecognition();
+
+
+        }
+
+        private void btnPauseOrResume_Click(object sender, EventArgs e)
+        {
+            if (blnCapturingInProcess == true)
+            {
+                Application.Idle -= processFrameAndUpdateGUI;
+                blnCapturingInProcess = false;
+                btnPauseOrResume.Text = "Tęsti";
+            }
+            else
+            {
+                Application.Idle += processFrameAndUpdateGUI;
+                blnCapturingInProcess = true;
+                btnPauseOrResume.Text = "Sustabdyti";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)             //video file opening
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            string formats = "*.MOV; *.dat; *.wmv; *.3g2; *.3gp; *.3gp2; *.3gpp; *.amv; *.asf;  *.avi; *.bin; *.cue; *.divx; *.dv; *.flv; *.gxf; *.iso; *.m1v; *.m2v; *.m2t; *.m2ts; *.m4v; " +
+                      " *.mkv; *.mov; *.mp2; *.mp2v; *.mp4; *.mp4v; *.mpa; *.mpe; *.mpeg; *.mpeg1; *.mpeg2; *.mpeg4; *.mpg; *.mpv2; *.mts; *.nsv; *.nuv; *.ogg; *.ogm; *.ogv; *.ogx; *.ps; *.rec; *.rm; *.rmvb; *.tod; *.ts; *.tts; *.vob; *.vro; *.webm";
+
+            string[] exts = formats.Split(';');
+            string filter = string.Empty;
+            foreach (string ext in exts)
+            {
+
+                filter += "Video Files (" + ext.Replace("*", "").Trim() + ")|" + ext + "|";
+            }
+
+            openFileDialog.Filter = filter.Remove(filter.Length - 1, 1);
+            openFileDialog.ShowDialog();
+
+            fileDir = openFileDialog.InitialDirectory + openFileDialog.FileName;
+
+            txtXYRadius.AppendText("File:" + fileDir);
+            
+            try
+            {
+                capVideo = new VideoCapture(fileDir);               //Video playing
             }
             catch (NullReferenceException except)
             {
                 txtXYRadius.Text = except.Message;
                 return;
             }
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
