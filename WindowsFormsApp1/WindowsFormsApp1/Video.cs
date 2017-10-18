@@ -20,7 +20,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Video : Form
     {
         VideoCapture capVideo = null;                  //original video source
         bool blnCapturingInProcess = false;             //check if video playing
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         //Capture capt;
 
-        public Form1()
+        public Video()
         {
             InitializeComponent();
         }
@@ -114,13 +114,13 @@ namespace WindowsFormsApp1
             {
                 Application.Idle -= processFrameAndUpdateGUI;
                 blnCapturingInProcess = false;
-                btnPauseOrResume.Text = "resume";
+                btnPauseOrResume.Text = "Tęsti";
             }
             else
             {
                 Application.Idle += processFrameAndUpdateGUI;
                 blnCapturingInProcess = true;
-                btnPauseOrResume.Text = "pause";
+                btnPauseOrResume.Text = "Sustabdyti";
             }
         }
 
@@ -156,6 +156,15 @@ namespace WindowsFormsApp1
             }
             
         }
-        
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
