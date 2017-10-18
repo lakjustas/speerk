@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
                                        "  y= " + ballCoord.Y.ToString().PadLeft(4));
             txtXYRadius.ScrollToCaret();*/
             
-            int plusminus = 5;
+            int plusminus = 3;
 
             goal = false;
 
