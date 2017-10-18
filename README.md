@@ -1,8 +1,10 @@
 # SPEERK / Foosball app
 
-## Justas Lak�tinis
-## �ar�nas Bagdonavi�ius
-## Greta Kasparaityt�
+## Justas Lakštinis
+## Šarūnas Bagdonavičius
+## Greta Kasparaitytė
+
+* Apps'o tikslas - sekti žaidimą: skaičiuoti įvarčius, vesti statistiką apie komandą.
 
 # Preparation
 
