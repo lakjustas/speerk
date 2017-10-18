@@ -1,8 +1,8 @@
 # SPEERK / Foosball app
 
-## Justas Lakğtinis
-## Ğarûnas Bagdonavièius
-## Greta Kasparaitytë
+## Justas LakÅ¡tinis
+## Å arÅ«nas BagdonaviÄius
+## Greta KasparaitytÄ—
 
 # Preparation
 
