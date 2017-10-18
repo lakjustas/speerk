@@ -8,10 +8,13 @@ namespace WindowsFormsApp1
 {
     class Statistics
     {
-        String name1;
-        String name2;
-        int Score1;
-        int Score2;
+        private String name1;
+        private String name2;
+        private int Score1;
+        private int Score2;
+        private DateTime date;
+
+
 
     }
 }

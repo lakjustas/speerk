@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
         Team teamRight = new Team("Dešinioji komanda", 0);
         bool goal = false;
         String videoFileDir;
+        Statistics statistics;
 
         public Form1()
         {
@@ -82,6 +83,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
                 Application.Idle -= ProcessFrameAndUpdateGUI;
+
                 return;
             }
             
