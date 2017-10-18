@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
         Team teamRight = new Team("Dešinioji komanda", 0);
         bool goal = false;
         String videoFileDir;
-        Statistics statistics;
 
         public Form1()
         {
@@ -72,7 +71,7 @@ namespace WindowsFormsApp1
             {
                 imgBgr = capVideo.QueryFrame();
             }
-            catch (NullReferenceException e)
+            catch (NullReferenceException)
             {
                 txtXYRadius.AppendText("File not chosen");
                 Application.Idle -= ProcessFrameAndUpdateGUI;
@@ -83,7 +82,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
                 Application.Idle -= ProcessFrameAndUpdateGUI;
-
+                DoStatistics();
                 return;
             }
             
@@ -194,6 +193,14 @@ namespace WindowsFormsApp1
                 txtXYRadius.Text = except.Message;
                 return;
             }
+        }
+
+        void DoStatistics()
+        {
+            Statistics statistics = new Statistics();
+            statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
+            statistics.SetScores(teamLeft.Score, teamRight.Score);
+            statistics.WriteToFile();
         }
     }
 }
