@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ibOriginal = new Emgu.CV.UI.ImageBox();
             this.btnPauseOrResume = new System.Windows.Forms.Button();
             this.txtXYRadius = new System.Windows.Forms.TextBox();
@@ -39,58 +40,65 @@
             this.btnResetGoalCounter = new System.Windows.Forms.Button();
             this.btnSelectGameVideo = new System.Windows.Forms.Button();
             this.openGameVideo = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ibOriginal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ibOriginal
             // 
             this.ibOriginal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ibOriginal.Location = new System.Drawing.Point(15, 16);
+            this.ibOriginal.Location = new System.Drawing.Point(12, 53);
             this.ibOriginal.Name = "ibOriginal";
-            this.ibOriginal.Size = new System.Drawing.Size(856, 480);
+            this.ibOriginal.Size = new System.Drawing.Size(488, 201);
             this.ibOriginal.TabIndex = 2;
             this.ibOriginal.TabStop = false;
             // 
             // btnPauseOrResume
             // 
-            this.btnPauseOrResume.Location = new System.Drawing.Point(886, 16);
+            this.btnPauseOrResume.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPauseOrResume.Location = new System.Drawing.Point(12, 283);
             this.btnPauseOrResume.Name = "btnPauseOrResume";
-            this.btnPauseOrResume.Size = new System.Drawing.Size(120, 57);
+            this.btnPauseOrResume.Size = new System.Drawing.Size(90, 32);
             this.btnPauseOrResume.TabIndex = 3;
-            this.btnPauseOrResume.Text = "Start";
+            this.btnPauseOrResume.Text = "Pradėti";
             this.btnPauseOrResume.UseVisualStyleBackColor = true;
             this.btnPauseOrResume.Click += new System.EventHandler(this.BtnPauseOrResume_Click);
             // 
             // txtXYRadius
             // 
-            this.txtXYRadius.Location = new System.Drawing.Point(124, 522);
+            this.txtXYRadius.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtXYRadius.Location = new System.Drawing.Point(315, 283);
             this.txtXYRadius.Margin = new System.Windows.Forms.Padding(0);
             this.txtXYRadius.Multiline = true;
             this.txtXYRadius.Name = "txtXYRadius";
             this.txtXYRadius.ReadOnly = true;
             this.txtXYRadius.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtXYRadius.Size = new System.Drawing.Size(658, 84);
+            this.txtXYRadius.Size = new System.Drawing.Size(188, 64);
             this.txtXYRadius.TabIndex = 4;
             // 
             // btnGoalLeft
             // 
-            this.btnGoalLeft.Location = new System.Drawing.Point(886, 94);
-            this.btnGoalLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGoalLeft.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoalLeft.Location = new System.Drawing.Point(10, 358);
+            this.btnGoalLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoalLeft.Name = "btnGoalLeft";
-            this.btnGoalLeft.Size = new System.Drawing.Size(120, 57);
+            this.btnGoalLeft.Size = new System.Drawing.Size(90, 32);
             this.btnGoalLeft.TabIndex = 5;
-            this.btnGoalLeft.Text = "Goal left";
+            this.btnGoalLeft.Text = "Įvartis kairei";
             this.btnGoalLeft.UseVisualStyleBackColor = true;
             this.btnGoalLeft.Click += new System.EventHandler(this.GoalLeft_Click);
             // 
             // btnGoalRight
             // 
-            this.btnGoalRight.Location = new System.Drawing.Point(886, 171);
-            this.btnGoalRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGoalRight.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoalRight.Location = new System.Drawing.Point(188, 358);
+            this.btnGoalRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoalRight.Name = "btnGoalRight";
-            this.btnGoalRight.Size = new System.Drawing.Size(120, 57);
+            this.btnGoalRight.Size = new System.Drawing.Size(90, 32);
             this.btnGoalRight.TabIndex = 6;
-            this.btnGoalRight.Text = "Goal right";
+            this.btnGoalRight.Text = "Įvartis dešinei";
             this.btnGoalRight.UseVisualStyleBackColor = true;
             this.btnGoalRight.Click += new System.EventHandler(this.GoalRight_Click);
             // 
@@ -99,7 +107,7 @@
             this.teamLeftBox.BackColor = System.Drawing.Color.DarkOrange;
             this.teamLeftBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.teamLeftBox.Location = new System.Drawing.Point(124, 635);
-            this.teamLeftBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.teamLeftBox.Margin = new System.Windows.Forms.Padding(2);
             this.teamLeftBox.Name = "teamLeftBox";
             this.teamLeftBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.teamLeftBox.Size = new System.Drawing.Size(226, 41);
@@ -111,7 +119,7 @@
             this.teamRightBox.BackColor = System.Drawing.Color.DarkOrange;
             this.teamRightBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.teamRightBox.Location = new System.Drawing.Point(556, 635);
-            this.teamRightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.teamRightBox.Margin = new System.Windows.Forms.Padding(2);
             this.teamRightBox.Name = "teamRightBox";
             this.teamRightBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.teamRightBox.Size = new System.Drawing.Size(226, 41);
@@ -120,23 +128,25 @@
             // 
             // btnResetGoalCounter
             // 
-            this.btnResetGoalCounter.Location = new System.Drawing.Point(886, 249);
-            this.btnResetGoalCounter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetGoalCounter.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetGoalCounter.Location = new System.Drawing.Point(188, 283);
+            this.btnResetGoalCounter.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetGoalCounter.Name = "btnResetGoalCounter";
-            this.btnResetGoalCounter.Size = new System.Drawing.Size(120, 57);
+            this.btnResetGoalCounter.Size = new System.Drawing.Size(90, 32);
             this.btnResetGoalCounter.TabIndex = 9;
-            this.btnResetGoalCounter.Text = "Reset";
+            this.btnResetGoalCounter.Text = "Perkrauti";
             this.btnResetGoalCounter.UseVisualStyleBackColor = true;
             this.btnResetGoalCounter.Click += new System.EventHandler(this.ResetGoalCounter_Click);
             // 
             // btnSelectGameVideo
             // 
-            this.btnSelectGameVideo.Location = new System.Drawing.Point(886, 323);
-            this.btnSelectGameVideo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectGameVideo.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectGameVideo.Location = new System.Drawing.Point(41, 16);
+            this.btnSelectGameVideo.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectGameVideo.Name = "btnSelectGameVideo";
-            this.btnSelectGameVideo.Size = new System.Drawing.Size(120, 57);
+            this.btnSelectGameVideo.Size = new System.Drawing.Size(90, 32);
             this.btnSelectGameVideo.TabIndex = 10;
-            this.btnSelectGameVideo.Text = "Select game video";
+            this.btnSelectGameVideo.Text = "Įkelti video";
             this.btnSelectGameVideo.UseVisualStyleBackColor = true;
             this.btnSelectGameVideo.Click += new System.EventHandler(this.SelectGameVideo_Click);
             // 
@@ -144,11 +154,34 @@
             // 
             this.openGameVideo.FileName = "openFileDialog1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(398, 366);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "SPEERK";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 602);
+            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ClientSize = new System.Drawing.Size(512, 401);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSelectGameVideo);
             this.Controls.Add(this.btnResetGoalCounter);
             this.Controls.Add(this.teamRightBox);
@@ -162,6 +195,7 @@
             this.Text = "SPEERK";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ibOriginal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +213,8 @@
         private System.Windows.Forms.Button btnResetGoalCounter;
         private System.Windows.Forms.Button btnSelectGameVideo;
         private System.Windows.Forms.OpenFileDialog openGameVideo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

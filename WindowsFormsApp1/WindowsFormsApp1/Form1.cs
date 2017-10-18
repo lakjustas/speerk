@@ -156,13 +156,13 @@ namespace WindowsFormsApp1
             {
                 Application.Idle -= ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = false;
-                btnPauseOrResume.Text = "Resume";
+                btnPauseOrResume.Text = "Tęsti";
             }
             else
             {
                 Application.Idle += ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = true;
-                btnPauseOrResume.Text = "Pause";
+                btnPauseOrResume.Text = "Pauzė";
             }
         }
 
