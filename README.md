@@ -4,6 +4,8 @@
 ## Šarūnas Bagdonavičius
 ## Greta Kasparaitytė
 
+* Apps'o tikslas - sekti žaidimą: skaičiuoti įvarčius, vesti statistiką apie komandą.
+
 # Preparation
 
 1. EmguCV Download https://sourceforge.net/projects/emgucv/
