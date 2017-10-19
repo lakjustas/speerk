@@ -33,12 +33,13 @@ namespace WindowsFormsApp1
             this.name2 = name2;
         }
 
-        public void WriteToFile()
+        public void WriteToFile(List<Statistics> stats)
         {
-            FileStream fileStream = new FileStream("Statistics.xml", FileMode.Append);
+            stats.Add(this);
+            FileStream fileStream = new FileStream("Statistics.xml", FileMode.OpenOrCreate);
             StreamWriter streamWriter = new StreamWriter(fileStream);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Statistics));
-            xmlSerializer.Serialize(streamWriter, this);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Statistics>));
+            xmlSerializer.Serialize(streamWriter, stats);
             streamWriter.Close();
             fileStream.Close();
         }

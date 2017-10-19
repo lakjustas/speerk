@@ -15,6 +15,8 @@ using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.Util;
 
+using System.Xml.Serialization;
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -28,10 +30,13 @@ namespace WindowsFormsApp1
         Team teamRight = new Team("Dešinioji komanda", 0);
         bool goal = false;
         String videoFileDir;
+        List<Statistics> stats = new List<Statistics>();
 
         public Form1()
         {
             InitializeComponent();
+            GetStatistics();
+
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -200,7 +205,31 @@ namespace WindowsFormsApp1
             Statistics statistics = new Statistics();
             statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
             statistics.SetScores(teamLeft.Score, teamRight.Score);
-            statistics.WriteToFile();
+            statistics.WriteToFile(stats);
+        }
+
+        void GetStatistics()
+        {
+            //-----------
+            FileStream fileStream;
+            try
+            {
+                fileStream = new FileStream("Statistics.xml", FileMode.Open);
+            }
+            catch (FileNotFoundException)
+            {
+                return;
+            }
+            StreamReader streamReader = new StreamReader(fileStream);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Statistics>));
+            stats = (List<Statistics>) xmlSerializer.Deserialize(fileStream);
+            fileStream.Close();
+            streamReader.Close();
+            foreach(Statistics s in stats)
+            {
+                txtXYRadius.AppendText(s.name1 + " " + s.name2 + " " + s.score1.ToString() + " " + s.score2.ToString() + " " + s.date.ToString());
+                txtXYRadius.ScrollToCaret();
+            }
         }
     }
 }
