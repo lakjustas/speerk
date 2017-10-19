@@ -54,7 +54,7 @@
             // 
             this.ibOriginal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ibOriginal.Location = new System.Drawing.Point(181, 64);
-            this.ibOriginal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ibOriginal.Margin = new System.Windows.Forms.Padding(4);
             this.ibOriginal.Name = "ibOriginal";
             this.ibOriginal.Size = new System.Drawing.Size(954, 423);
             this.ibOriginal.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             this.btnPauseOrResume.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPauseOrResume.Location = new System.Drawing.Point(16, 222);
-            this.btnPauseOrResume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPauseOrResume.Margin = new System.Windows.Forms.Padding(4);
             this.btnPauseOrResume.Name = "btnPauseOrResume";
             this.btnPauseOrResume.Size = new System.Drawing.Size(120, 39);
             this.btnPauseOrResume.TabIndex = 3;
@@ -75,13 +75,13 @@
             // txtXYRadius
             // 
             this.txtXYRadius.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtXYRadius.Location = new System.Drawing.Point(912, 681);
+            this.txtXYRadius.Location = new System.Drawing.Point(417, 699);
             this.txtXYRadius.Margin = new System.Windows.Forms.Padding(0);
             this.txtXYRadius.Multiline = true;
             this.txtXYRadius.Name = "txtXYRadius";
             this.txtXYRadius.ReadOnly = true;
             this.txtXYRadius.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtXYRadius.Size = new System.Drawing.Size(249, 78);
+            this.txtXYRadius.Size = new System.Drawing.Size(498, 78);
             this.txtXYRadius.TabIndex = 4;
             // 
             // btnGoalLeft
@@ -164,7 +164,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(13, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +250,7 @@
             this.Controls.Add(this.txtXYRadius);
             this.Controls.Add(this.btnPauseOrResume);
             this.Controls.Add(this.ibOriginal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "SPEERK";
             this.Load += new System.EventHandler(this.Form1_Load);

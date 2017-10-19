@@ -15,8 +15,6 @@ using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.Util;
 
-using System.Xml.Serialization;
-
 namespace WindowsFormsApp1
 
 
@@ -76,7 +74,7 @@ namespace WindowsFormsApp1
             }
             catch (NullReferenceException)
             {
-                txtXYRadius.AppendText("Nepasirinktas failas");
+                txtXYRadius.AppendText("Nepasirinktas failas \n");
                 Application.Idle -= ProcessFrameAndUpdateGUI;
                 return;
             }
@@ -107,7 +105,6 @@ namespace WindowsFormsApp1
                     string goalR = Enum.GetName(typeof(Messages), 1);
 
                     txtXYRadius.AppendText(goalR + "\n");
-                    txtXYRadius.ScrollToCaret();
                     goal = true;
                     break;
                 }
@@ -119,7 +116,6 @@ namespace WindowsFormsApp1
                     string goalL = Enum.GetName(typeof(Messages), 0);
 
                     txtXYRadius.AppendText(goalL + "\n");
-                    txtXYRadius.ScrollToCaret();
                     goal = true;
                     break;
                 }
@@ -129,13 +125,20 @@ namespace WindowsFormsApp1
 
         private void GoalLeft_Click(object sender, EventArgs e)
         {
+            string goalL = Enum.GetName(typeof(Messages), 0);
+            txtXYRadius.AppendText(goalL + "\n");
+
             teamLeft.Goal();
             leftResultBox.Clear();
             leftResultBox.AppendText(teamLeft.Score.ToString());
+
         }
 
         private void GoalRight_Click(object sender, EventArgs e)
         {
+            string goalR = Enum.GetName(typeof(Messages), 1);
+            txtXYRadius.AppendText(goalR + "\n");
+
             teamRight.Goal();
             rightResultBox.Clear();
             rightResultBox.AppendText(teamRight.Score.ToString());
