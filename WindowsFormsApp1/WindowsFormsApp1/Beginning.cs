@@ -31,5 +31,10 @@ namespace WindowsFormsApp1
         {
             new Komandos().Show();
         }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            new Statistika().Show();
+        }
     }
 }
