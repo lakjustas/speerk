@@ -26,6 +26,8 @@ namespace WindowsFormsApp1
             this.score1 = score1;
             this.score2 = score2;
         }
+        
+        public void SetScores() {} // For tests, if values ar not given
 
         public int getScore1()
         {
