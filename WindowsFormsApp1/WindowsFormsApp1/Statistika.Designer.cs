@@ -64,8 +64,9 @@
             this.statsTextBox.Name = "statsTextBox";
             this.statsTextBox.ReadOnly = true;
             this.statsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.statsTextBox.Size = new System.Drawing.Size(581, 340);
+            this.statsTextBox.Size = new System.Drawing.Size(664, 340);
             this.statsTextBox.TabIndex = 11;
+            this.statsTextBox.TabStop = false;
             this.statsTextBox.Text = "Data                 | Komanda kairėje      | Rezultatas  | Komanda dešinėje    \r" +
     "\n-------------------------------------------------------------------------------" +
     "-------------";
@@ -75,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(603, 439);
+            this.ClientSize = new System.Drawing.Size(688, 439);
             this.Controls.Add(this.statsTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
