@@ -24,8 +24,8 @@ namespace WindowsFormsApp1
         BallTracker ballTracker = new BallTracker();
         GateTracker gateTracker = new GateTracker();
         bool blnCapturingInProcess = false;
-        Team teamLeft = new Team("Kairioji komanda", 0);
-        Team teamRight = new Team("Dešinioji komanda", 0);
+        Team teamLeft = new Team("", 0);
+        Team teamRight = new Team("", 0);
         bool goal = false;
         String videoFileDir;
 
@@ -47,8 +47,8 @@ namespace WindowsFormsApp1
                 return;
             }*/
 
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+            teamLeftBox.AppendText(teamLeft.GetName() + "" + teamLeft.Score.ToString());
+            teamRightBox.AppendText(teamRight.GetName() + "" + teamRight.Score.ToString());
 
             /*Application.Idle += ProcessFrameAndUpdateGUI;
             blnCapturingInProcess = true;*/
@@ -156,13 +156,13 @@ namespace WindowsFormsApp1
             {
                 Application.Idle -= ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = false;
-                btnPauseOrResume.Text = "Resume";
+                btnPauseOrResume.Text = "Tęsti";
             }
             else
             {
                 Application.Idle += ProcessFrameAndUpdateGUI;
                 blnCapturingInProcess = true;
-                btnPauseOrResume.Text = "Pause";
+                btnPauseOrResume.Text = "Pauzė";
             }
         }
 
@@ -192,6 +192,11 @@ namespace WindowsFormsApp1
                 txtXYRadius.Text = except.Message;
                 return;
             }
+        }
+
+        private void teamLeftBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
