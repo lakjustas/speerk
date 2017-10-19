@@ -80,6 +80,7 @@
             this.btnStatistics.TabIndex = 3;
             this.btnStatistics.Text = "Statistika";
             this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // Beginning
             // 
