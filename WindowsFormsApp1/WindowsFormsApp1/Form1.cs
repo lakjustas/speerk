@@ -85,6 +85,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
                 Application.Idle -= ProcessFrameAndUpdateGUI;
+                capVideo = null;
                 DoStatistics();
                 return;
             }
@@ -198,6 +199,15 @@ namespace WindowsFormsApp1
             statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
             statistics.SetScores(teamLeft.Score, teamRight.Score);
             statistics.WriteToFile(stats);
+        }
+
+        private void endMatchBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
+            Application.Idle -= ProcessFrameAndUpdateGUI;
+            DoStatistics();
+            capVideo = null;
+            return;
         }
     }
 }

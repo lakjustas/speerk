@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.leftResultBox = new System.Windows.Forms.RichTextBox();
             this.rightResultBox = new System.Windows.Forms.RichTextBox();
+            this.endMatchBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ibOriginal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -216,12 +217,25 @@
             this.rightResultBox.TabIndex = 16;
             this.rightResultBox.Text = "";
             // 
+            // endMatchBtn
+            // 
+            this.endMatchBtn.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endMatchBtn.Location = new System.Drawing.Point(16, 310);
+            this.endMatchBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.endMatchBtn.Name = "endMatchBtn";
+            this.endMatchBtn.Size = new System.Drawing.Size(120, 39);
+            this.endMatchBtn.TabIndex = 17;
+            this.endMatchBtn.Text = "Baigti rungt.";
+            this.endMatchBtn.UseVisualStyleBackColor = true;
+            this.endMatchBtn.Click += new System.EventHandler(this.endMatchBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1179, 814);
+            this.Controls.Add(this.endMatchBtn);
             this.Controls.Add(this.rightResultBox);
             this.Controls.Add(this.leftResultBox);
             this.Controls.Add(this.label3);
@@ -264,6 +278,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox leftResultBox;
         private System.Windows.Forms.RichTextBox rightResultBox;
+        private System.Windows.Forms.Button endMatchBtn;
     }
 }
 
