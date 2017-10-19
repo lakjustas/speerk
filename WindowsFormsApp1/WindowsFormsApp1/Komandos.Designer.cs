@@ -65,7 +65,7 @@
             // 
             this.txtFirstTeam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtFirstTeam.Location = new System.Drawing.Point(195, 140);
-            this.txtFirstTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstTeam.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstTeam.MaxLength = 20;
             this.txtFirstTeam.Name = "txtFirstTeam";
             this.txtFirstTeam.Size = new System.Drawing.Size(199, 22);
@@ -75,7 +75,7 @@
             // 
             this.txtSecondTeam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtSecondTeam.Location = new System.Drawing.Point(195, 220);
-            this.txtSecondTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSecondTeam.Margin = new System.Windows.Forms.Padding(4);
             this.txtSecondTeam.MaxLength = 20;
             this.txtSecondTeam.Name = "txtSecondTeam";
             this.txtSecondTeam.Size = new System.Drawing.Size(199, 22);
@@ -85,7 +85,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(303, 181);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +107,7 @@
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Location = new System.Drawing.Point(235, 281);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(120, 39);
             this.btnConfirm.TabIndex = 14;
@@ -128,7 +128,7 @@
             this.Controls.Add(this.txtFirstTeam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Komandos";
             this.Text = "Komandos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
