@@ -53,23 +53,10 @@ namespace WindowsFormsApp1
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            /*try
-            {
-                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
-            }
-            catch (NullReferenceException except)
-            {
-                txtXYRadius.Text = except.Message;
-                return;
-            }*/
-
-            teamLeftBox.AppendText(teamLeft.GetName() + "" + teamLeft.Score.ToString());
-            teamRightBox.AppendText(teamRight.GetName() + "" + teamRight.Score.ToString());
-
-            /*Application.Idle += ProcessFrameAndUpdateGUI;
-            blnCapturingInProcess = true;*/
-
+            teamLeftBox.AppendText(teamLeft.GetName());
+            teamRightBox.AppendText(teamRight.GetName());
+            leftResultBox.AppendText(teamLeft.Score.ToString());
+            rightResultBox.AppendText(teamRight.Score.ToString());
         }
         
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -78,7 +65,6 @@ namespace WindowsFormsApp1
             {
                 capVideo.Dispose();
             }
-
         }
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
@@ -90,7 +76,7 @@ namespace WindowsFormsApp1
             }
             catch (NullReferenceException)
             {
-                txtXYRadius.AppendText("File not chosen");
+                txtXYRadius.AppendText("Nepasirinktas failas");
                 Application.Idle -= ProcessFrameAndUpdateGUI;
                 return;
             }
@@ -105,15 +91,10 @@ namespace WindowsFormsApp1
             
 
             Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
-            ballTracker.MarkBall(imgBgr, ballCoord);
+            //ballTracker.MarkBall(imgBgr, ballCoord); // pazymet kamuoliuka
 
             LineSegment2D[] lines = gateTracker.GetGates(imgBgr);
-            gateTracker.MarkGates(imgBgr, lines);
-            
-            /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-            txtXYRadius.AppendText("Ball position: x= " + ballCoord.X.ToString().PadLeft(4) +
-                                       "  y= " + ballCoord.Y.ToString().PadLeft(4));
-            txtXYRadius.ScrollToCaret();*/
+            //gateTracker.MarkGates(imgBgr, lines); // pazymeti vartus
             
             int plusminus = 3;
 
@@ -121,13 +102,6 @@ namespace WindowsFormsApp1
 
             foreach (LineSegment2D line in lines)
             {
-                /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-
-                txtXYRadius.AppendText("Gates position Top =" + line.P1.ToString().PadLeft(4) +
-                                       ", Bottom =" + line.P2.ToString().PadLeft(4));
-                txtXYRadius.ScrollToCaret();*/
-
-
                 if ((line.P1.X - plusminus) <= ballCoord.X && line.P1.X >= ballCoord.X  && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X > 400)
                 {
                     Goal(teamRight);
@@ -158,15 +132,15 @@ namespace WindowsFormsApp1
         private void GoalLeft_Click(object sender, EventArgs e)
         {
             teamLeft.Goal();
-            teamLeftBox.Clear();
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
+            leftResultBox.Clear();
+            leftResultBox.AppendText(teamLeft.Score.ToString());
         }
 
         private void GoalRight_Click(object sender, EventArgs e)
         {
             teamRight.Goal();
-            teamRightBox.Clear();
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+            rightResultBox.Clear();
+            rightResultBox.AppendText(teamRight.Score.ToString());
         }
 
         private void ResetGoalCounter_Click(object sender, EventArgs e)
@@ -194,11 +168,11 @@ namespace WindowsFormsApp1
         {
             team.Goal();
 
-            teamRightBox.Clear();
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+            leftResultBox.Clear();
+            leftResultBox.AppendText(teamLeft.Score.ToString());
 
-            teamLeftBox.Clear();
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
+            rightResultBox.Clear();
+            rightResultBox.AppendText(teamRight.Score.ToString());
         }
 
         private void SelectGameVideo_Click(object sender, EventArgs e)
@@ -224,37 +198,6 @@ namespace WindowsFormsApp1
             statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
             statistics.SetScores(teamLeft.Score, teamRight.Score);
             statistics.WriteToFile(stats);
-        }
-
-        void GetStatistics()
-        {
-            /*/-----------
-            FileStream fileStream;
-            try
-            {
-                fileStream = new FileStream("Statistics.xml", FileMode.Open);
-            }
-            catch (FileNotFoundException)
-            {
-                return;
-            }
-            StreamReader streamReader = new StreamReader(fileStream);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Statistics>));
-            stats = (List<Statistics>) xmlSerializer.Deserialize(fileStream);
-            fileStream.Close();
-            streamReader.Close();
-            foreach(Statistics s in stats)
-            {
-                txtXYRadius.AppendText(s.name1 + " " + s.name2 + " " + s.score1.ToString() + " " + s.score2.ToString() + " " + s.date.ToString());
-                txtXYRadius.ScrollToCaret();
-            }*/
-        }
-
-        void teamLeftBox_TextChanged(object sender, EventArgs e)
-        {
-
-
-
         }
     }
 }
