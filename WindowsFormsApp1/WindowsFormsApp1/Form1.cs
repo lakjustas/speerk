@@ -34,15 +34,19 @@ namespace WindowsFormsApp1
         BallTracker ballTracker = new BallTracker();
         GateTracker gateTracker = new GateTracker();
         bool blnCapturingInProcess = false;
-        Team teamLeft = new Team("", 0);
-        Team teamRight = new Team("", 0);
+        Team teamLeft;
+        Team teamRight;
         bool goal = false;
         String videoFileDir;
         List<Statistics> stats;
 
-        public Form1()
+        public Form1(String name1, String name2)
         {
             InitializeComponent();
+
+            teamLeft = new Team(name1, 0);
+            teamRight = new Team(name2, 0);
+
             stats = new Statistics().GetStatistics();
             if (stats == null) stats = new List<Statistics>();
         }

@@ -43,9 +43,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 322);
+            this.label1.Location = new System.Drawing.Point(440, 396);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 26);
+            this.label1.Size = new System.Drawing.Size(132, 33);
             this.label1.TabIndex = 8;
             this.label1.Text = "SPEERK";
             // 
@@ -53,34 +54,40 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 66);
+            this.label2.Location = new System.Drawing.Point(196, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 30);
+            this.label2.Size = new System.Drawing.Size(193, 39);
             this.label2.TabIndex = 9;
             this.label2.Text = "Komandos";
             // 
             // txtFirstTeam
             // 
             this.txtFirstTeam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtFirstTeam.Location = new System.Drawing.Point(146, 114);
+            this.txtFirstTeam.Location = new System.Drawing.Point(195, 140);
+            this.txtFirstTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstTeam.MaxLength = 20;
             this.txtFirstTeam.Name = "txtFirstTeam";
-            this.txtFirstTeam.Size = new System.Drawing.Size(150, 20);
+            this.txtFirstTeam.Size = new System.Drawing.Size(199, 22);
             this.txtFirstTeam.TabIndex = 10;
             // 
             // txtSecondTeam
             // 
             this.txtSecondTeam.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtSecondTeam.Location = new System.Drawing.Point(146, 179);
+            this.txtSecondTeam.Location = new System.Drawing.Point(195, 220);
+            this.txtSecondTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSecondTeam.MaxLength = 20;
             this.txtSecondTeam.Name = "txtSecondTeam";
-            this.txtSecondTeam.Size = new System.Drawing.Size(150, 20);
+            this.txtSecondTeam.Size = new System.Drawing.Size(199, 22);
             this.txtSecondTeam.TabIndex = 11;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(227, 147);
+            this.pictureBox1.Location = new System.Drawing.Point(303, 181);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(39, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -89,29 +96,31 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(200, 147);
+            this.label3.Location = new System.Drawing.Point(267, 181);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 24);
+            this.label3.Size = new System.Drawing.Size(27, 31);
             this.label3.TabIndex = 13;
             this.label3.Text = "VS";
             // 
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(176, 228);
+            this.btnConfirm.Location = new System.Drawing.Point(235, 281);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(90, 32);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 39);
             this.btnConfirm.TabIndex = 14;
             this.btnConfirm.Text = "Patvirtinti";
             this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.button1_Click);
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // Komandos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(447, 357);
+            this.ClientSize = new System.Drawing.Size(596, 439);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -119,6 +128,7 @@
             this.Controls.Add(this.txtFirstTeam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Komandos";
             this.Text = "Komandos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
