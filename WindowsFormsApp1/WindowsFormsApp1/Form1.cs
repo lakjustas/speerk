@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-
+            
             try
             {
                 imgBgr = capVideo.QueryFrame();
@@ -83,10 +83,7 @@ namespace WindowsFormsApp1
 
             if (imgBgr == null)
             {
-                MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
-                Application.Idle -= ProcessFrameAndUpdateGUI;
-                capVideo = null;
-                DoStatistics();
+                MatchEnd();
                 return;
             }
             
@@ -203,11 +200,29 @@ namespace WindowsFormsApp1
 
         private void endMatchBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
+            MatchEnd();
+            return;
+        }
+        private void MatchEnd()
+        {
             Application.Idle -= ProcessFrameAndUpdateGUI;
             DoStatistics();
             capVideo = null;
-            return;
+
+            MessageBox.Show(teamLeft.GetName().ToString() + "  " +
+                            teamLeft.Score.ToString() + " : " +
+                            teamRight.Score.ToString() + "  " +
+                            teamRight.GetName().ToString(),
+                            "Rungtynių pabaiga",
+                            MessageBoxButtons.OK);
+
+            DialogResult dialogResult = MessageBox.Show("Grįžti i pagr. meniu?", "Rungtynių pabaiga", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+
         }
     }
 }
