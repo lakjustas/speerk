@@ -81,6 +81,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Statistika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Statistika";
             this.Load += new System.EventHandler(this.Statistika_Load);
             this.ResumeLayout(false);
