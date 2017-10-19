@@ -231,5 +231,12 @@ namespace WindowsFormsApp1
                 txtXYRadius.ScrollToCaret();
             }
         }
+
+        void teamLeftBox_TextChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
 }
