@@ -222,7 +222,6 @@ namespace WindowsFormsApp1
                 this.Close();
             }
 
-
         }
     }
 }

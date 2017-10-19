@@ -35,9 +35,13 @@ namespace WindowsFormsApp1
             {
                 foreach (Statistics s in stats)
                 {
-                    txtToBox = s.date.ToString() + " " + s.name1 + " " + s.score1.ToString() + " - " + s.score2.ToString() + " " + s.name2;
-                    statsTextBox.AppendText(txtToBox);
                     statsTextBox.AppendText(Environment.NewLine);
+                    txtToBox = String.Format("{0,-13} | {1,-20} | {2,4} : {3,-4} | {4,-20}", s.date.ToString(@"MM - dd HH:mm"), 
+                                                                                             s.name1,
+                                                                                             s.score1.ToString(),
+                                                                                             s.score2.ToString(),
+                                                                                             s.name2);
+                    statsTextBox.AppendText(txtToBox);
                 }
             }
         }

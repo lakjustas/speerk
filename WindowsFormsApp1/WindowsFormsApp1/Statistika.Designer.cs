@@ -38,7 +38,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(440, 396);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 33);
             this.label1.TabIndex = 9;
@@ -49,7 +49,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(16, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 39);
             this.label2.TabIndex = 10;
@@ -58,29 +58,28 @@
             // statsTextBox
             // 
             this.statsTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.statsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.statsTextBox.Location = new System.Drawing.Point(12, 53);
+            this.statsTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.statsTextBox.Location = new System.Drawing.Point(11, 53);
             this.statsTextBox.Multiline = true;
             this.statsTextBox.Name = "statsTextBox";
             this.statsTextBox.ReadOnly = true;
             this.statsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.statsTextBox.Size = new System.Drawing.Size(664, 340);
+            this.statsTextBox.Size = new System.Drawing.Size(840, 340);
             this.statsTextBox.TabIndex = 11;
             this.statsTextBox.TabStop = false;
-            this.statsTextBox.Text = "Data                 | Komanda kairėje      | Rezultatas  | Komanda dešinėje    \r" +
-    "\n-------------------------------------------------------------------------------" +
-    "-------------";
+            this.statsTextBox.Text = "Data          | Komanda kairėje      | Rezultatas  | Komanda dešinėje     \r\n-----" +
+    "---------------------------------------------------------------------";
             // 
             // Statistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(688, 439);
+            this.ClientSize = new System.Drawing.Size(863, 439);
             this.Controls.Add(this.statsTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Statistika";
             this.Text = "Statistika";
             this.Load += new System.EventHandler(this.Statistika_Load);
