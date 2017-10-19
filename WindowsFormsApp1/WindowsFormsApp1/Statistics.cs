@@ -27,10 +27,31 @@ namespace WindowsFormsApp1
             this.score2 = score2;
         }
 
+        public int getScore1()
+        {
+            return score1;
+        }
+
+        public int getScore2()
+        {
+            return score2;
+        }
+
+
         public void SetNames(String name1, String name2)
         {
             this.name1 = name1;
             this.name2 = name2;
+        }
+
+        public string getName1()
+        {
+            return name1;
+        }
+
+        public string getName2()
+        {
+            return name2;
         }
 
         public void WriteToFile(List<Statistics> stats)
