@@ -18,9 +18,17 @@ using Emgu.CV.Util;
 using System.Xml.Serialization;
 
 namespace WindowsFormsApp1
+
+
+    
 {
     public partial class Form1 : Form
     {
+        enum Messages
+        {
+            Ivartis_kaireje, Ivartis_desineje, Laimejo_komanda_kaireje, Laimejo_komanda_Desineje, Lygiosios
+        };
+
         Mat imgBgr = new Mat();
         VideoCapture capVideo = null;
         BallTracker ballTracker = new BallTracker();
@@ -118,8 +126,11 @@ namespace WindowsFormsApp1
 
                 if ((line.P1.X - plusminus) <= ballCoord.X && line.P1.X >= ballCoord.X  && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X > 400)
                 {
-                    Goal(teamLeft);
-                    txtXYRadius.AppendText("GOAL!!!!--------------------------------------------------------------------");
+                    Goal(teamRight);
+
+                    string goalR = Enum.GetName(typeof(Messages), 1);
+
+                    txtXYRadius.AppendText(goalR + "\n");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
                     break;
@@ -127,8 +138,11 @@ namespace WindowsFormsApp1
 
                 if ((line.P1.X + plusminus >= ballCoord.X) && line.P1.X <= ballCoord.X && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X < 400)
                 {
-                    Goal(teamRight);
-                    txtXYRadius.AppendText("GOAL!!!!----------------------------------------------------------------------");
+                    Goal(teamLeft);
+
+                    string goalL = Enum.GetName(typeof(Messages), 0);
+
+                    txtXYRadius.AppendText(goalL + "\n");
                     txtXYRadius.ScrollToCaret();
                     goal = true;
                     break;
