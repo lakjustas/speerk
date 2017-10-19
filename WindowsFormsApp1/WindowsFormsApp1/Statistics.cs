@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
 
         public Statistics()
         {
-            this.date = DateTime.Today;
+            this.date = DateTime.Now;
         }
         
         public void SetScores(int score1, int score2)
