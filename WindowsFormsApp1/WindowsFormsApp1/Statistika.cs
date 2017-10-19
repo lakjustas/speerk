@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Xml.Serialization;
+
 namespace WindowsFormsApp1
 {
     public partial class Statistika : Form
     {
-        private object textbox1;
 
         public Statistika()
         {
@@ -22,12 +23,23 @@ namespace WindowsFormsApp1
 
         private void Statistika_Load(object sender, EventArgs e)
         {
-            
-        }
+            List<Statistics> stats = new Statistics().GetStatistics();
+            String txtToBox;
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
+            if(stats == null)
+            {
+                txtToBox = "Nėra duomenų";
+                statsTextBox.AppendText(txtToBox);
+            }
+            else
+            {
+                foreach (Statistics s in stats)
+                {
+                    txtToBox = s.date.ToString() + " " + s.name1 + " " + s.score1.ToString() + " - " + s.score2.ToString() + " " + s.name2;
+                    statsTextBox.AppendText(txtToBox);
+                    statsTextBox.AppendText(Environment.NewLine);
+                }
+            }
         }
     }
 }

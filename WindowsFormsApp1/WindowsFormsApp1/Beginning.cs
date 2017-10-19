@@ -12,6 +12,8 @@ namespace WindowsFormsApp1
 {
     public partial class Beginning : Form
     {
+        public List<Statistics> stats = new List<Statistics>();
+
         public Beginning()
         {
             InitializeComponent();

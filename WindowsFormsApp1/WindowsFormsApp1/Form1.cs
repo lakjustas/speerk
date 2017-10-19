@@ -38,13 +38,13 @@ namespace WindowsFormsApp1
         Team teamRight = new Team("", 0);
         bool goal = false;
         String videoFileDir;
-        List<Statistics> stats = new List<Statistics>();
+        List<Statistics> stats;
 
         public Form1()
         {
             InitializeComponent();
-            GetStatistics();
-
+            stats = new Statistics().GetStatistics();
+            if (stats == null) stats = new List<Statistics>();
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -224,7 +224,7 @@ namespace WindowsFormsApp1
 
         void GetStatistics()
         {
-            //-----------
+            /*/-----------
             FileStream fileStream;
             try
             {
@@ -243,7 +243,7 @@ namespace WindowsFormsApp1
             {
                 txtXYRadius.AppendText(s.name1 + " " + s.name2 + " " + s.score1.ToString() + " " + s.score2.ToString() + " " + s.date.ToString());
                 txtXYRadius.ScrollToCaret();
-            }
+            }*/
         }
 
         void teamLeftBox_TextChanged(object sender, EventArgs e)
