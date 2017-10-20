@@ -66,5 +66,27 @@ namespace WindowsFormsApp1
             streamWriter.Close();
             fileStream.Close();
         }
+
+        public List<Statistics> GetStatistics()
+        {
+            List<Statistics> stats;
+            FileStream fileStream;
+            try
+            {
+                fileStream = new FileStream("Statistics.xml", FileMode.Open);
+            }
+            catch (FileNotFoundException)
+            {
+                return null;
+            }
+
+            StreamReader streamReader = new StreamReader(fileStream);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Statistics>));
+            stats = (List<Statistics>)xmlSerializer.Deserialize(fileStream);
+            fileStream.Close();
+            streamReader.Close();
+
+            return stats;
+        }
     }
 }

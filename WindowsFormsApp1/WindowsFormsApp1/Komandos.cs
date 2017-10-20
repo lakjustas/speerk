@@ -17,9 +17,13 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            String name1, name2;
+            name1 = txtFirstTeam.Text;
+            name2 = txtSecondTeam.Text;
+            new Form1(name1, name2).Show();
+            this.Close();
         }
     }
 }

@@ -28,62 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.statsTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox2.Location = new System.Drawing.Point(43, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 0;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox3.Location = new System.Drawing.Point(43, 77);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 20);
-            this.textBox3.TabIndex = 1;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox4.Location = new System.Drawing.Point(201, 77);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(45, 20);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox5.Location = new System.Drawing.Point(201, 51);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(45, 20);
-            this.textBox5.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.textBox6.Location = new System.Drawing.Point(252, 63);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(150, 20);
-            this.textBox6.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 322);
+            this.label1.Location = new System.Drawing.Point(440, 396);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 26);
+            this.label1.Size = new System.Drawing.Size(132, 33);
             this.label1.TabIndex = 9;
             this.label1.Text = "SPEERK";
             // 
@@ -91,26 +48,40 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 30);
+            this.label2.Size = new System.Drawing.Size(180, 39);
             this.label2.TabIndex = 10;
             this.label2.Text = "Statistika";
             // 
+            // statsTextBox
+            // 
+            this.statsTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.statsTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.statsTextBox.Location = new System.Drawing.Point(11, 53);
+            this.statsTextBox.Multiline = true;
+            this.statsTextBox.Name = "statsTextBox";
+            this.statsTextBox.ReadOnly = true;
+            this.statsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.statsTextBox.Size = new System.Drawing.Size(840, 340);
+            this.statsTextBox.TabIndex = 11;
+            this.statsTextBox.TabStop = false;
+            this.statsTextBox.Text = "Data          | Komanda kairėje      | Rezultatas  | Komanda dešinėje     \r\n-----" +
+    "---------------------------------------------------------------------";
+            // 
             // Statistika
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(447, 357);
+            this.ClientSize = new System.Drawing.Size(863, 439);
+            this.Controls.Add(this.statsTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Statistika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Statistika";
             this.Load += new System.EventHandler(this.Statistika_Load);
             this.ResumeLayout(false);
@@ -119,13 +90,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox statsTextBox;
     }
 }

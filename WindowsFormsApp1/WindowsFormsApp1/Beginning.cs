@@ -12,19 +12,11 @@ namespace WindowsFormsApp1
 {
     public partial class Beginning : Form
     {
+        public List<Statistics> stats = new List<Statistics>();
+
         public Beginning()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)

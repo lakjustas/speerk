@@ -15,8 +15,6 @@ using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.Util;
 
-using System.Xml.Serialization;
-
 namespace WindowsFormsApp1
 
 
@@ -34,38 +32,29 @@ namespace WindowsFormsApp1
         BallTracker ballTracker = new BallTracker();
         GateTracker gateTracker = new GateTracker();
         bool blnCapturingInProcess = false;
-        Team teamLeft = new Team("", 0);
-        Team teamRight = new Team("", 0);
+        Team teamLeft;
+        Team teamRight;
         bool goal = false;
         String videoFileDir;
-        List<Statistics> stats = new List<Statistics>();
+        List<Statistics> stats;
 
-        public Form1()
+        public Form1(String name1, String name2)
         {
             InitializeComponent();
-            GetStatistics();
 
+            teamLeft = new Team(name1, 0);
+            teamRight = new Team(name2, 0);
+
+            stats = new Statistics().GetStatistics();
+            if (stats == null) stats = new List<Statistics>();
         }
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            /*try
-            {
-                capVideo = new VideoCapture("C:\\Users\\Šarūnas\\Desktop\\video.mp4");
-            }
-            catch (NullReferenceException except)
-            {
-                txtXYRadius.Text = except.Message;
-                return;
-            }*/
-
-            teamLeftBox.AppendText(teamLeft.GetName() + "" + teamLeft.Score.ToString());
-            teamRightBox.AppendText(teamRight.GetName() + "" + teamRight.Score.ToString());
-
-            /*Application.Idle += ProcessFrameAndUpdateGUI;
-            blnCapturingInProcess = true;*/
-
+            teamLeftBox.AppendText(teamLeft.GetName());
+            teamRightBox.AppendText(teamRight.GetName());
+            leftResultBox.AppendText(teamLeft.Score.ToString());
+            rightResultBox.AppendText(teamRight.Score.ToString());
         }
         
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -74,42 +63,34 @@ namespace WindowsFormsApp1
             {
                 capVideo.Dispose();
             }
-
         }
 
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)
         {
-
+            
             try
             {
                 imgBgr = capVideo.QueryFrame();
             }
             catch (NullReferenceException)
             {
-                txtXYRadius.AppendText("File not chosen");
+                txtXYRadius.AppendText("Nepasirinktas failas \n");
                 Application.Idle -= ProcessFrameAndUpdateGUI;
                 return;
             }
 
             if (imgBgr == null)
             {
-                MessageBox.Show("Match ended", "End", MessageBoxButtons.OK);
-                Application.Idle -= ProcessFrameAndUpdateGUI;
-                DoStatistics();
+                MatchEnd();
                 return;
             }
             
 
             Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
-            ballTracker.MarkBall(imgBgr, ballCoord);
+            //ballTracker.MarkBall(imgBgr, ballCoord); // pazymet kamuoliuka
 
             LineSegment2D[] lines = gateTracker.GetGates(imgBgr);
-            gateTracker.MarkGates(imgBgr, lines);
-            
-            /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-            txtXYRadius.AppendText("Ball position: x= " + ballCoord.X.ToString().PadLeft(4) +
-                                       "  y= " + ballCoord.Y.ToString().PadLeft(4));
-            txtXYRadius.ScrollToCaret();*/
+            //gateTracker.MarkGates(imgBgr, lines); // pazymeti vartus
             
             int plusminus = 3;
 
@@ -117,13 +98,6 @@ namespace WindowsFormsApp1
 
             foreach (LineSegment2D line in lines)
             {
-                /*if (txtXYRadius.Text != "") txtXYRadius.AppendText(Environment.NewLine);
-
-                txtXYRadius.AppendText("Gates position Top =" + line.P1.ToString().PadLeft(4) +
-                                       ", Bottom =" + line.P2.ToString().PadLeft(4));
-                txtXYRadius.ScrollToCaret();*/
-
-
                 if ((line.P1.X - plusminus) <= ballCoord.X && line.P1.X >= ballCoord.X  && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X > 400)
                 {
                     Goal(teamRight);
@@ -131,7 +105,6 @@ namespace WindowsFormsApp1
                     string goalR = Enum.GetName(typeof(Messages), 1);
 
                     txtXYRadius.AppendText(goalR + "\n");
-                    txtXYRadius.ScrollToCaret();
                     goal = true;
                     break;
                 }
@@ -143,7 +116,6 @@ namespace WindowsFormsApp1
                     string goalL = Enum.GetName(typeof(Messages), 0);
 
                     txtXYRadius.AppendText(goalL + "\n");
-                    txtXYRadius.ScrollToCaret();
                     goal = true;
                     break;
                 }
@@ -153,16 +125,23 @@ namespace WindowsFormsApp1
 
         private void GoalLeft_Click(object sender, EventArgs e)
         {
+            string goalL = Enum.GetName(typeof(Messages), 0);
+            txtXYRadius.AppendText(goalL + "\n");
+
             teamLeft.Goal();
-            teamLeftBox.Clear();
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
+            leftResultBox.Clear();
+            leftResultBox.AppendText(teamLeft.Score.ToString());
+
         }
 
         private void GoalRight_Click(object sender, EventArgs e)
         {
+            string goalR = Enum.GetName(typeof(Messages), 1);
+            txtXYRadius.AppendText(goalR + "\n");
+
             teamRight.Goal();
-            teamRightBox.Clear();
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+            rightResultBox.Clear();
+            rightResultBox.AppendText(teamRight.Score.ToString());
         }
 
         private void ResetGoalCounter_Click(object sender, EventArgs e)
@@ -190,11 +169,11 @@ namespace WindowsFormsApp1
         {
             team.Goal();
 
-            teamRightBox.Clear();
-            teamRightBox.AppendText(teamRight.GetName() + ": " + teamRight.Score.ToString());
+            leftResultBox.Clear();
+            leftResultBox.AppendText(teamLeft.Score.ToString());
 
-            teamLeftBox.Clear();
-            teamLeftBox.AppendText(teamLeft.GetName() + ": " + teamLeft.Score.ToString());
+            rightResultBox.Clear();
+            rightResultBox.AppendText(teamRight.Score.ToString());
         }
 
         private void SelectGameVideo_Click(object sender, EventArgs e)
@@ -222,34 +201,29 @@ namespace WindowsFormsApp1
             statistics.WriteToFile(stats);
         }
 
-        void GetStatistics()
+        private void endMatchBtn_Click(object sender, EventArgs e)
         {
-            //-----------
-            FileStream fileStream;
-            try
-            {
-                fileStream = new FileStream("Statistics.xml", FileMode.Open);
-            }
-            catch (FileNotFoundException)
-            {
-                return;
-            }
-            StreamReader streamReader = new StreamReader(fileStream);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Statistics>));
-            stats = (List<Statistics>) xmlSerializer.Deserialize(fileStream);
-            fileStream.Close();
-            streamReader.Close();
-            foreach(Statistics s in stats)
-            {
-                txtXYRadius.AppendText(s.name1 + " " + s.name2 + " " + s.score1.ToString() + " " + s.score2.ToString() + " " + s.date.ToString());
-                txtXYRadius.ScrollToCaret();
-            }
+            MatchEnd();
+            return;
         }
-
-        void teamLeftBox_TextChanged(object sender, EventArgs e)
+        private void MatchEnd()
         {
+            Application.Idle -= ProcessFrameAndUpdateGUI;
+            DoStatistics();
+            capVideo = null;
 
+            MessageBox.Show(teamLeft.GetName().ToString() + "  " +
+                            teamLeft.Score.ToString() + " : " +
+                            teamRight.Score.ToString() + "  " +
+                            teamRight.GetName().ToString(),
+                            "Rungtynių pabaiga",
+                            MessageBoxButtons.OK);
 
+            DialogResult dialogResult = MessageBox.Show("Grįžti i pagr. meniu?", "Rungtynių pabaiga", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
 
         }
     }
