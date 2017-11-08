@@ -45,5 +45,10 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void statsTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
