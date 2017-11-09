@@ -17,8 +17,6 @@ using Emgu.CV.Util;
 
 namespace WindowsFormsApp1
 
-
-    
 {
     public partial class Form1 : Form
     {
