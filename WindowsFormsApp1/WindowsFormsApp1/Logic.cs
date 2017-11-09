@@ -19,7 +19,9 @@ namespace WindowsFormsApp1
 {
     class Logic
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static int WhatToDo(Mat imgBgr)
         {
             BallTracker ballTracker = new BallTracker();
@@ -55,6 +57,11 @@ namespace WindowsFormsApp1
             return sk;
         }
 
+        /// <summary>
+        /// prie esamos statistikos pridedama einamų rungtynių statistika
+        /// </summary>
+        /// <param name="teamLeft"></param>
+        /// <param name="teamRight"></param>
         public static void DoStatistics(Team teamLeft, Team teamRight)
         {
             List<Statistics> stats;
