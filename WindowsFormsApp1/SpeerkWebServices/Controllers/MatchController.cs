@@ -12,9 +12,24 @@ namespace SpeerkWebServices.Controllers
     public class MatchController : ApiController
     {
         // GET: api/Match
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "Match1", "Match2" };
+            List<Statistics> stats = new Statistics().GetStatistics();
+            String txtToString;
+            String allStats = "";
+            foreach (Statistics s in stats)
+            {
+               
+                txtToString = String.Format("{0,-13} | {1,-20} | {2,4} : {3,-4} | {4,-20}", s.date.ToString(@"MM - dd HH:mm"),
+                                                                                         s.name1,
+                                                                                         s.score1.ToString(),
+                                                                                         s.score2.ToString(),
+                                                                                         s.name2);
+                allStats = allStats = string.Join("\n", txtToString);
+                
+            }
+            
+            return allStats;
         }
 
         // GET: api/Match/5
