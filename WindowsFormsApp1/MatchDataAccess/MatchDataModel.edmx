@@ -5,11 +5,11 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="databaseSpeerkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Match">
+        <EntityType Name="MatchTbl">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="teamOne" Type="nchar" MaxLength="10" />
           <Property Name="teamTwo" Type="nchar" MaxLength="10" />
           <Property Name="scoreOne" Type="int" />
@@ -17,18 +17,18 @@
           <Property Name="date" Type="datetime" />
         </EntityType>
         <EntityContainer Name="databaseSpeerkModelStoreContainer">
-          <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MatchTbl" EntityType="Self.MatchTbl" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="databaseSpeerkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Match">
+        <EntityType Name="MatchTbl">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="teamOne" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="teamTwo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="scoreOne" Type="Int32" />
@@ -36,7 +36,7 @@
           <Property Name="date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityContainer Name="databaseSpeerkEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Matches" EntityType="Self.Match" />
+          <EntitySet Name="MatchTbls" EntityType="Self.MatchTbl" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -44,9 +44,9 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="databaseSpeerkModelStoreContainer" CdmEntityContainer="databaseSpeerkEntities">
-          <EntitySetMapping Name="Matches">
-            <EntityTypeMapping TypeName="databaseSpeerkModel.Match">
-              <MappingFragment StoreEntitySet="Match">
+          <EntitySetMapping Name="MatchTbls">
+            <EntityTypeMapping TypeName="databaseSpeerkModel.MatchTbl">
+              <MappingFragment StoreEntitySet="MatchTbl">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="teamOne" ColumnName="teamOne" />
                 <ScalarProperty Name="teamTwo" ColumnName="teamTwo" />

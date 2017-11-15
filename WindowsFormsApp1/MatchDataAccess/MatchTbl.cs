@@ -12,7 +12,7 @@ namespace MatchDataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Match
+    public partial class MatchTbl
     {
         public int id { get; set; }
         public string teamOne { get; set; }
