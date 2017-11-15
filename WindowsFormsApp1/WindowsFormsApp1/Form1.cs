@@ -157,6 +157,7 @@ namespace WindowsFormsApp1
             MatchEnd();
             return;
         }
+
         private void MatchEnd()
         {
             Application.Idle -= UpdateGUI;
