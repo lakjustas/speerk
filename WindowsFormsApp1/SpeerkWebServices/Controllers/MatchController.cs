@@ -7,9 +7,7 @@ using System.Web.Http;
 using SpeerkMobileApp;
 using WindowsFormsApp1;
 using MatchDataAccess;
-
 using System.Diagnostics;
-using MatchDataAccess;
 using System.Data.Entity.Validation;
 
 
