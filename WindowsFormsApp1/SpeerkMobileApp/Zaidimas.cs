@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+//using Android.Net.Uri;
 
 namespace SpeerkMobileApp
 {
@@ -21,8 +22,9 @@ namespace SpeerkMobileApp
             SetContentView(Resource.Layout.Zaidimas);
 
             var videoView = FindViewById<VideoView>(Resource.Id.videoView1);
-
-
+            var uri = Android.Net.Uri.Parse ("https://www.facebook.com/aidas.vaiksnoras/videos/2101188579906876/"); //cia idedam URL nuoroda i video
+            videoView.SetVideoURI(uri);
+            videoView.Start();
             // Create your application here
         }
     }
