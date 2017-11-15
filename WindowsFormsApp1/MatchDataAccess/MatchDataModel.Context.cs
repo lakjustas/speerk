@@ -25,6 +25,8 @@ namespace MatchDataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Match> Matches { get; set; }
+
+        public virtual DbSet<MatchTbl> MatchTbls { get; set; }
+
     }
 }
