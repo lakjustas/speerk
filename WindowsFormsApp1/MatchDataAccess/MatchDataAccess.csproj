@@ -4,7 +4,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+
     <ProjectGuid>{5E5F42C1-940E-4967-A5B5-280C0044591E}</ProjectGuid>
+
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MatchDataAccess</RootNamespace>
@@ -49,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="MatchDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,9 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MatchDataModel.edmx</DependentUpon>
     </Compile>
+
     <Compile Include="MatchTbl.cs">
       <DependentUpon>MatchDataModel.tt</DependentUpon>
     </Compile>
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

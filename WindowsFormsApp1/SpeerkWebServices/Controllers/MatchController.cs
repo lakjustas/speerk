@@ -7,31 +7,37 @@ using System.Web.Http;
 using SpeerkMobileApp;
 using WindowsFormsApp1;
 using MatchDataAccess;
+
 using System.Diagnostics;
 using MatchDataAccess;
 using System.Data.Entity.Validation;
+
 
 namespace SpeerkWebServices.Controllers
 {
     public class MatchController : ApiController
     {
         // GET: api/Match
+
         public IEnumerable<MatchTbl> Get()
         {
             using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
             {
                 return entities.MatchTbls.ToList();
+
             
             }
  
         }
 
         // GET: api/Match/5
+
         public MatchTbl Get(int id)
         {
             using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
             {
                 return entities.MatchTbls.FirstOrDefault(m => m.id == id);
+
             }
 
         }
