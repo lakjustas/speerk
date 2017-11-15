@@ -71,6 +71,15 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f040002
 			public const int VS = 2130968578;
 			
+			// aapt resource value: 0x7f04000a
+			public const int ZaidimasAntrojiKomanda = 2130968586;
+			
+			// aapt resource value: 0x7f040009
+			public const int ZaidimasPirmojiKomanda = 2130968585;
+			
+			// aapt resource value: 0x7f04000b
+			public const int videoView1 = 2130968587;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -92,6 +101,9 @@ namespace SpeerkMobileApp
 			
 			// aapt resource value: 0x7f020002
 			public const int Statistika = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Zaidimas = 2130837507;
 			
 			static Layout()
 			{

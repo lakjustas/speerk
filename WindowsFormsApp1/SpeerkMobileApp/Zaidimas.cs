@@ -12,13 +12,16 @@ using Android.Widget;
 
 namespace SpeerkMobileApp
 {
-    [Activity(Label = "Statistika")]
-    public class Statistika : Activity
+    [Activity(Label = "Zaidimas")]
+    public class Zaidimas : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Statistika);
+            SetContentView(Resource.Layout.Zaidimas);
+
+            var videoView = FindViewById<VideoView>(Resource.Id.videoView1);
+
 
             // Create your application here
         }
