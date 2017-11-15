@@ -6,37 +6,31 @@ using System.Net.Http;
 using System.Web.Http;
 using SpeerkMobileApp;
 using WindowsFormsApp1;
+using MatchDataAccess;
 
 namespace SpeerkWebServices.Controllers
 {
     public class MatchController : ApiController
     {
         // GET: api/Match
-        public string Get()
+        public IEnumerable<Match> Get()
         {
-            List<Statistics> stats = new Statistics().GetStatistics();
-            String txtToString;
-            String allStats = "";
-            foreach (Statistics s in stats)
+            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
             {
-               
-                txtToString = String.Format("{0,-13} | {1,-20} | {2,4} : {3,-4} | {4,-20}", s.date.ToString(@"MM - dd HH:mm"),
-                                                                                         s.name1,
-                                                                                         s.score1.ToString(),
-                                                                                         s.score2.ToString(),
-                                                                                         s.name2);
-                allStats = allStats = string.Join("\n", txtToString);
-                
-            }
+                return entities.Matches.ToList();
             
-            return allStats;
+            }
+ 
         }
 
         // GET: api/Match/5
-        public string Get(string name)
+        public Match Get(int id)
         {
-            Statistics match = new Statistics();
-            return match.getName1();
+            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
+            {
+                return entities.Matches.FirstOrDefault(m => m.id == id);
+            }
+
         }
 
         // POST: api/Match
