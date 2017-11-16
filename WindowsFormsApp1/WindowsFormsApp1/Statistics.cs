@@ -8,6 +8,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
+    [Serializable]
     public class Statistics
     {
         public String name1;

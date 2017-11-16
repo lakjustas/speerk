@@ -199,6 +199,7 @@ namespace WindowsFormsApp1
             statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
             statistics.SetScores(teamLeft.Score, teamRight.Score);
             statistics.WriteToFile(stats);
+            WebServiceCall.POST(statistics);
         }
 
         private void endMatchBtn_Click(object sender, EventArgs e)
