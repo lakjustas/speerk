@@ -6,27 +6,67 @@ using System.Net.Http;
 using System.Web.Http;
 using SpeerkMobileApp;
 using WindowsFormsApp1;
+using MatchDataAccess;
+using System.Diagnostics;
+using System.Data.Entity.Validation;
+
 
 namespace SpeerkWebServices.Controllers
 {
     public class MatchController : ApiController
     {
         // GET: api/Match
-        public IEnumerable<string> Get()
+
+        public IEnumerable<MatchTbl> Get()
         {
-            return new string[] { "Match1", "Match2" };
+            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
+            {
+                return entities.MatchTbls.ToList();
+
+            
+            }
+ 
         }
 
         // GET: api/Match/5
-        public string Get(string name)
+
+        public MatchTbl Get(int id)
         {
-            Statistics match = new Statistics();
-            return match.getName1();
+            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
+            {
+                return entities.MatchTbls.FirstOrDefault(m => m.id == id);
+
+            }
+
         }
 
         // POST: api/Match
-        public void Post([FromBody]string value)
+        public void Post([FromBody] MatchTbl match)
         {
+            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
+            {
+
+                entities.MatchTbls.Add(match);
+
+
+                try
+                {
+                    entities.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        }
+                    }
+                }
+
+                var message = Request.CreateResponse(HttpStatusCode.Created, match);
+            }
+
         }
 
         // PUT: api/Match/5

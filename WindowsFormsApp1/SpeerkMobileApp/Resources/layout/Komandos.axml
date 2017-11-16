@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark">
+    <TextView
+        android:text="Pirmoji komanda:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="356.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/PirmojiKomanda"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="120dp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:maxLength="30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PirmosiosKomandosPavadinimas"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:text="VS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="356.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/VS"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:text="Antroji Komanda:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="356.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/AntrojiKomanda"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:maxLength="30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AntrosiosKomandosPavadinimas"
+        android:textColor="@android:color/black" />
+    <Button
+        android:background="@android:color/darker_gray"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:text="Išsaugoti"
+        android:textAlignment="center"
+        android:id="@+id/Issaugoti"
+        android:layout_marginTop="30dip"
+        android:layout_marginLeft="145dip"
+        android:textColor="@android:color/black" />
+    <Button
+        android:background="@android:color/darker_gray"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:text="Grįžti atgal"
+        android:textAlignment="center"
+        android:id="@+id/GriztiAtgal"
+        android:layout_marginTop="15dip"
+        android:layout_marginLeft="136dip"
+        android:textColor="@android:color/black" />
+</LinearLayout>

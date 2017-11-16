@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeerkMobileApp", "SpeerkMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeerkWebServices", "SpeerkWebServices\SpeerkWebServices.csproj", "{D71BB08E-7D8D-4FDC-A802-4589B1856023}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchDataAccess", "MatchDataAccess\MatchDataAccess.csproj", "{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D71BB08E-7D8D-4FDC-A802-4589B1856023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D71BB08E-7D8D-4FDC-A802-4589B1856023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D71BB08E-7D8D-4FDC-A802-4589B1856023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
