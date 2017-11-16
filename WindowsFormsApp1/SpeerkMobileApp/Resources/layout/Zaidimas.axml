@@ -7,20 +7,69 @@
     android:minWidth="25px"
     android:minHeight="25px">
     <TextView
-        android:text="Pirmoji komanda"
+        android:text="Pirmoji komanda:"
         android:layout_width="356.0dp"
         android:layout_height="wrap_content"
         android:id="@+id/ZaidimasPirmojiKomanda"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:text="Pavadinimas"
+        android:layout_width="356.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Rezultatai"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="10dp"
         android:textColor="@android:color/black"
         android:textSize="20dp" />
+    <Button
+        android:text="Įvartis Pirmai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IvartisPirmaiMygtukas" />
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton />
     <TextView
-        android:text="Antroji komanda"
+        android:text="Įvartis Pirmai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IvartisPirmaiMygtukas"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="140dp" />
+    <TextView
+        android:text="Įvartis Antrai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IvartisAntrai"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="140dp" />
+    <Button
+        android:text="Įvartis Antrai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IvartisAntraiMygtukas" />
+    <TextView
+        android:text="Antroji komanda:"
         android:layout_width="356.0dp"
         android:layout_height="wrap_content"
         android:id="@+id/ZaidimasAntrojiKomanda"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:text="Pavadinimas"
+        android:layout_width="356.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Rezultatai2"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="10dp"
         android:textColor="@android:color/black"
         android:textSize="20dp" />

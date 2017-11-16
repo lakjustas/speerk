@@ -16,13 +16,17 @@ namespace SpeerkMobileApp
     [Activity(Label = "Komandos")]
     public class Komandos : Activity
     {
+        EditText txt_Name;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Komandos);
 
+            txt_Name = FindViewById<EditText>(Resource.Id.PirmosiosKomandosPavadinimas);
+
             Button Issaugoti = FindViewById<Button>(Resource.Id.Issaugoti);
             Issaugoti.Click += new EventHandler(this.Issaugoti_Click);
+
             Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgal);
             GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
         }
@@ -53,7 +57,21 @@ namespace SpeerkMobileApp
                 return;
             }
 
-            StartActivity(typeof(Zaidimas));
+            if (txt_Name.Text != "")
+            {
+                //ing the Activity2 in Intent  
+                Intent i = new Intent(this, typeof(Zaidimas));
+                //Add PutExtra method data to intent.  
+                i.PutExtra("Name", txt_Name.Text.ToString());
+                //StartActivity  
+                StartActivity(i);
+            }
+            //else
+            //{
+            //    Toast.MakeText(this, "Please Provide Name", ToastLength.Short).Show();
+            //}
+
+            //StartActivity(typeof(Zaidimas));
         }
 
         private void GriztiAtgal_Click(object sender, EventArgs e)
