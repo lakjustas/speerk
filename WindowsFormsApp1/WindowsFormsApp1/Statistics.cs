@@ -57,6 +57,11 @@ namespace WindowsFormsApp1
             return name2;
         }
 
+
+        /// <summary>
+        /// Statistikos rašymas į failą panaudojant serializaciją
+        /// </summary>
+        /// <param name="stats"></param>
         public void WriteToFile(List<Statistics> stats)
         {
             stats.Add(this);
@@ -68,6 +73,11 @@ namespace WindowsFormsApp1
             fileStream.Close();
         }
 
+        /// <summary>
+        /// Statistikos skaitymas iš failo, jeigu failas yra išsaugotas,
+        /// jeigu ne, tiesiog grąžinamas null
+        /// </summary>
+        /// <returns></returns>
         public List<Statistics> GetStatistics()
         {
             List<Statistics> stats;
