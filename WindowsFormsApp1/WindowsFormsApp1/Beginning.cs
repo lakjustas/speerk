@@ -26,6 +26,8 @@ namespace WindowsFormsApp1
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             new Statistika().Show();
+            WebServiceCall ws = new WebServiceCall();
+            ws.GET();
         }
     }
 }
