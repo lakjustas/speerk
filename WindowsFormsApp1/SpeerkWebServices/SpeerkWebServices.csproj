@@ -113,9 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MatchDataAccess\MatchDataAccess.csproj">
-
-      <Project>{5e5f42c1-940e-4967-a5b5-280c0044591e}</Project>
-
+      <Project>{c1eed6a9-d6b3-4d97-9018-219513f3fc2d}</Project>
       <Name>MatchDataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\SpeerkMobileApp\SpeerkMobileApp.csproj">

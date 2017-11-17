@@ -25,6 +25,11 @@ namespace WindowsFormsApp1
         private int iLowV = 180;
         private int iHighV = 255;
 
+        /// <summary>
+        /// kamuoliuko išryškinimas kadre
+        /// </summary>
+        /// <param name="imgBgr"></param>
+        /// <returns></returns>
         private Mat ProcessFrame(Mat imgBgr)
         {
             Mat imgHsv = new Mat();
@@ -50,6 +55,12 @@ namespace WindowsFormsApp1
 
         }
         
+        /// <summary>
+        /// Kamuoliuko žymėjimas kadre
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="coordinates"></param>
+        /// <returns></returns>
         public Mat MarkBall(Mat img, Point coordinates)
         {
             CvInvoke.Circle(img, coordinates, 3, new MCvScalar(0, 255, 0), -1, LineType.AntiAlias, 0);
@@ -57,6 +68,11 @@ namespace WindowsFormsApp1
             return img;
         }
 
+        /// <summary>
+        /// Suskaičiuojamos kamuoliuko koordinatės
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
         public Point GetBallCoordinates(Mat img)
         {
             MCvMoments moments = CvInvoke.Moments(ProcessFrame(img));

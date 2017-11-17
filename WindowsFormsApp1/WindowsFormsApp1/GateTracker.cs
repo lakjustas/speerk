@@ -16,6 +16,11 @@ namespace WindowsFormsApp1
 {
     class GateTracker
     {
+        /// <summary>
+        /// vartu atskyrimas kadre
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
         private Image<Gray, Byte> ProcessFrame(Mat img)
         {
             Image<Gray, Byte> image = img.ToImage<Bgr, Byte>().InRange(new Bgr(0, 2, 4), new Bgr(10, 20, 30));
@@ -26,6 +31,11 @@ namespace WindowsFormsApp1
             return image;
         }
 
+        /// <summary>
+        /// randamos linijos kurios yra vartų plote
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
         public LineSegment2D[] GetGates(Mat img)
         {
             Image<Gray, Byte> imgProc = ProcessFrame(img);
@@ -39,6 +49,12 @@ namespace WindowsFormsApp1
             return lines;
         }
 
+        /// <summary>
+        /// pažymimi vartai kadre
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="lines"></param>
+        /// <returns></returns>
         public Mat MarkGates(Mat img, LineSegment2D[] lines)
         {
             foreach (LineSegment2D line in lines)
