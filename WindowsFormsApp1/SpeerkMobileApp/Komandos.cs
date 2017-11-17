@@ -16,13 +16,14 @@ namespace SpeerkMobileApp
     [Activity(Label = "Komandos")]
     public class Komandos : Activity
     {
-        EditText txt_Name;
+        EditText txt_Name, txt_Name2;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Komandos);
 
             txt_Name = FindViewById<EditText>(Resource.Id.PirmosiosKomandosPavadinimas);
+            txt_Name2 = FindViewById<EditText>(Resource.Id.AntrosiosKomandosPavadinimas);
 
             Button Issaugoti = FindViewById<Button>(Resource.Id.Issaugoti);
             Issaugoti.Click += new EventHandler(this.Issaugoti_Click);
@@ -57,12 +58,13 @@ namespace SpeerkMobileApp
                 return;
             }
 
-            if (txt_Name.Text != "")
+            if (txt_Name.Text != "" && txt_Name2.Text != "")
             {
                 //ing the Activity2 in Intent  
                 Intent i = new Intent(this, typeof(Zaidimas));
                 //Add PutExtra method data to intent.  
                 i.PutExtra("Name", txt_Name.Text.ToString());
+                i.PutExtra("Name2", txt_Name.Text.ToString());
                 //StartActivity  
                 StartActivity(i);
             }

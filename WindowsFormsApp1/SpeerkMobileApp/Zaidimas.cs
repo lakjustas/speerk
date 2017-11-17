@@ -22,9 +22,13 @@ namespace SpeerkMobileApp
             SetContentView(Resource.Layout.Zaidimas);
 
             TextView txt_Result = FindViewById<TextView>(Resource.Id.Rezultatai);
+            TextView txt_Result2 = FindViewById<TextView>(Resource.Id.Rezultatai2);
             //Retrieve the data using Intent.GetStringExtra method  
             string name = Intent.GetStringExtra("Name");
+            string name2 = Intent.GetStringExtra("Name2");
+
             txt_Result.Text = " " + name;
+            txt_Result2.Text = " " + name2;
 
             var videoView = FindViewById<VideoView>(Resource.Id.videoView1);
             var uri = Android.Net.Uri.Parse ("https://www.facebook.com/aidas.vaiksnoras/videos/2101188579906876/"); //cia idedam URL nuoroda i video

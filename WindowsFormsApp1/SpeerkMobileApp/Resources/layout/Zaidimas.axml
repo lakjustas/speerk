@@ -30,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/IvartisPirmaiMygtukas" />
-    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton />
     <TextView
         android:text="Įvartis Pirmai"
         android:layout_width="match_parent"
@@ -58,7 +57,7 @@
         android:text="Antroji komanda:"
         android:layout_width="356.0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ZaidimasAntrojiKomanda"
+        android:id="@+id/Rezultatai2"
         android:layout_marginLeft="125dp"
         android:layout_marginTop="10dp"
         android:textColor="@android:color/black"
