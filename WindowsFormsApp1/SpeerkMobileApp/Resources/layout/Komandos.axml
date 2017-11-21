@@ -13,9 +13,10 @@
             android:layout_width="356.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/PirmojiKomanda"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="120dp"
-            android:textColor="@android:color/black" />
+            android:layout_marginTop="100dp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:includeFontPadding="false" />
         <EditText
             android:maxLength="30"
             android:layout_width="match_parent"
@@ -28,18 +29,20 @@
             android:layout_width="356.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/VS"
-            android:layout_marginLeft="170dp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:includeFontPadding="false" />
         <TextView
             android:text="Antroji Komanda:"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="356.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/AntrojiKomanda"
-            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:includeFontPadding="false" />
         <EditText
             android:maxLength="30"
             android:layout_width="match_parent"
@@ -48,25 +51,23 @@
             android:textColor="@android:color/black" />
         <Button
             android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:padding="10dp"
             android:text="Išsaugoti"
             android:textAlignment="center"
             android:id="@+id/Issaugoti"
             android:layout_marginTop="30dip"
-            android:layout_marginLeft="145dip"
             android:textColor="@android:color/black" />
         <Button
             android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:padding="10dp"
             android:text="Grįžti atgal"
             android:textAlignment="center"
             android:id="@+id/GriztiAtgal"
             android:layout_marginTop="15dip"
-            android:layout_marginLeft="136dip"
             android:textColor="@android:color/black" />
     </LinearLayout>
 </ScrollView>

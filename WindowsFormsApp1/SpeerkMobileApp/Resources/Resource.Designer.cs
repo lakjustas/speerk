@@ -1601,10 +1601,7 @@ namespace SpeerkMobileApp
 			public const int Issaugoti = 2131427417;
 			
 			// aapt resource value: 0x7f0b0071
-			public const int IvartisAntrai = 2131427441;
-			
-			// aapt resource value: 0x7f0b0072
-			public const int IvartisAntraiMygtukas = 2131427442;
+			public const int IvartisAntraiMygtukas = 2131427441;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int IvartisPirmaiMygtukas = 2131427440;
@@ -1629,6 +1626,9 @@ namespace SpeerkMobileApp
 			
 			// aapt resource value: 0x7f0b0056
 			public const int VS = 2131427414;
+			
+			// aapt resource value: 0x7f0b0072
+			public const int ZaidimasAntrojiKomanda = 2131427442;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int ZaidimasPirmojiKomanda = 2131427438;
