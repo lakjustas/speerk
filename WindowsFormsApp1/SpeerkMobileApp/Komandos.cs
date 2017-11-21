@@ -60,20 +60,14 @@ namespace SpeerkMobileApp
 
             if (txt_Name.Text != "" && txt_Name2.Text != "")
             {
-                //ing the Activity2 in Intent  
+                
                 Intent i = new Intent(this, typeof(Zaidimas));
-                //Add PutExtra method data to intent.  
+                
                 i.PutExtra("Name", txt_Name.Text.ToString());
                 i.PutExtra("Name2", txt_Name2.Text.ToString());
-                //StartActivity  
+                 
                 StartActivity(i);
             }
-            //else
-            //{
-            //    Toast.MakeText(this, "Please Provide Name", ToastLength.Short).Show();
-            //}
-
-            //StartActivity(typeof(Zaidimas));
         }
 
         private void GriztiAtgal_Click(object sender, EventArgs e)
