@@ -71,6 +71,8 @@ namespace WindowsFormsApp1
             xmlSerializer.Serialize(streamWriter, stats);
             streamWriter.Close();
             fileStream.Close();
+
+
         }
 
         /// <summary>
