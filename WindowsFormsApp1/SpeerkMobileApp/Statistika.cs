@@ -20,7 +20,16 @@ namespace SpeerkMobileApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Statistika);
 
+            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgal);
+            GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
+
+
             // Create your application here
+        }
+
+        private void GriztiAtgal_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }

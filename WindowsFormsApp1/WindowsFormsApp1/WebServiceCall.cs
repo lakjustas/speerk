@@ -12,11 +12,11 @@ using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
-    class WebServiceCall
+    public class WebServiceCall : IWebServiceCall
     {
 
 
-        public void POST(Statistics statsToSave)
+        public void POST(IStatistics statsToSave)
         {
 
             try
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string json = "{\n" + "\"teamOne\": " + "\"" + statsToSave.name1.ToString() + "\",\n" + "\"teamTwo\": " + "\"" + statsToSave.name2.ToString() + "\",\n" + "\"scoreOne\": " + "\"" + statsToSave.score1 + "\",\n" + "\"scoreTwo\": " + "\"" + statsToSave.score2 + "\",\n" + "\"date\": " + "\"" + statsToSave.date.ToString() + "\",\n" + "}";
+                    string json = "{\n" + "\"teamOne\": " + "\"" + statsToSave.getName1().ToString() + "\",\n" + "\"teamTwo\": " + "\"" + statsToSave.getName2().ToString() + "\",\n" + "\"scoreOne\": " + "\"" + statsToSave.getScore1() + "\",\n" + "\"scoreTwo\": " + "\"" + statsToSave.getScore2() + "\",\n" + "\"date\": " + "\"" + statsToSave.GetDate().ToString() + "\",\n" + "}";
 
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
 
         }
 
-        public void GET()
+        public List<Matches> GET()
         {
             string url = @"http://localhost:56233/api/Match";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -59,23 +59,15 @@ namespace WindowsFormsApp1
             {
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                 string json = reader.ReadToEnd();
-                Debug.WriteLine(json);
-                List<Matches> items = JsonConvert.DeserializeObject<List<Matches>>(json);
+                
+                List<Matches> matchStats = JsonConvert.DeserializeObject<List<Matches>>(json);
+                return matchStats;
 
             }
-
 
 
         }
     }
 
-    public class Matches
-    {
-        public int id { get; set; }
-        public string teamOne { get; set; }
-        public string teamTwo { get; set; }
-        public int? scoreOne { get; set; }
-        public int? scoreTwo { get; set; }
-        public DateTime? date { get; set; }
-    }
+
 }

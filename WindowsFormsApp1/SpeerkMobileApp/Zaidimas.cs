@@ -14,18 +14,47 @@ using Android.Widget;
 namespace SpeerkMobileApp
 {
     [Activity(Label = "Zaidimas")]
+    
     public class Zaidimas : Activity
     {
+        int count = 0, count2 = 0;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Zaidimas);
 
-            var videoView = FindViewById<VideoView>(Resource.Id.videoView1);
-            var uri = Android.Net.Uri.Parse ("https://www.facebook.com/aidas.vaiksnoras/videos/2101188579906876/"); //cia idedam URL nuoroda i video
-            videoView.SetVideoURI(uri);
-            videoView.Start();
-            // Create your application here
+            TextView txt_Result = FindViewById<TextView>(Resource.Id.Rezultatai);
+            TextView txt_Result2 = FindViewById<TextView>(Resource.Id.Rezultatai2);
+           
+            
+            //Retrieve the data using Intent.GetStringExtra method  
+            string name = Intent.GetStringExtra("Name");
+            string name2 = Intent.GetStringExtra("Name2");
+
+            txt_Result.Text = " " + name;
+            txt_Result2.Text = " " + name2;
+
+            //var videoView = FindViewById<VideoView>(Resource.Id.videoView1);
+            //var uri = Android.Net.Uri.Parse ("https://www.facebook.com/aidas.vaiksnoras/videos/2101188579906876/"); //cia idedam URL nuoroda i video
+            //videoView.SetVideoURI(uri);
+            //videoView.Start();
+
+            var btnShow = FindViewById<Button>(Resource.Id.IvartisPirmaiMygtukas);
+            var btnShow2 = FindViewById<Button>(Resource.Id.IvartisAntraiMygtukas);
+
+            btnShow.Click += delegate
+            {
+                btnShow.Text = string.Format("{0}", ++count);
+            };
+
+            btnShow2.Click += delegate
+            {
+                btnShow2.Text = string.Format("{0}", ++count2);
+            };
+
         }
+
+        
+       
     }
 }
