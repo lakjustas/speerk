@@ -1601,10 +1601,16 @@ namespace SpeerkMobileApp
 			public const int Issaugoti = 2131427417;
 			
 			// aapt resource value: 0x7f0b0071
-			public const int IvartisAntraiMygtukas = 2131427441;
+			public const int MygtukasAntrai = 2131427441;
 			
 			// aapt resource value: 0x7f0b0070
-			public const int IvartisPirmaiMygtukas = 2131427440;
+			public const int MygtukasPirmai = 2131427440;
+			
+			// aapt resource value: 0x7f0b0073
+			public const int PavadinimasAntros = 2131427443;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int PavadinimasPirmos = 2131427439;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int PirmojiKomanda = 2131427412;
@@ -1614,12 +1620,6 @@ namespace SpeerkMobileApp
 			
 			// aapt resource value: 0x7f0b005f
 			public const int Pradeti = 2131427423;
-			
-			// aapt resource value: 0x7f0b006f
-			public const int Rezultatai = 2131427439;
-			
-			// aapt resource value: 0x7f0b0073
-			public const int Rezultatai2 = 2131427443;
 			
 			// aapt resource value: 0x7f0b0060
 			public const int Statistika = 2131427424;
