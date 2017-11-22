@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
         bool blnCapturingInProcess = false;
         Team teamLeft;
         Team teamRight;
+        Logic logic = new Logic();
 
 
 
@@ -60,7 +61,7 @@ namespace WindowsFormsApp1
 
         void UpdateGUI(object sender, EventArgs arg)
         {
-            Logic logic = new Logic();
+            
 
             try
             {
@@ -164,8 +165,6 @@ namespace WindowsFormsApp1
         {
             Application.Idle -= UpdateGUI;
             capVideo = null;
-
-            Logic logic = new Logic();
 
             logic.DoStatistics(teamLeft, teamRight);
 

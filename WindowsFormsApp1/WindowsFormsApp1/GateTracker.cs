@@ -14,14 +14,14 @@ using Emgu.CV.Util;
 
 namespace WindowsFormsApp1
 {
-    class GateTracker
+    class GateTracker: IGateTracker
     {
         /// <summary>
         /// vartu atskyrimas kadre
         /// </summary>
         /// <param name="img"></param>
         /// <returns></returns>
-        private Image<Gray, Byte> ProcessFrame(Mat img)
+        public Image<Gray, Byte> ProcessFrame(Mat img)
         {
             Image<Gray, Byte> image = img.ToImage<Bgr, Byte>().InRange(new Bgr(0, 2, 4), new Bgr(10, 20, 30));
 

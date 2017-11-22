@@ -14,7 +14,7 @@ using Emgu.CV.Util;
 
 namespace WindowsFormsApp1
 {
-    class BallTracker
+    class BallTracker: IBallTracker
     {
         private int iLowH = 0;
         private int iHighH = 15;
@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="imgBgr"></param>
         /// <returns></returns>
-        private Mat ProcessFrame(Mat imgBgr)
+        public Mat ProcessFrame(Mat imgBgr)
         {
             Mat imgHsv = new Mat();
             Mat imgProc = new Mat();
