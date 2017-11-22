@@ -121,6 +121,57 @@ namespace SpeerkMobileApp
 			}
 		}
 		
+
+
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f040003
+			public const int AntrojiKomanda = 2130968579;
+			
+			// aapt resource value: 0x7f040004
+			public const int AntrosiosKomandosPavadinimas = 2130968580;
+			
+			// aapt resource value: 0x7f040006
+			public const int GriztiAtgal = 2130968582;
+			
+			// aapt resource value: 0x7f040005
+			public const int Issaugoti = 2130968581;
+			
+			// aapt resource value: 0x7f040000
+			public const int PirmojiKomanda = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int PirmosiosKomandosPavadinimas = 2130968577;
+			
+			// aapt resource value: 0x7f040007
+			public const int Pradeti = 2130968583;
+			
+			// aapt resource value: 0x7f040008
+			public const int Statistika = 2130968584;
+			
+			// aapt resource value: 0x7f040002
+			public const int VS = 2130968578;
+			
+			// aapt resource value: 0x7f04000a
+			public const int ZaidimasAntrojiKomanda = 2130968586;
+			
+			// aapt resource value: 0x7f040009
+			public const int ZaidimasPirmojiKomanda = 2130968585;
+			
+			// aapt resource value: 0x7f04000b
+			public const int videoView1 = 2130968587;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
