@@ -52,9 +52,13 @@ namespace SpeerkMobileApp
                 btnShow2.Text = string.Format("{0}", ++count2);
             };
 
-        }
+            var Baigti = FindViewById<Button>(Resource.Id.Baigti);
 
-        
-       
+            Baigti.Click += delegate
+            {
+                
+            };
+
+        }
     }
 }

@@ -1594,6 +1594,9 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0058
 			public const int AntrosiosKomandosPavadinimas = 2131427416;
 			
+			// aapt resource value: 0x7f0b0074
+			public const int Baigti = 2131427444;
+			
 			// aapt resource value: 0x7f0b005a
 			public const int GriztiAtgal = 2131427418;
 			
@@ -1930,8 +1933,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int videoView1 = 2131427444;
+			// aapt resource value: 0x7f0b0075
+			public const int videoView1 = 2131427445;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int withText = 2131427361;
