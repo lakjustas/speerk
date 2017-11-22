@@ -27,29 +27,32 @@ namespace WindowsFormsApp1
 
         private readonly IWebServiceCall _wsc;
         private readonly IStatistics _statistics;
+        private readonly IBallTracker _ballTrack;
+        private readonly IGateTracker _gateTrack;
 
-        public Logic() : this(new WebServiceCall(), new Statistics())
+        public Logic() : this(new WebServiceCall(), new Statistics(), new BallTracker(), new GateTracker())
         {
         }
 
-        public Logic(IWebServiceCall wsc, IStatistics stat)
+        public Logic(IWebServiceCall wsc, IStatistics stat, IBallTracker ballTrack, IGateTracker gateTrack)
         {
             _wsc = wsc;
             _statistics = stat;
+            _ballTrack = ballTrack;
+            _gateTrack = gateTrack;
         }
 
 
 
         public int ImageProcessing(Mat imgBgr)
         {
-            BallTracker ballTracker = new BallTracker();
-            GateTracker gateTracker = new GateTracker();
+            
             bool goal;
             int sk = 0;
 
-            Point ballCoord = ballTracker.GetBallCoordinates(imgBgr);
+            Point ballCoord = _ballTrack.GetBallCoordinates(imgBgr);
 
-            LineSegment2D[] lines = gateTracker.GetGates(imgBgr);
+            LineSegment2D[] lines = _gateTrack.GetGates(imgBgr);
 
             int plusminus = 3;
 
