@@ -23,8 +23,8 @@ namespace SpeerkMobileApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Zaidimas);
 
-            TextView txt_Result = FindViewById<TextView>(Resource.Id.Rezultatai);
-            TextView txt_Result2 = FindViewById<TextView>(Resource.Id.Rezultatai2);
+            TextView txt_Result = FindViewById<TextView>(Resource.Id.PavadinimasPirmos);
+            TextView txt_Result2 = FindViewById<TextView>(Resource.Id.PavadinimasAntros);
            
             
             //Retrieve the data using Intent.GetStringExtra method  
@@ -39,8 +39,8 @@ namespace SpeerkMobileApp
             //videoView.SetVideoURI(uri);
             //videoView.Start();
 
-            var btnShow = FindViewById<Button>(Resource.Id.IvartisPirmaiMygtukas);
-            var btnShow2 = FindViewById<Button>(Resource.Id.IvartisAntraiMygtukas);
+            var btnShow = FindViewById<Button>(Resource.Id.MygtukasPirmai);
+            var btnShow2 = FindViewById<Button>(Resource.Id.MygtukasAntrai);
 
             btnShow.Click += delegate
             {

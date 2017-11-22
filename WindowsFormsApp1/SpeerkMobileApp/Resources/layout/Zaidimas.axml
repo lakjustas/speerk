@@ -24,7 +24,7 @@
             android:text="Pavadinimas"
             android:layout_width="356.0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/Rezultatai"
+            android:id="@+id/PavadinimasPirmos"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
             android:textSize="20dp"
@@ -34,17 +34,16 @@
             android:text="Įvartis Pirmai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/IvartisPirmaiMygtukas"
+            android:id="@+id/MygtukasPirmai"
             android:background="@android:color/darker_gray"
             android:textColor="@android:color/black" />
         <Button
-            android:text="Įvartis Antrai"
+            android:text="Įvartis Pirmai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/IvartisAntraiMygtukas"
+            android:id="@+id/MygtukasAntrai"
             android:background="@android:color/darker_gray"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="10dp" />
+            android:textColor="@android:color/black" />
         <TextView
             android:text="Antroji komanda:"
             android:layout_width="356.0dp"
@@ -60,7 +59,7 @@
             android:text="Pavadinimas"
             android:layout_width="356.0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/Rezultatai2"
+            android:id="@+id/PavadinimasAntros"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
             android:textSize="20dp"
