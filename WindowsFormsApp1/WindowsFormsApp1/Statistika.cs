@@ -15,35 +15,45 @@ namespace WindowsFormsApp1
 {
     public partial class Statistika : Form
     {
+        private readonly IWebServiceCall _wsc;
 
-        public Statistika()
+        public Statistika() : this(new WebServiceCall())
         {
             InitializeComponent();
         }
 
+        public Statistika(IWebServiceCall wsc)
+        {
+            _wsc = wsc;
+        }
+
         private void Statistika_Load(object sender, EventArgs e)
         {
-            List<Statistics> stats = new Statistics().GetStatistics();
-            String txtToBox;
 
-            if(stats == null)
+            string txtToBox;
+            List<Matches> matchStats = _wsc.GET();
+
+            if (matchStats == null)
             {
                 txtToBox = "Nėra duomenų";
                 statsTextBox.AppendText(txtToBox);
             }
             else
             {
-                foreach (Statistics s in stats)
+                foreach (Matches m in matchStats)
                 {
                     statsTextBox.AppendText(Environment.NewLine);
-                    txtToBox = String.Format("{0,-13} | {1,-20} | {2,4} : {3,-4} | {4,-20}", s.date.ToString(@"MM - dd HH:mm"), 
-                                                                                             s.name1,
-                                                                                             s.score1.ToString(),
-                                                                                             s.score2.ToString(),
-                                                                                             s.name2);
+
+                    txtToBox = String.Format("{0,-13} | {1,-20} | {2,4} : {3,-4} | {4,-20}", m.date.ToString(),
+                                                                                             m.teamOne,
+                                                                                             m.scoreOne.ToString(),
+                                                                                             m.scoreTwo.ToString(),
+                                                                                             m.teamTwo);
                     statsTextBox.AppendText(txtToBox);
                 }
             }
+
+
         }
     }
 }

@@ -30,8 +30,8 @@ namespace WindowsFormsApp1
         bool blnCapturingInProcess = false;
         Team teamLeft;
         Team teamRight;
-        
-        
+
+
 
         public Form1(String name1, String name2)
         {
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             teamRight = new Team(name2, 0);
 
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             teamLeftBox.AppendText(teamLeft.GetName());
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             leftResultBox.AppendText(teamLeft.Score.ToString());
             rightResultBox.AppendText(teamRight.Score.ToString());
         }
-        
+
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (capVideo != null)
@@ -60,6 +60,8 @@ namespace WindowsFormsApp1
 
         void UpdateGUI(object sender, EventArgs arg)
         {
+            Logic logic = new Logic();
+
             try
             {
                 imgBgr = capVideo.QueryFrame();
@@ -79,7 +81,7 @@ namespace WindowsFormsApp1
 
             ibOriginal.Image = imgBgr;
 
-            switch (Logic.WhatToDo(imgBgr))
+            switch (logic.ImageProcessing(imgBgr))
             {
                 case 1:
                     GoalLeft_Click(new object(), new EventArgs());
@@ -90,7 +92,7 @@ namespace WindowsFormsApp1
                 default:
                     break;
             }
-            
+
         }
 
         private void GoalLeft_Click(object sender, EventArgs e)
@@ -116,7 +118,7 @@ namespace WindowsFormsApp1
 
         private void ResetGoalCounter_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void BtnPauseOrResume_Click(object sender, EventArgs e)
@@ -163,7 +165,9 @@ namespace WindowsFormsApp1
             Application.Idle -= UpdateGUI;
             capVideo = null;
 
-            Logic.DoStatistics(teamLeft, teamRight);
+            Logic logic = new Logic();
+
+            logic.DoStatistics(teamLeft, teamRight);
 
             MessageBox.Show(teamLeft.GetName().ToString() + "  " +
                             teamLeft.Score.ToString() + " : " +
@@ -173,7 +177,7 @@ namespace WindowsFormsApp1
                             MessageBoxButtons.OK);
 
             DialogResult dialogResult = MessageBox.Show("Grįžti i pagr. meniu?", "Rungtynių pabaiga", MessageBoxButtons.YesNo);
-            if(dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
             }
