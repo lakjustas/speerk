@@ -17,12 +17,29 @@ using Emgu.CV.Util;
 
 namespace WindowsFormsApp1
 {
-    class Logic
+    public class Logic
     {
         /// <summary>
         /// 
         /// </summary>
-        public static int WhatToDo(Mat imgBgr)
+        /// 
+
+        
+        private readonly IWebServiceCall _wsc;
+
+        public Logic()
+            : this(new WebServiceCall())
+        {
+        }
+
+        public Logic(IWebServiceCall wsc)
+        {
+            _wsc = wsc;
+        }
+        
+
+
+        public int WhatToDo(Mat imgBgr)
         {
             BallTracker ballTracker = new BallTracker();
             GateTracker gateTracker = new GateTracker();
@@ -62,7 +79,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="teamLeft"></param>
         /// <param name="teamRight"></param>
-        public static void DoStatistics(Team teamLeft, Team teamRight)
+        public void DoStatistics(Team teamLeft, Team teamRight)
         {
             List<Statistics> stats;
             stats = new Statistics().GetStatistics();
@@ -72,6 +89,9 @@ namespace WindowsFormsApp1
             statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
             statistics.SetScores(teamLeft.Score, teamRight.Score);
             statistics.WriteToFile(stats);
+            _wsc.POST(statistics);
+
+
         }
 
 

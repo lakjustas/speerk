@@ -75,6 +75,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GateTracker.cs" />
+    <Compile Include="IWebServiceCall.cs" />
     <Compile Include="Komandos.cs">
       <SubType>Form</SubType>
     </Compile>

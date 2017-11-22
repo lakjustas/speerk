@@ -60,6 +60,8 @@ namespace WindowsFormsApp1
 
         void UpdateGUI(object sender, EventArgs arg)
         {
+            Logic logic = new Logic();
+
             try
             {
                 imgBgr = capVideo.QueryFrame();
@@ -79,7 +81,7 @@ namespace WindowsFormsApp1
 
             ibOriginal.Image = imgBgr;
 
-            switch (Logic.WhatToDo(imgBgr))
+            switch (logic.WhatToDo(imgBgr))
             {
                 case 1:
                     GoalLeft_Click(new object(), new EventArgs());
@@ -163,7 +165,9 @@ namespace WindowsFormsApp1
             Application.Idle -= UpdateGUI;
             capVideo = null;
 
-            Logic.DoStatistics(teamLeft, teamRight);
+            Logic logic = new Logic();
+
+            logic.DoStatistics(teamLeft, teamRight);
 
             MessageBox.Show(teamLeft.GetName().ToString() + "  " +
                             teamLeft.Score.ToString() + " : " +

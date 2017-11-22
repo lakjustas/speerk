@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
-    class WebServiceCall
+    class WebServiceCall: IWebServiceCall
     {
 
 
