@@ -24,22 +24,23 @@ namespace WindowsFormsApp1
         /// </summary>
         /// 
 
-        
-        private readonly IWebServiceCall _wsc;
 
-        public Logic()
-            : this(new WebServiceCall())
+        private readonly IWebServiceCall _wsc;
+        private readonly IStatistics _statistics;
+
+        public Logic() : this(new WebServiceCall(), new Statistics())
         {
         }
 
-        public Logic(IWebServiceCall wsc)
+        public Logic(IWebServiceCall wsc, IStatistics stat)
         {
             _wsc = wsc;
+            _statistics = stat;
         }
-        
 
 
-        public int WhatToDo(Mat imgBgr)
+
+        public int ImageProcessing(Mat imgBgr)
         {
             BallTracker ballTracker = new BallTracker();
             GateTracker gateTracker = new GateTracker();
@@ -57,7 +58,7 @@ namespace WindowsFormsApp1
             foreach (LineSegment2D line in lines)
             {
                 if ((line.P1.X - plusminus) <= ballCoord.X && line.P1.X >= ballCoord.X && line.P1.Y > ballCoord.Y && line.P2.Y < ballCoord.Y && goal == false && ballCoord.X > 400)
-                { 
+                {
                     sk = 2;
                     goal = true;
                     break;
@@ -81,15 +82,12 @@ namespace WindowsFormsApp1
         /// <param name="teamRight"></param>
         public void DoStatistics(Team teamLeft, Team teamRight)
         {
-            List<Statistics> stats;
-            stats = new Statistics().GetStatistics();
-            if (stats == null) stats = new List<Statistics>();
 
-            Statistics statistics = new Statistics();
-            statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
-            statistics.SetScores(teamLeft.Score, teamRight.Score);
-            statistics.WriteToFile(stats);
-            _wsc.POST(statistics);
+            _statistics.GetDate();
+            _statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
+            _statistics.SetScores(teamLeft.Score, teamRight.Score);
+
+            _wsc.POST(_statistics);
 
 
         }

@@ -8,8 +8,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    [Serializable]
-    public class Statistics
+    public class Statistics : IStatistics
     {
         public String name1;
         public String name2;
@@ -17,18 +16,24 @@ namespace WindowsFormsApp1
         public int score2;
         public DateTime date;
 
+
+        public DateTime GetDate()
+        {
+            return date;
+        }
+
         public Statistics()
         {
             this.date = DateTime.Now;
         }
-        
+
         public void SetScores(int score1, int score2)
         {
             this.score1 = score1;
             this.score2 = score2;
         }
-        
-        public void SetScores() {} // For tests, if values ar not given
+
+        public void SetScores() { } // For tests, if values ar not given
 
         public int getScore1()
         {

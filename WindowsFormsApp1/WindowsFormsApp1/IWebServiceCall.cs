@@ -8,8 +8,8 @@ namespace WindowsFormsApp1
 {
     public interface IWebServiceCall
     {
-        void POST(Statistics statsToSave);
-        void GET();
+        void POST(IStatistics statsToSave);
+        List<Matches> GET();
 
     }
 }
