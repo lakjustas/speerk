@@ -29,8 +29,8 @@ namespace WindowsFormsApp1
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string json = "{\n" + "\"teamOne\": " + "\"" + statsToSave.getName1().ToString() + "\",\n" + "\"teamTwo\": " + "\"" + statsToSave.getName2().ToString() + "\",\n" + "\"scoreOne\": " + "\"" + statsToSave.getScore1() + "\",\n" + "\"scoreTwo\": " + "\"" + statsToSave.getScore2() + "\",\n" + "\"date\": " + "\"" + statsToSave.GetDate().ToString() + "\",\n" + "}";
-
+                    //string json = "{\n" + "\"teamOne\": " + "\"" + statsToSave.getName1().ToString() + "\",\n" + "\"teamTwo\": " + "\"" + statsToSave.getName2().ToString() + "\",\n" + "\"scoreOne\": " + "\"" + statsToSave.getScore1() + "\",\n" + "\"scoreTwo\": " + "\"" + statsToSave.getScore2() + "\",\n" + "\"date\": " + "\"" + statsToSave.GetDate().ToString() + "\",\n" + "}";
+                    string json = JsonConvert.SerializeObject(statsToSave);
                     streamWriter.Write(json);
                     streamWriter.Flush();
                 }
