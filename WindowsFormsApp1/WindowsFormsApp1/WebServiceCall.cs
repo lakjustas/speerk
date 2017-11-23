@@ -67,6 +67,23 @@ namespace WindowsFormsApp1
 
 
         }
+
+        public Matches GET(int id)
+        {
+            Matches match;
+            string url = "http://localhost:56233/api/Match/" + id.ToString();
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            using (Stream responseStream = response.GetResponseStream())
+            {
+                StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                string json = reader.ReadToEnd();
+
+                match = JsonConvert.DeserializeObject<Matches>(json);
+                return match;
+
+            }
+        }
     }
 
 
