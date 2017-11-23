@@ -21,7 +21,7 @@ namespace SpeerkMobileApp
 
             try
             {
-                string webAddr = "http://localhost:56233/api/Match";
+                string webAddr = "http://192.168.0.194/api/Match";
 
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(webAddr);
                 httpWebRequest.ContentType = "application/json; charset=utf-8";
@@ -52,7 +52,7 @@ namespace SpeerkMobileApp
 
         public List<Match> GET()
         {
-            string url = @"http://localhost:56233/api/Match";
+            string url = @"http://192.168.0.194/api/Match";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
