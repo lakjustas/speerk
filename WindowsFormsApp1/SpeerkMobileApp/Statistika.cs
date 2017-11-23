@@ -33,7 +33,7 @@ namespace SpeerkMobileApp
             items.Add("Katinai");
 
             StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
+            StatsAdapter adapter = new StatsAdapter(this, items);
 
             StatisticsListView.Adapter = adapter;
         }

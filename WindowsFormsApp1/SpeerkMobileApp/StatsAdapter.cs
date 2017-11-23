@@ -12,16 +12,15 @@ using Android.Widget;
 
 namespace SpeerkMobileApp
 {
-    public class StatsAdapter : ArrayAdapter<Matches>
+    public class StatsAdapter : BaseAdapter<string>
     {
-        List<Matches> list;
-        Activity context;
-
-        public StatsAdapter(Activity context, List<Matches> list) : base(context, 0, list) {
+        private List<string> items;
+        private Activity context;
+        public StatsAdapter(Activity context, List<string> items) /*base(context, 0, list) */{
             this.context = context;
-            this.list = list;
+            this.items = items;
         }
-        /*public override long GetItemId(int position)
+        public override long GetItemId(int position)
         {
             return position;
         }
@@ -31,17 +30,17 @@ namespace SpeerkMobileApp
         }
         public override int Count
         {
-            get { return list.; }
-        }*/
-        /*public override View GetView(int position, View convertView, ViewGroup parent)
+            get { return items.Count; }
+        }
+        public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            View view = convertView; // re-use an existing view, if one is available
-            if (view == null) // otherwise create a new one
-                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
-            return view;
-        }*/
+            View row = convertView; // re-use an existing view, if one is available
+            if (row == null) // otherwise create a new one
+                row = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null, false);
+            row.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
+            return row;
+        }
 
-        
+
     }
 }
