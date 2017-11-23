@@ -12,11 +12,11 @@ using Android.Widget;
 
 namespace SpeerkMobileApp
 {
-    public class StatsAdapter : BaseAdapter<string>
+    public class StatsAdapter : BaseAdapter<Matches>
     {
-        private List<string> items;
+        private List<Matches> items;
         private Activity context;
-        public StatsAdapter(Activity context, List<string> items) /*base(context, 0, list) */{
+        public StatsAdapter(Activity context, List<Matches> items) /*base(context, 0, list) */{
             this.context = context;
             this.items = items;
         }
@@ -24,7 +24,7 @@ namespace SpeerkMobileApp
         {
             return position;
         }
-        public override string this[int position]
+        public override Matches this[int position]
         {
             get { return items[position]; }
         }
@@ -37,7 +37,7 @@ namespace SpeerkMobileApp
             View row = convertView; // re-use an existing view, if one is available
             if (row == null) // otherwise create a new one
                 row = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null, false);
-            row.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
+            //row.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
             return row;
         }
 

@@ -15,7 +15,7 @@ namespace SpeerkMobileApp
     [Activity(Label = "Statistika")]
     public class Statistika : Activity
     {
-        private List<string> items;
+        private List<Matches> items;
         private ListView StatisticsListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,10 +27,8 @@ namespace SpeerkMobileApp
             GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);*/
 
 
-            items = new List<string>();
-            items.Add("Komanda");
-            items.Add("Melyna");
-            items.Add("Katinai");
+            items = new List<Matches>();
+            
 
             StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
             StatsAdapter adapter = new StatsAdapter(this, items);
