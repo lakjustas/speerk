@@ -19,7 +19,7 @@ namespace SpeerkMobileApp
     {
         int count = 0, count2 = 0;
 
-        Matches matchStats = new Matches();
+        Match matchStats = new Match();
         
 
         protected override void OnCreate(Bundle savedInstanceState)
