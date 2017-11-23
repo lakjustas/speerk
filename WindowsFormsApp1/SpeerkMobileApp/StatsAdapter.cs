@@ -37,11 +37,19 @@ namespace SpeerkMobileApp
         {
             View row = convertView; // re-use an existing view, if one is available
             if (row == null) // otherwise create a new one
-                row = context.LayoutInflater.Inflate(Android.Resource.Layout., null, false);
-            //row = LayoutInflater.FromContext(context).Inflate(Android.Resource.Layout.)
-            //row.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
+                row = context.LayoutInflater.Inflate(Resource.Layout.RowListView, null, false);
 
             TextView textName1 = row.FindViewById<TextView>(Resource.Id.textName1);
+            textName1.Text = items[position].teamOne;
+
+            TextView textName2 = row.FindViewById<TextView>(Resource.Id.textName2);
+            textName2.Text = items[position].teamTwo;
+
+            TextView textScore1 = row.FindViewById<TextView>(Resource.Id.textScore1);
+            textScore1.Text = items[position].scoreOne.ToString();
+
+            TextView textScore2 = row.FindViewById<TextView>(Resource.Id.textScore2);
+            textScore2.Text = items[position].scoreTwo.ToString();
 
             return row;
         }

@@ -14,26 +14,33 @@
         android:text="Komanda1"
         android:layout_width="match_parent"
         android:layout_weight="20"
-        android:layout_height="wrap_content"
-        android:id="@+id/textName1" />
+        android:layout_height="50dp"
+        android:id="@+id/textName1"
+        android:textSize="20dp"
+        android:gravity="center_vertical" />
     <TextView
         android:text="5"
         android:layout_width="match_parent"
         android:layout_weight="30"
-        android:layout_height="wrap_content"
-        android:id="@+id/textScore1" />
+        android:layout_height="50dp"
+        android:id="@+id/textScore1"
+        android:textSize="20dp"
+        android:textStyle="bold" />
     <TextView
         android:text="7"
         android:layout_width="match_parent"
         android:layout_weight="30"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/textScore2"
-        android:gravity="right" />
+        android:gravity="right"
+        android:textSize="20dp"
+        android:textStyle="bold" />
     <TextView
         android:text="Komanda2"
         android:layout_width="match_parent"
         android:layout_weight="20"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/textName2"
-        android:gravity="right" />
+        android:gravity="right"
+        android:textSize="20dp" />
 </LinearLayout>
