@@ -1,30 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using System.Net;
+using System.Diagnostics;
 using System.IO;
-using System.Json;
+using System.Linq;
+using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SpeerkMobileApp
 {
-    class WebServiceCall
+    public class WebServiceCall : IWebServiceCall
     {
 
-        public void POST(Matches statsToSave)
+        public void POST(Match statsToSave)
+
         {
 
             try
             {
-                string webAddr = "http://192.168.0.103/MyService/api/Match";
+                string webAddr = "http://192.168.0.194/MyWebService/api/Match";
 
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(webAddr);
                 httpWebRequest.ContentType = "application/json; charset=utf-8";
@@ -32,7 +29,7 @@ namespace SpeerkMobileApp
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string json = "{\n" + "\"teamOne\": " + "\"" + statsToSave.teamOne.ToString() + "\",\n" + "\"teamTwo\": " + "\"" + statsToSave.teamTwo.ToString() + "\",\n" + "\"scoreOne\": " + "\"" + statsToSave.scoreOne + "\",\n" + "\"scoreTwo\": " + "\"" + statsToSave.scoreTwo + "\",\n" + "\"date\": " + "\"" + statsToSave.date.ToString() + "\",\n" + "}";
+                    string json = JsonConvert.SerializeObject(statsToSave);
 
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -53,10 +50,10 @@ namespace SpeerkMobileApp
 
         }
 
-        public List<Matches> GET()
+
+        public List<Match> GET()
         {
-            /*
-            string url = @"http://localhost:56233/api/Match";
+            string url = @"http://192.168.0.194/MyWebService/api/Match";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
@@ -64,17 +61,30 @@ namespace SpeerkMobileApp
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                 string json = reader.ReadToEnd();
 
-                List<Matches> matchStats = JsonConvert.DeserializeObject<List<Matches>>(json);
-  
+                List<Match> matchStats = JsonConvert.DeserializeObject<List<Match>>(json);
                 return matchStats;
 
             }
-            */
-            List<Matches> match = null ;
 
-            return match;
 
         }
 
+        public Match GET(int id)
+        {
+            Match match;
+            string url = "http://192.168.0.194/MyWebService/api/Match/" + id.ToString();
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            using (Stream responseStream = response.GetResponseStream())
+            {
+                StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                string json = reader.ReadToEnd();
+
+                match = JsonConvert.DeserializeObject<Match>(json);
+                return match;
+
+            }
+        }
     }
 }
+

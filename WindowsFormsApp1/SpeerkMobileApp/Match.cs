@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpeerkWebServices.Models
+namespace SpeerkMobileApp
 {
     public class Match
     {

@@ -25,6 +25,7 @@ namespace SpeerkWebServices.Controllers
 
             
             }
+            //return Make();
  
         }
 
@@ -77,6 +78,18 @@ namespace SpeerkWebServices.Controllers
         // DELETE: api/Match/5
         public void Delete(int id)
         {
+        }
+
+        public List<Match> Make()
+        {
+            Match match1 = new Match() { id = 1, teamOne = "Pirma", teamTwo = "Antra", scoreOne = 2, scoreTwo = 3 };
+            Match match2 = new Match() { id = 2, teamOne = "melyna", teamTwo = "zalia", scoreOne = 4, scoreTwo = 7 };
+            Match match3 = new Match() { id = 3, teamOne = "Sunys", teamTwo = "Katinai", scoreOne = 5, scoreTwo = 0 };
+            List<Match> list = new List<Match>();
+            list.Add(match1);
+            list.Add(match2);
+            list.Add(match3);
+            return list;
         }
     }
 }

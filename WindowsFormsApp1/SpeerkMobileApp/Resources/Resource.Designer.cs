@@ -1594,8 +1594,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0058
 			public const int AntrosiosKomandosPavadinimas = 2131427416;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int Baigti = 2131427444;
+			// aapt resource value: 0x7f0b0079
+			public const int Baigti = 2131427449;
 			
 			// aapt resource value: 0x7f0b005a
 			public const int GriztiAtgal = 2131427418;
@@ -1603,17 +1603,17 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0059
 			public const int Issaugoti = 2131427417;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int MygtukasAntrai = 2131427441;
+			// aapt resource value: 0x7f0b0076
+			public const int MygtukasAntrai = 2131427446;
 			
-			// aapt resource value: 0x7f0b0070
-			public const int MygtukasPirmai = 2131427440;
+			// aapt resource value: 0x7f0b0075
+			public const int MygtukasPirmai = 2131427445;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int PavadinimasAntros = 2131427443;
+			// aapt resource value: 0x7f0b0078
+			public const int PavadinimasAntros = 2131427448;
 			
-			// aapt resource value: 0x7f0b006f
-			public const int PavadinimasPirmos = 2131427439;
+			// aapt resource value: 0x7f0b0074
+			public const int PavadinimasPirmos = 2131427444;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int PirmojiKomanda = 2131427412;
@@ -1624,17 +1624,20 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b005f
 			public const int Pradeti = 2131427423;
 			
+			// aapt resource value: 0x7f0b0072
+			public const int StatisticsListView = 2131427442;
+			
 			// aapt resource value: 0x7f0b0060
 			public const int Statistika = 2131427424;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int VS = 2131427414;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int ZaidimasAntrojiKomanda = 2131427442;
+			// aapt resource value: 0x7f0b0077
+			public const int ZaidimasAntrojiKomanda = 2131427447;
 			
-			// aapt resource value: 0x7f0b006e
-			public const int ZaidimasPirmojiKomanda = 2131427438;
+			// aapt resource value: 0x7f0b0073
+			public const int ZaidimasPirmojiKomanda = 2131427443;
 			
 			// aapt resource value: 0x7f0b0061
 			public const int action0 = 2131427425;
@@ -1909,6 +1912,18 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0069
 			public const int text2 = 2131427433;
 			
+			// aapt resource value: 0x7f0b006e
+			public const int textName1 = 2131427438;
+			
+			// aapt resource value: 0x7f0b0071
+			public const int textName2 = 2131427441;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int textScore1 = 2131427439;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int textScore2 = 2131427440;
+			
 			// aapt resource value: 0x7f0b0037
 			public const int textSpacerNoButtons = 2131427383;
 			
@@ -1933,8 +1948,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int videoView1 = 2131427445;
+			// aapt resource value: 0x7f0b007a
+			public const int videoView1 = 2131427450;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int withText = 2131427361;
@@ -2092,22 +2107,25 @@ namespace SpeerkMobileApp
 			public const int notification_template_part_time = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int select_dialog_item_material = 2130968613;
+			public const int RowListView = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int select_dialog_multichoice_material = 2130968614;
+			public const int select_dialog_item_material = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int select_dialog_singlechoice_material = 2130968615;
+			public const int select_dialog_multichoice_material = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int Statistika = 2130968616;
+			public const int select_dialog_singlechoice_material = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int support_simple_spinner_dropdown_item = 2130968617;
+			public const int Statistika = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int Zaidimas = 2130968618;
+			public const int support_simple_spinner_dropdown_item = 2130968618;
+			
+			// aapt resource value: 0x7f04002b
+			public const int Zaidimas = 2130968619;
 			
 			static Layout()
 			{
