@@ -16,6 +16,8 @@ namespace SpeerkMobileApp
     [Activity(Label = "Komandos")]
     public class Komandos : Activity
     {
+        Matches matchStats = new Matches();
+
         EditText txt_Name, txt_Name2;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -65,6 +67,8 @@ namespace SpeerkMobileApp
                 
                 i.PutExtra("Name", txt_Name.Text.ToString());
                 i.PutExtra("Name2", txt_Name2.Text.ToString());
+
+                
                  
                 StartActivity(i);
             }

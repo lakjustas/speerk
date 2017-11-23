@@ -54,6 +54,7 @@
       <HintPath>..\packages\ElegantNumberButton.3.0.0\lib\ElegantNumberButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Json" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
@@ -85,9 +86,11 @@
   <ItemGroup>
     <Compile Include="Komandos.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Matches.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistika.cs" />
+    <Compile Include="WebServiceCall.cs" />
     <Compile Include="Zaidimas.cs" />
   </ItemGroup>
   <ItemGroup>
