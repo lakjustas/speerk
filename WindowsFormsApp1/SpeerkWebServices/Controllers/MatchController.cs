@@ -17,15 +17,15 @@ namespace SpeerkWebServices.Controllers
     {
         // GET: api/Match
 
-        public IEnumerable<Match> Get()
+        public IEnumerable<MatchTbl> Get()
         {
-            /*using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
+            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
             {
                 return entities.MatchTbls.ToList();
 
             
-            }*/
-            return Make();
+            }
+            //return Make();
  
         }
 
