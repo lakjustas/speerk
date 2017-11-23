@@ -23,7 +23,7 @@ namespace SpeerkMobileApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Statistika);
 
-            items = Make();
+            items = GetItems();
             
 
             StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
@@ -32,17 +32,10 @@ namespace SpeerkMobileApp
             StatisticsListView.Adapter = adapter;
         }
 
-        public List<Match> Make()
+        public List<Match> GetItems()
         {
-            Match match1 = new Match() { id = 1, teamOne = "Pirma", teamTwo = "Antra", scoreOne = 2, scoreTwo = 3 };
-            Match match2 = new Match() { id = 2, teamOne = "melyna", teamTwo = "zalia", scoreOne = 4, scoreTwo = 7 };
-            Match match3 = new Match() { id = 3, teamOne = "Sunys", teamTwo = "Katinai", scoreOne = 5, scoreTwo = 0 };
-            List<Match> list = new List<Match>();
-            list.Add(match1);
-            list.Add(match2);
-            list.Add(match3);
-
-            return list;
+            IWebServiceCall call = new WebServiceCall();
+            return call.GET();
         }
     }
 }

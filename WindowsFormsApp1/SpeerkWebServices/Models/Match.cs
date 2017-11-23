@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SpeerkWebServices.Models
 {
     public class Match
     {
-        public int ID { get; set; }
-
-        public string name1 { get; set; }
-
-        public string name2 { get; set; }
-
-        public int score1 { get; set; }
-
-        public int score2 { get; set; }
-
-        public DateTime date { get; set; }
-
+        public int id { get; set; }
+        public string teamOne { get; set; }
+        public string teamTwo { get; set; }
+        public int? scoreOne { get; set; }
+        public int? scoreTwo { get; set; }
+        public DateTime? date { get; set; }
     }
 }
