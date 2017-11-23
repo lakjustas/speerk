@@ -27,7 +27,6 @@ namespace SpeerkMobileApp
             GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
 
             StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
-            
 
         }
 
