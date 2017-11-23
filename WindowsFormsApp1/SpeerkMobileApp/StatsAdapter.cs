@@ -12,15 +12,16 @@ using Android.Widget;
 
 namespace SpeerkMobileApp
 {
-    public class StatsAdapter : BaseAdapter<string>
+    public class StatsAdapter : ArrayAdapter<Matches>
     {
-        string[] items;
+        List<Matches> list;
         Activity context;
-        public StatsAdapter(Activity context, string[] items) : base() {
+
+        public StatsAdapter(Activity context, List<Matches> list) : base(context, 0, list) {
             this.context = context;
-            this.items = items;
+            this.list = list;
         }
-        public override long GetItemId(int position)
+        /*public override long GetItemId(int position)
         {
             return position;
         }
@@ -30,17 +31,17 @@ namespace SpeerkMobileApp
         }
         public override int Count
         {
-            get { return items.Length; }
-        }
-        public override View GetView(int position, View convertView, ViewGroup parent)
+            get { return list.; }
+        }*/
+        /*public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View view = convertView; // re-use an existing view, if one is available
             if (view == null) // otherwise create a new one
                 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
             view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
             return view;
-        }
+        }*/
 
-
+        
     }
 }

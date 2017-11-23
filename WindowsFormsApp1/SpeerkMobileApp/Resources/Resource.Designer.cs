@@ -1594,8 +1594,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0058
 			public const int AntrosiosKomandosPavadinimas = 2131427416;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int Baigti = 2131427447;
+			// aapt resource value: 0x7f0b0075
+			public const int Baigti = 2131427445;
 			
 			// aapt resource value: 0x7f0b005a
 			public const int GriztiAtgal = 2131427418;
@@ -1603,17 +1603,17 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0059
 			public const int Issaugoti = 2131427417;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int MygtukasAntrai = 2131427444;
-			
-			// aapt resource value: 0x7f0b0073
-			public const int MygtukasPirmai = 2131427443;
-			
-			// aapt resource value: 0x7f0b0076
-			public const int PavadinimasAntros = 2131427446;
-			
 			// aapt resource value: 0x7f0b0072
-			public const int PavadinimasPirmos = 2131427442;
+			public const int MygtukasAntrai = 2131427442;
+			
+			// aapt resource value: 0x7f0b0071
+			public const int MygtukasPirmai = 2131427441;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int PavadinimasAntros = 2131427444;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int PavadinimasPirmos = 2131427440;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int PirmojiKomanda = 2131427412;
@@ -1624,8 +1624,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b005f
 			public const int Pradeti = 2131427423;
 			
-			// aapt resource value: 0x7f0b0070
-			public const int StatisticsListView = 2131427440;
+			// aapt resource value: 0x7f0b006e
+			public const int StatisticsListView = 2131427438;
 			
 			// aapt resource value: 0x7f0b0060
 			public const int Statistika = 2131427424;
@@ -1633,11 +1633,11 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0056
 			public const int VS = 2131427414;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int ZaidimasAntrojiKomanda = 2131427445;
+			// aapt resource value: 0x7f0b0073
+			public const int ZaidimasAntrojiKomanda = 2131427443;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int ZaidimasPirmojiKomanda = 2131427441;
+			// aapt resource value: 0x7f0b006f
+			public const int ZaidimasPirmojiKomanda = 2131427439;
 			
 			// aapt resource value: 0x7f0b0061
 			public const int action0 = 2131427425;
@@ -1780,9 +1780,6 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b006a
 			public const int line3 = 2131427434;
 			
-			// aapt resource value: 0x7f0b006f
-			public const int linearLayout1 = 2131427439;
-			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
 			
@@ -1833,9 +1830,6 @@ namespace SpeerkMobileApp
 			
 			// aapt resource value: 0x7f0b0036
 			public const int scrollView = 2131427382;
-			
-			// aapt resource value: 0x7f0b006e
-			public const int scrollView1 = 2131427438;
 			
 			// aapt resource value: 0x7f0b0049
 			public const int search_badge = 2131427401;
@@ -1942,8 +1936,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int videoView1 = 2131427448;
+			// aapt resource value: 0x7f0b0076
+			public const int videoView1 = 2131427446;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int withText = 2131427361;
