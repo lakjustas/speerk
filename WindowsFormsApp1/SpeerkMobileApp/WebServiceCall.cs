@@ -15,13 +15,12 @@ namespace SpeerkMobileApp
     public class WebServiceCall : IWebServiceCall
     {
 
-
         public void POST(Match statsToSave)
         {
 
             try
             {
-                string webAddr = "http://192.168.0.194/api/Match";
+                string webAddr = "http://192.168.0.194/MyWebService/api/Match";
 
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(webAddr);
                 httpWebRequest.ContentType = "application/json; charset=utf-8";
@@ -29,7 +28,6 @@ namespace SpeerkMobileApp
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    //string json = "{\n" + "\"teamOne\": " + "\"" + statsToSave.getName1().ToString() + "\",\n" + "\"teamTwo\": " + "\"" + statsToSave.getName2().ToString() + "\",\n" + "\"scoreOne\": " + "\"" + statsToSave.getScore1() + "\",\n" + "\"scoreTwo\": " + "\"" + statsToSave.getScore2() + "\",\n" + "\"date\": " + "\"" + statsToSave.GetDate().ToString() + "\",\n" + "}";
                     string json = JsonConvert.SerializeObject(statsToSave);
                     streamWriter.Write(json);
                     streamWriter.Flush();
@@ -59,7 +57,7 @@ namespace SpeerkMobileApp
             {
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                 string json = reader.ReadToEnd();
-                
+
                 List<Match> matchStats = JsonConvert.DeserializeObject<List<Match>>(json);
                 return matchStats;
 
@@ -71,7 +69,7 @@ namespace SpeerkMobileApp
         public Match GET(int id)
         {
             Match match;
-            string url = "http://localhost:56233/api/Match/" + id.ToString();
+            string url = "http://192.168.0.194/MyWebService/api/Match/" + id.ToString();
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
@@ -85,6 +83,4 @@ namespace SpeerkMobileApp
             }
         }
     }
-
-
 }
