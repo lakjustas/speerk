@@ -16,7 +16,8 @@ namespace SpeerkMobileApp
     {
         private List<Match> items;
         private Activity context;
-        public StatsAdapter(Activity context, List<Match> items) /*base(context, 0, list) */{
+        public StatsAdapter(Activity context, List<Match> items)
+        {
             this.context = context;
             this.items = items;
         }
@@ -36,8 +37,12 @@ namespace SpeerkMobileApp
         {
             View row = convertView; // re-use an existing view, if one is available
             if (row == null) // otherwise create a new one
-                row = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null, false);
+                row = context.LayoutInflater.Inflate(Android.Resource.Layout., null, false);
+            //row = LayoutInflater.FromContext(context).Inflate(Android.Resource.Layout.)
             //row.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position];
+
+            TextView textName1 = row.FindViewById<TextView>(Resource.Id.textName1);
+
             return row;
         }
 
