@@ -15,7 +15,7 @@ namespace SpeerkMobileApp
     [Activity(Label = "Statistika")]
     public class Statistika : Activity
     {
-        private List<Matches> items;
+        private List<Match> items;
         private ListView StatisticsListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -23,11 +23,7 @@ namespace SpeerkMobileApp
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Statistika);
 
-            /*Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgal);
-            GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);*/
-
-
-            items = new List<Matches>();
+            items = Make();
             
 
             StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
@@ -36,9 +32,17 @@ namespace SpeerkMobileApp
             StatisticsListView.Adapter = adapter;
         }
 
-        /*private void GriztiAtgal_Click(object sender, EventArgs e)
+        public List<Match> Make()
         {
-            Finish();
-        }*/
+            Match match1 = new Match() { id = 1, teamOne = "Pirma", teamTwo = "Antra", scoreOne = 2, scoreTwo = 3 };
+            Match match2 = new Match() { id = 2, teamOne = "melyna", teamTwo = "zalia", scoreOne = 4, scoreTwo = 7 };
+            Match match3 = new Match() { id = 3, teamOne = "Sunys", teamTwo = "Katinai", scoreOne = 5, scoreTwo = 0 };
+            List<Match> list = new List<Match>();
+            list.Add(match1);
+            list.Add(match2);
+            list.Add(match3);
+
+            return list;
+        }
     }
 }

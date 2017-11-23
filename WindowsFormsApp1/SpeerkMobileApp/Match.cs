@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpeerkMobileApp
 {
-    public class Matches
+    public class Match
     {
         public int id { get; set; }
         public string teamOne { get; set; }

@@ -85,7 +85,7 @@
   <ItemGroup>
     <Compile Include="Komandos.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Matches.cs" />
+    <Compile Include="Match.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistika.cs" />
@@ -105,6 +105,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Zaidimas.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RowListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

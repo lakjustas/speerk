@@ -12,11 +12,11 @@ using Android.Widget;
 
 namespace SpeerkMobileApp
 {
-    public class StatsAdapter : BaseAdapter<Matches>
+    public class StatsAdapter : BaseAdapter<Match>
     {
-        private List<Matches> items;
+        private List<Match> items;
         private Activity context;
-        public StatsAdapter(Activity context, List<Matches> items) /*base(context, 0, list) */{
+        public StatsAdapter(Activity context, List<Match> items) /*base(context, 0, list) */{
             this.context = context;
             this.items = items;
         }
@@ -24,7 +24,7 @@ namespace SpeerkMobileApp
         {
             return position;
         }
-        public override Matches this[int position]
+        public override Match this[int position]
         {
             get { return items[position]; }
         }

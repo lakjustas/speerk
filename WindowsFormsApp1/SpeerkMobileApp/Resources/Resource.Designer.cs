@@ -2095,22 +2095,25 @@ namespace SpeerkMobileApp
 			public const int notification_template_part_time = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int select_dialog_item_material = 2130968613;
+			public const int RowListView = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int select_dialog_multichoice_material = 2130968614;
+			public const int select_dialog_item_material = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int select_dialog_singlechoice_material = 2130968615;
+			public const int select_dialog_multichoice_material = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int Statistika = 2130968616;
+			public const int select_dialog_singlechoice_material = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int support_simple_spinner_dropdown_item = 2130968617;
+			public const int Statistika = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int Zaidimas = 2130968618;
+			public const int support_simple_spinner_dropdown_item = 2130968618;
+			
+			// aapt resource value: 0x7f04002b
+			public const int Zaidimas = 2130968619;
 			
 			static Layout()
 			{
