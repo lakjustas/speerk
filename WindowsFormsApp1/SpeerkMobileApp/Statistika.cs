@@ -14,7 +14,10 @@ namespace SpeerkMobileApp
 {
     [Activity(Label = "Statistika")]
     public class Statistika : Activity
-    {
+    { 
+
+        private ListView StatisticsListView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,8 +26,9 @@ namespace SpeerkMobileApp
             Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgal);
             GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
 
+            StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
+            
 
-            // Create your application here
         }
 
         private void GriztiAtgal_Click(object sender, EventArgs e)
