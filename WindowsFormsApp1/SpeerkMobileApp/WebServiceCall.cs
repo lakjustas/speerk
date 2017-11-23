@@ -16,6 +16,7 @@ namespace SpeerkMobileApp
     {
 
         public void POST(Match statsToSave)
+
         {
 
             try
@@ -29,6 +30,7 @@ namespace SpeerkMobileApp
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
                     string json = JsonConvert.SerializeObject(statsToSave);
+
                     streamWriter.Write(json);
                     streamWriter.Flush();
                 }
@@ -47,6 +49,7 @@ namespace SpeerkMobileApp
 
 
         }
+
 
         public List<Match> GET()
         {
@@ -84,3 +87,4 @@ namespace SpeerkMobileApp
         }
     }
 }
+

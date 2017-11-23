@@ -18,6 +18,10 @@ namespace SpeerkMobileApp
     public class Zaidimas : Activity
     {
         int count = 0, count2 = 0;
+
+        Matches matchStats = new Matches();
+        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -45,17 +49,27 @@ namespace SpeerkMobileApp
             btnShow.Click += delegate
             {
                 btnShow.Text = string.Format("{0}", ++count);
+                matchStats.scoreOne++;
+                
             };
 
             btnShow2.Click += delegate
             {
                 btnShow2.Text = string.Format("{0}", ++count2);
+                matchStats.scoreTwo++;
             };
 
             var Baigti = FindViewById<Button>(Resource.Id.Baigti);
 
             Baigti.Click += delegate
             {
+                matchStats.teamOne = name;
+                matchStats.teamTwo = name2;
+                matchStats.date = DateTime.Now;
+
+                WebServiceCall wsc = new WebServiceCall();
+
+                wsc.POST(matchStats);
                 
             };
 
