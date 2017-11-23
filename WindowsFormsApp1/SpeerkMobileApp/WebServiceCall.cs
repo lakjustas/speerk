@@ -52,7 +52,7 @@ namespace SpeerkMobileApp
 
         public List<Match> GET()
         {
-            string url = @"http://192.168.0.194/api/Match";
+            string url = @"http://192.168.0.194/MyWebService/api/Match";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
