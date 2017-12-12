@@ -14,5 +14,14 @@ namespace SpeerkMobileApp
         public int? scoreOne { get; set; }
         public int? scoreTwo { get; set; }
         public DateTime? date { get; set; }
+
+        public void goalOne()
+        {
+            scoreOne = scoreOne + 1;
+        }
+        public void goalTwo()
+        {
+            scoreTwo = scoreTwo + 1;
+        }
     }
 }
