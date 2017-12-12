@@ -21,7 +21,7 @@ namespace SpeerkMobileApp
 
             try
             {
-                string webAddr = "http://192.168.0.194/MyWebService/api/Match";
+                string webAddr = @"http://speerkservices.azurewebsites.net/api/Match";
 
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(webAddr);
                 httpWebRequest.ContentType = "application/json; charset=utf-8";
@@ -30,7 +30,6 @@ namespace SpeerkMobileApp
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
                     string json = JsonConvert.SerializeObject(statsToSave);
-
                     streamWriter.Write(json);
                     streamWriter.Flush();
                 }
@@ -48,12 +47,13 @@ namespace SpeerkMobileApp
             }
 
 
+
         }
 
 
         public List<Match> GET()
         {
-            string url = @"http://192.168.0.194/MyWebService/api/Match";
+            string url = @"http://speerkservices.azurewebsites.net/api/Match";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
@@ -72,7 +72,7 @@ namespace SpeerkMobileApp
         public Match GET(int id)
         {
             Match match;
-            string url = "http://192.168.0.194/MyWebService/api/Match/" + id.ToString();
+            string url = "http://speerkservices.azurewebsites.net/api/Match" + id.ToString();
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())

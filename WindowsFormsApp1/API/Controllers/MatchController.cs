@@ -4,62 +4,45 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using SpeerkMobileApp;
-using WindowsFormsApp1;
-using MatchDataAccess;
-using System.Diagnostics;
+using API.Models;
 using System.Data.Entity.Validation;
+using System.Diagnostics;
 
-
-namespace SpeerkWebServices.Controllers
+namespace API.Controllers
 {
     public class MatchController : ApiController
     {
+        speerkEntities db = new speerkEntities();
+        
         // GET: api/Match
-
-        public IEnumerable<MatchTbl> Get()
+        [HttpGet]
+        public IEnumerable<Match> Get()
         {
-           // List<Match> matches = new List<Match>();
-            
-            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
-            {
-
-                
-                entities.Database.Connection.Open();
-                return entities.MatchTbls.ToList();
-                
-                //return matches;
-            
-            }
-            
-            //return Make();
- 
+            db.Database.Connection.Open();
+            return db.Matches.ToList();
         }
 
         // GET: api/Match/5
-
-        public MatchTbl Get(int id)
+        public string Get(int id)
         {
-            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
-            {
-                return entities.MatchTbls.FirstOrDefault(m => m.id == id);
-
-            }
-
+            return "value";
         }
 
         // POST: api/Match
-        public void Post([FromBody] MatchTbl match)
+        [HttpPost]
+        public void Post([FromBody]Match match)
         {
-            using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
+            using (speerkEntities entities = new speerkEntities())
             {
 
-                entities.MatchTbls.Add(match);
+                db.Database.Connection.Open();
+
+                db.Matches.Add(match);
 
 
                 try
                 {
-                    entities.SaveChanges();
+                    db.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
                 {
@@ -71,10 +54,7 @@ namespace SpeerkWebServices.Controllers
                         }
                     }
                 }
-
-                var message = Request.CreateResponse(HttpStatusCode.Created, match);
             }
-
         }
 
         // PUT: api/Match/5
@@ -86,6 +66,5 @@ namespace SpeerkWebServices.Controllers
         public void Delete(int id)
         {
         }
-
     }
 }
