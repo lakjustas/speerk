@@ -24,7 +24,9 @@ namespace SpeerkMobileApp
             SetContentView(Resource.Layout.Statistika);
 
             List<Match> items = GetItemsAsync();
-            
+
+            Button GoBack = FindViewById<Button>(Resource.Id.GriztiAtgal);
+            GoBack.Click += new EventHandler(this.GoBack_Click);
 
             StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
             StatsAdapter adapter = new StatsAdapter(this, items);
@@ -36,6 +38,11 @@ namespace SpeerkMobileApp
         {
             IWebServiceCall call = new WebServiceCall();
             return  call.GET();
+        }
+
+        private void GoBack_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }
