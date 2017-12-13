@@ -32,6 +32,19 @@ namespace SpeerkMobileApp
             teamNames[5] = FindViewById<EditText>(Resource.Id.NameTeam6);
             teamNames[6] = FindViewById<EditText>(Resource.Id.NameTeam7);
             teamNames[7] = FindViewById<EditText>(Resource.Id.NameTeam8);
+
+            List<string> tournamentNames = new List<string>();
+
+            Confirm.Click += delegate
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    tournamentNames.Add(teamNames[i].Text);
+                }
+
+                //toliau ka darom?
+
+            };
         }
     }
 }
