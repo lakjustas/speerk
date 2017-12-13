@@ -15,16 +15,16 @@ namespace SpeerkMobileApp
             SetContentView(Resource.Layout.Main);
 
             Button Pradeti = FindViewById<Button>(Resource.Id.Pradeti);
-            Button VisaKomStatistika = FindViewById<Button>(Resource.Id.Statistika);
+            Button VisaStatistikaButton = FindViewById<Button>(Resource.Id.Statistika);
 
             Pradeti.Click += delegate
             {
                 StartActivity(typeof(Komandos));
             };
 
-            VisaKomStatistika.Click += delegate
+            VisaStatistikaButton.Click += delegate
             {
-                StartActivity(typeof(VisaKomStatistika));
+                StartActivity(typeof(VisaStatistika));
             };
         }
     }

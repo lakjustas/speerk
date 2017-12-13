@@ -1594,8 +1594,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0058
 			public const int AntrosiosKomandosPavadinimas = 2131427416;
 			
-			// aapt resource value: 0x7f0b0079
-			public const int Baigti = 2131427449;
+			// aapt resource value: 0x7f0b0080
+			public const int Baigti = 2131427456;
 			
 			// aapt resource value: 0x7f0b005d
 			public const int GautiStatistika = 2131427421;
@@ -1609,20 +1609,23 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0059
 			public const int Issaugoti = 2131427417;
 			
+			// aapt resource value: 0x7f0b0076
+			public const int Komanda = 2131427446;
+			
 			// aapt resource value: 0x7f0b005b
 			public const int KomandosPavadinimas = 2131427419;
 			
-			// aapt resource value: 0x7f0b0076
-			public const int MygtukasAntrai = 2131427446;
+			// aapt resource value: 0x7f0b007d
+			public const int MygtukasAntrai = 2131427453;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int MygtukasPirmai = 2131427445;
+			// aapt resource value: 0x7f0b007c
+			public const int MygtukasPirmai = 2131427452;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int PavadinimasAntros = 2131427448;
+			// aapt resource value: 0x7f0b007f
+			public const int PavadinimasAntros = 2131427455;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int PavadinimasPirmos = 2131427444;
+			// aapt resource value: 0x7f0b007b
+			public const int PavadinimasPirmos = 2131427451;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int PirmojiKomanda = 2131427412;
@@ -1633,23 +1636,29 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0062
 			public const int Pradeti = 2131427426;
 			
+			// aapt resource value: 0x7f0b0075
+			public const int StatisticsListView = 2131427445;
+			
 			// aapt resource value: 0x7f0b0063
 			public const int Statistika = 2131427427;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int SuvestaKomanda = 2131427447;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int VS = 2131427414;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int VienosKomandosStatistika = 2131427442;
+			// aapt resource value: 0x7f0b0079
+			public const int VienosKomandosStatistika = 2131427449;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int VisaStatistika = 2131427441;
+			// aapt resource value: 0x7f0b0078
+			public const int VisaStatistika = 2131427448;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int ZaidimasAntrojiKomanda = 2131427447;
+			// aapt resource value: 0x7f0b007e
+			public const int ZaidimasAntrojiKomanda = 2131427454;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int ZaidimasPirmojiKomanda = 2131427443;
+			// aapt resource value: 0x7f0b007a
+			public const int ZaidimasPirmojiKomanda = 2131427450;
 			
 			// aapt resource value: 0x7f0b0064
 			public const int action0 = 2131427428;
@@ -1924,6 +1933,18 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b006c
 			public const int text2 = 2131427436;
 			
+			// aapt resource value: 0x7f0b0071
+			public const int textName1 = 2131427441;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int textName2 = 2131427444;
+			
+			// aapt resource value: 0x7f0b0072
+			public const int textScore1 = 2131427442;
+			
+			// aapt resource value: 0x7f0b0073
+			public const int textScore2 = 2131427443;
+			
 			// aapt resource value: 0x7f0b0037
 			public const int textSpacerNoButtons = 2131427383;
 			
@@ -2074,7 +2095,7 @@ namespace SpeerkMobileApp
 			public const int Komandos = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int KomandosStatistika = 2130968603;
+			public const int KomStatistika = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
 			public const int layout = 2130968604;
@@ -2107,25 +2128,31 @@ namespace SpeerkMobileApp
 			public const int notification_template_part_time = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int select_dialog_item_material = 2130968614;
+			public const int RowListView = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int select_dialog_multichoice_material = 2130968615;
+			public const int select_dialog_item_material = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int select_dialog_singlechoice_material = 2130968616;
+			public const int select_dialog_multichoice_material = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int Statistika = 2130968617;
+			public const int select_dialog_singlechoice_material = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int support_simple_spinner_dropdown_item = 2130968618;
+			public const int Statistika = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int VisaKomStatistika = 2130968619;
+			public const int support_simple_spinner_dropdown_item = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int Zaidimas = 2130968620;
+			public const int SuvestosKomStatistika = 2130968620;
+			
+			// aapt resource value: 0x7f04002d
+			public const int VisaStatistika = 2130968621;
+			
+			// aapt resource value: 0x7f04002e
+			public const int Zaidimas = 2130968622;
 			
 			static Layout()
 			{
