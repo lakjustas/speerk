@@ -72,22 +72,7 @@ namespace SpeerkMobileApp
                  
                 StartActivity(i);
             }
-            /*List<string> teams = new List<string>();
-
-            teams.Add("one");
-            teams.Add("two");
-            teams.Add("three");
-            teams.Add("four");
-            teams.Add("five");
-            teams.Add("six");
-            teams.Add("seven");
-            teams.Add("eight");
-
-
-            Intent i = new Intent(this, typeof(Tournament));
-            i.PutStringArrayListExtra("names", teams);
-
-            StartActivity(i);*/
+           
         }
 
         private void GriztiAtgal_Click(object sender, EventArgs e)
