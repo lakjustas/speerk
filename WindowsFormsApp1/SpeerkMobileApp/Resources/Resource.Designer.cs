@@ -2149,10 +2149,13 @@ namespace SpeerkMobileApp
 			public const int SuvestosKomStatistika = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int VisaStatistika = 2130968621;
+			public const int TournamentTeams = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int Zaidimas = 2130968622;
+			public const int VisaStatistika = 2130968622;
+			
+			// aapt resource value: 0x7f04002f
+			public const int Zaidimas = 2130968623;
 			
 			static Layout()
 			{
