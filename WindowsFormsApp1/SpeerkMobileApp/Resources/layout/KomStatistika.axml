@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/KomandosPavadinimas"
         android:layout_marginTop="30dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/background_light"
         android:gravity="center"
         android:includeFontPadding="false" />
     <EditText
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/IrasytasKomandosPavadinimas"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/background_light" />
     <Button
         android:background="@android:color/darker_gray"
         android:layout_width="match_parent"
