@@ -16,16 +16,21 @@ namespace SpeerkMobileApp
 
             Button Pradeti = FindViewById<Button>(Resource.Id.Pradeti);
             Button VisaStatistikaButton = FindViewById<Button>(Resource.Id.Statistika);
+            Button Turnyras = FindViewById<Button>(Resource.Id.BtnStartTournament);
 
             Pradeti.Click += delegate
             {
                 StartActivity(typeof(Komandos));
-                //StartActivity(typeof(TournamentTeams));
             };
 
             VisaStatistikaButton.Click += delegate
             {
                 StartActivity(typeof(VisaStatistika));
+            };
+
+            Turnyras.Click += delegate
+            {
+                StartActivity(typeof(TournamentTeams));
             };
         }
     }
