@@ -1588,20 +1588,20 @@ namespace SpeerkMobileApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b007b
-			public const int Antra = 2131427451;
-			
 			// aapt resource value: 0x7f0b0057
 			public const int AntrojiKomanda = 2131427415;
 			
 			// aapt resource value: 0x7f0b0058
 			public const int AntrosiosKomandosPavadinimas = 2131427416;
 			
-			// aapt resource value: 0x7f0b0081
-			public const int Astunta = 2131427457;
-			
 			// aapt resource value: 0x7f0b008b
 			public const int Baigti = 2131427467;
+			
+			// aapt resource value: 0x7f0b0063
+			public const int BtnStartTournament = 2131427427;
+			
+			// aapt resource value: 0x7f0b0082
+			public const int BtnTeamNamesConfirm = 2131427458;
 			
 			// aapt resource value: 0x7f0b005d
 			public const int GautiStatistika = 2131427421;
@@ -1615,14 +1615,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0059
 			public const int Issaugoti = 2131427417;
 			
-			// aapt resource value: 0x7f0b007d
-			public const int Ketvirta = 2131427453;
-			
 			// aapt resource value: 0x7f0b0077
 			public const int Komanda = 2131427447;
-			
-			// aapt resource value: 0x7f0b0079
-			public const int Komandos = 2131427449;
 			
 			// aapt resource value: 0x7f0b005b
 			public const int KomandosPavadinimas = 2131427419;
@@ -1633,17 +1627,35 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0087
 			public const int MygtukasPirmai = 2131427463;
 			
+			// aapt resource value: 0x7f0b007a
+			public const int NameTeam1 = 2131427450;
+			
+			// aapt resource value: 0x7f0b007b
+			public const int NameTeam2 = 2131427451;
+			
+			// aapt resource value: 0x7f0b007c
+			public const int NameTeam3 = 2131427452;
+			
+			// aapt resource value: 0x7f0b007d
+			public const int NameTeam4 = 2131427453;
+			
+			// aapt resource value: 0x7f0b007e
+			public const int NameTeam5 = 2131427454;
+			
+			// aapt resource value: 0x7f0b007f
+			public const int NameTeam6 = 2131427455;
+			
+			// aapt resource value: 0x7f0b0080
+			public const int NameTeam7 = 2131427456;
+			
+			// aapt resource value: 0x7f0b0081
+			public const int NameTeam8 = 2131427457;
+			
 			// aapt resource value: 0x7f0b008a
 			public const int PavadinimasAntros = 2131427466;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int PavadinimasPirmos = 2131427462;
-			
-			// aapt resource value: 0x7f0b007e
-			public const int Penkta = 2131427454;
-			
-			// aapt resource value: 0x7f0b007a
-			public const int Pirma = 2131427450;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int PirmojiKomanda = 2131427412;
@@ -1654,29 +1666,14 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0062
 			public const int Pradeti = 2131427426;
 			
-			// aapt resource value: 0x7f0b0080
-			public const int Septinta = 2131427456;
-			
-			// aapt resource value: 0x7f0b007f
-			public const int Sesta = 2131427455;
-			
 			// aapt resource value: 0x7f0b0076
 			public const int StatisticsListView = 2131427446;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int Statistika = 2131427427;
+			// aapt resource value: 0x7f0b0064
+			public const int Statistika = 2131427428;
 			
 			// aapt resource value: 0x7f0b0078
 			public const int SuvestaKomanda = 2131427448;
-			
-			// aapt resource value: 0x7f0b007c
-			public const int Trecia = 2131427452;
-			
-			// aapt resource value: 0x7f0b0064
-			public const int Turnyras = 2131427428;
-			
-			// aapt resource value: 0x7f0b0082
-			public const int Tvirtinti = 2131427458;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int VS = 2131427414;
@@ -1981,6 +1978,9 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0037
 			public const int textSpacerNoButtons = 2131427383;
 			
+			// aapt resource value: 0x7f0b0079
+			public const int textView1 = 2131427449;
+			
 			// aapt resource value: 0x7f0b006b
 			public const int time = 2131427435;
 			
@@ -2182,7 +2182,7 @@ namespace SpeerkMobileApp
 			public const int SuvestosKomStatistika = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int Turnyras = 2130968621;
+			public const int TournamentTeams = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
 			public const int VisaStatistika = 2130968622;

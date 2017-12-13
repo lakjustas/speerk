@@ -100,8 +100,10 @@
     <Compile Include="Statistika.cs" />
     <Compile Include="StatsAdapter.cs" />
     <Compile Include="Matches.cs" />
+    <Compile Include="Tournament.cs" />
+    <Compile Include="TournamentModel.cs" />
     <Compile Include="SuvestosKomStatistika.cs" />
-    <Compile Include="Turnyras.cs" />
+    <Compile Include="TournamentTeams.cs" />
     <Compile Include="VisaStatistika.cs" />
     <Compile Include="WebServiceCall.cs" />
     <Compile Include="Zaidimas.cs" />
@@ -133,7 +135,7 @@
     <AndroidResource Include="Resources\layout\SuvestosKomStatistika.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Turnyras.axml">
+    <AndroidResource Include="Resources\layout\TournamentTeams.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
