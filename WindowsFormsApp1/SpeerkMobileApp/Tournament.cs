@@ -124,10 +124,11 @@ namespace SpeerkMobileApp
             {
                 TournamentModel.forElimination.Add(name);
             }
-            else
+            else if (scoreOne > scoreTwo)
             {
                 TournamentModel.forElimination.Add(name2);
             }
+            else rematch(name, name2);
             
 
             tournamentMaking();
@@ -139,6 +140,17 @@ namespace SpeerkMobileApp
             TournamentModel.forElimination = new List<string>();
 
             
+        }
+
+        public void rematch(string name, string name2)
+        {
+            Intent i = new Intent(this, typeof(Zaidimas));
+            TournamentModel.index = TournamentModel.index - 2;
+            i.PutExtra("Name", name);
+            i.PutExtra("Name2", name2);
+            i.PutExtra("tournament", isTournament);
+
+            StartActivity(i);
         }
     }
 }
