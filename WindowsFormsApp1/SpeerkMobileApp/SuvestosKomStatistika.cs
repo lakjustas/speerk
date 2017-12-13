@@ -30,11 +30,15 @@ namespace SpeerkMobileApp
             txt_Result.Text = " " + name;
 
             List<Match> items = GetItems(name);
+            if(items != null)
+            {
+                StatisticsListView = FindViewById<ListView>(Resource.Id.TeamStatsListView);
+                StatsAdapter adapter = new StatsAdapter(this, items);
 
-            StatisticsListView = FindViewById<ListView>(Resource.Id.TeamStatsListView);
-            StatsAdapter adapter = new StatsAdapter(this, items);
-
-            StatisticsListView.Adapter = adapter;
+                StatisticsListView.Adapter = adapter;
+            }
+            else
+            
 
             // Create your application here
         }
