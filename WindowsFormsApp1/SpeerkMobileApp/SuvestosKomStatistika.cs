@@ -30,7 +30,8 @@ namespace SpeerkMobileApp
             txt_Result.Text = " " + name;
 
             List<Match> items = GetItems(name);
-            if(items != null)
+            
+            if(items.Count != 0)
             {
                 StatisticsListView = FindViewById<ListView>(Resource.Id.TeamStatsListView);
                 StatsAdapter adapter = new StatsAdapter(this, items);
@@ -38,6 +39,10 @@ namespace SpeerkMobileApp
                 StatisticsListView.Adapter = adapter;
             }
             else
+            {
+                TextView txt_Null = FindViewById<TextView>(Resource.Id.TextNull);
+                txt_Null.Text = "Tokio komandos nėra!";
+            }
             
 
             // Create your application here
