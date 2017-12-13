@@ -20,7 +20,7 @@ namespace SpeerkMobileApp
             Pradeti.Click += delegate
             {
                 StartActivity(typeof(Komandos));
-                //pabandymui StartActivity(typeof(TournamentTeams));
+                //StartActivity(typeof(TournamentTeams));
             };
 
             VisaStatistikaButton.Click += delegate
