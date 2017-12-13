@@ -86,6 +86,8 @@ namespace SpeerkMobileApp
                     i.PutExtra("scoreOne", matchStats.scoreOne.Value);
                     i.PutExtra("scoreTwo", matchStats.scoreTwo.Value);
                     i.PutExtra("tStarted", tournamentStarted);
+                    i.PutExtra("Name", name);
+                    i.PutExtra("Name2", name2);
                     StartActivity(i);
                 }
 
