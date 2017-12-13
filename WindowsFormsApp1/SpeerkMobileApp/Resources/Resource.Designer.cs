@@ -1933,9 +1933,6 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int videoView1 = 2131427445;
-			
 			// aapt resource value: 0x7f0b0021
 			public const int withText = 2131427361;
 			
