@@ -39,6 +39,10 @@ namespace SpeerkMobileApp
             if (row == null) // otherwise create a new one
                 row = context.LayoutInflater.Inflate(Resource.Layout.RowListView, null, false);
 
+            /*TextView textDate = row.FindViewById<TextView>(Resource.Id.text);
+            text.Text = items[position].date;
+            */
+
             TextView textName1 = row.FindViewById<TextView>(Resource.Id.textName1);
             textName1.Text = items[position].teamOne;
 

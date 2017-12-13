@@ -23,9 +23,18 @@ namespace API.Controllers
         }
 
         // GET: api/Match/5
-        public string Get(int id)
+  
+        [HttpGet, Route("api/Match/{name}")]
+        public IEnumerable<Match> Get(string name)
         {
-            return "value";
+            db.Database.Connection.Open();
+            List<Match> matches = db.Matches.ToList();
+
+            var query = from a in matches
+                        where a.teamOne == name || a.teamTwo == name
+                        select a;
+            return query;
+
         }
 
         // POST: api/Match
