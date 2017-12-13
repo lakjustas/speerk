@@ -15,6 +15,8 @@ namespace SpeerkMobileApp
     [Activity(Label = "SuvestosKomStatistika")]
     public class SuvestosKomStatistika : Activity
     {
+        private ListView StatisticsListView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,7 +29,29 @@ namespace SpeerkMobileApp
 
             txt_Result.Text = " " + name;
 
+            List<Match> items = GetItems(name);
+            
+            if(items.Count != 0)
+            {
+                StatisticsListView = FindViewById<ListView>(Resource.Id.TeamStatsListView);
+                StatsAdapter adapter = new StatsAdapter(this, items);
+
+                StatisticsListView.Adapter = adapter;
+            }
+            else
+            {
+                TextView txt_Null = FindViewById<TextView>(Resource.Id.TextNull);
+                txt_Null.Text = "Tokio komandos nėra!";
+            }
+            
+
             // Create your application here
+        }
+
+        private List<Match> GetItems(string name)
+        {
+            IWebServiceCall call = new WebServiceCall();
+            return call.GET(name);
         }
     }
 }
