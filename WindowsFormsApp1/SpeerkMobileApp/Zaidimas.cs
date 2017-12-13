@@ -34,7 +34,9 @@ namespace SpeerkMobileApp
             //Retrieve the data using Intent.GetStringExtra method  
             string name = Intent.GetStringExtra("Name");
             string name2 = Intent.GetStringExtra("Name2");
+
             bool isTournament = Intent.GetBooleanExtra("tournament", false);
+
             matchStats.scoreOne = 0;
             matchStats.scoreTwo = 0;
 
@@ -54,6 +56,7 @@ namespace SpeerkMobileApp
             {
                 btnShow.Text = string.Format("{0}", ++count);
                 matchStats.goalOne();
+
             };
 
             btnShow2.Click += delegate
@@ -75,6 +78,7 @@ namespace SpeerkMobileApp
 
                 wsc.POST(matchStats);
 
+
                 if (isTournament)
                 {
                     bool tournamentStarted = true;
@@ -91,7 +95,7 @@ namespace SpeerkMobileApp
                     Finish();
                     StartActivity(i);
                 }
-                
+
                 
             };
 

@@ -17,7 +17,7 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="IWebServiceCall.cs" />
     <Compile Include="Komandos.cs" />
+    <Compile Include="KomStatistika.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -99,8 +100,13 @@
     <Compile Include="Statistika.cs" />
     <Compile Include="StatsAdapter.cs" />
     <Compile Include="Matches.cs" />
+
     <Compile Include="Tournament.cs" />
     <Compile Include="TournamentModel.cs" />
+
+    <Compile Include="SuvestosKomStatistika.cs" />
+    <Compile Include="VisaStatistika.cs" />
+
     <Compile Include="WebServiceCall.cs" />
     <Compile Include="Zaidimas.cs" />
   </ItemGroup>
@@ -120,6 +126,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\RowListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\VisaStatistika.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\KomStatistika.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SuvestosKomStatistika.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
