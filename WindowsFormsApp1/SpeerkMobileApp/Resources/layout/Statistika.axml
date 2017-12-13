@@ -9,8 +9,10 @@
         android:background="@android:color/holo_blue_dark">
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/StatisticsListView" />
+            android:layout_height="500.5dp"
+            android:id="@+id/StatisticsListView"
+            android:layout_marginBottom="1.5dp"
+            android:layout_marginTop="0.0dp" />
         <Button
             android:background="@android:color/darker_gray"
             android:layout_height="wrap_content"
@@ -19,7 +21,8 @@
             android:text="Grįžti atgal"
             android:textAlignment="center"
             android:id="@+id/GriztiAtgal"
-            android:layout_marginTop="15dip"
-            android:textColor="@android:color/black" />
+            android:layout_marginTop="0.0dp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="0.0dp" />
     </LinearLayout>
 </ScrollView>
