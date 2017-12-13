@@ -10,6 +10,6 @@ namespace SpeerkMobileApp
     {
         void POST(Match statsToSave);
         List<Match> GET();
-
+        List<Match> GET(string name);
     }
 }
