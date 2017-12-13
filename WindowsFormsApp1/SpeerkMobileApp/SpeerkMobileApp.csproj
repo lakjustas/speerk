@@ -99,6 +99,8 @@
     <Compile Include="Statistika.cs" />
     <Compile Include="StatsAdapter.cs" />
     <Compile Include="Matches.cs" />
+    <Compile Include="Tournament.cs" />
+    <Compile Include="TournamentModel.cs" />
     <Compile Include="WebServiceCall.cs" />
     <Compile Include="Zaidimas.cs" />
   </ItemGroup>

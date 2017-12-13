@@ -16,7 +16,6 @@ namespace SpeerkMobileApp
     [Activity(Label = "Statistika")]
     public class Statistika : Activity
     {
-        //private List<Match> items;
         private ListView StatisticsListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
