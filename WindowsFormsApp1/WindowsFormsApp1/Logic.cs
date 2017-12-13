@@ -85,14 +85,11 @@ namespace WindowsFormsApp1
         /// <param name="teamRight"></param>
         public void DoStatistics(Team teamLeft, Team teamRight)
         {
-
             _statistics.GetDate();
             _statistics.SetNames(teamLeft.GetName(), teamRight.GetName());
             _statistics.SetScores(teamLeft.Score, teamRight.Score);
 
             _wsc.POST(_statistics);
-
-
         }
 
 

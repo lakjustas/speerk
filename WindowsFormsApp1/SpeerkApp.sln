@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeerkApp", "WindowsFormsApp1\SpeerkApp.csproj", "{B04068C7-2C94-46BC-9490-DF1BD57FD95C}"
 EndProject
@@ -9,12 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeerkMobileApp", "SpeerkMobileApp\SpeerkMobileApp.csproj", "{68BE9796-68AF-48D3-8B5A-FF124E0FFE09}"
 EndProject
-
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeerkWebServices", "SpeerkWebServices\SpeerkWebServices.csproj", "{D71BB08E-7D8D-4FDC-A802-4589B1856023}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchDataAccess", "MatchDataAccess\MatchDataAccess.csproj", "{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}"
 EndProject
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{A8CEC61F-B09B-4164-B177-89DC518121D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,7 +35,6 @@ Global
 		{68BE9796-68AF-48D3-8B5A-FF124E0FFE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68BE9796-68AF-48D3-8B5A-FF124E0FFE09}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68BE9796-68AF-48D3-8B5A-FF124E0FFE09}.Release|Any CPU.Deploy.0 = Release|Any CPU
-
 		{D71BB08E-7D8D-4FDC-A802-4589B1856023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D71BB08E-7D8D-4FDC-A802-4589B1856023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D71BB08E-7D8D-4FDC-A802-4589B1856023}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,7 +43,10 @@ Global
 		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1EED6A9-D6B3-4D97-9018-219513F3FC2D}.Release|Any CPU.Build.0 = Release|Any CPU
-
+		{A8CEC61F-B09B-4164-B177-89DC518121D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CEC61F-B09B-4164-B177-89DC518121D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CEC61F-B09B-4164-B177-89DC518121D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CEC61F-B09B-4164-B177-89DC518121D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

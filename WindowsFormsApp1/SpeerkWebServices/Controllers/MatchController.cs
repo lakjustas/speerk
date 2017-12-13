@@ -19,12 +19,20 @@ namespace SpeerkWebServices.Controllers
 
         public IEnumerable<MatchTbl> Get()
         {
+           // List<Match> matches = new List<Match>();
+            
             using (databaseSpeerkEntities entities = new databaseSpeerkEntities())
             {
-                return entities.MatchTbls.ToList();
 
+                
+                entities.Database.Connection.Open();
+                return entities.MatchTbls.ToList();
+                
+                //return matches;
             
             }
+            
+            //return Make();
  
         }
 
@@ -78,5 +86,6 @@ namespace SpeerkWebServices.Controllers
         public void Delete(int id)
         {
         }
+
     }
 }

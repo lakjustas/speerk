@@ -9,27 +9,34 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Threading.Tasks;
 
 namespace SpeerkMobileApp
 {
     [Activity(Label = "Statistika")]
     public class Statistika : Activity
     {
+        //private List<Match> items;
+        private ListView StatisticsListView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Statistika);
 
-            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgal);
-            GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
+            List<Match> items = GetItemsAsync();
+            
 
+            StatisticsListView = FindViewById<ListView>(Resource.Id.StatisticsListView);
+            StatsAdapter adapter = new StatsAdapter(this, items);
 
-            // Create your application here
+            StatisticsListView.Adapter = adapter;
         }
 
-        private void GriztiAtgal_Click(object sender, EventArgs e)
+        private List<Match> GetItemsAsync()
         {
-            Finish();
+            IWebServiceCall call = new WebServiceCall();
+            return  call.GET();
         }
     }
 }
