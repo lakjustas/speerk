@@ -42,10 +42,7 @@ namespace SpeerkMobileApp
                     tournamentNames.Add(teamNames[i].Text);
                 }
 
-                Intent intent = new Intent(this, typeof(Tournament));
-                intent.PutStringArrayListExtra("names", tournamentNames);
-
-                StartActivity(intent);
+                //toliau ka darom?
 
             };
         }
