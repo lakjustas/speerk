@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TournamentTeamsActivity.cs" />
     <Compile Include="IWebServiceCall.cs" />
     <Compile Include="Komandos.cs" />
     <Compile Include="MainActivity.cs" />
@@ -118,6 +119,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\RowListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TournamentTeams.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

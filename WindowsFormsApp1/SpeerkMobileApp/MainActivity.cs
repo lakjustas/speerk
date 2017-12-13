@@ -19,7 +19,8 @@ namespace SpeerkMobileApp
 
             Pradeti.Click += delegate
             {
-                StartActivity(typeof(Komandos));
+                //StartActivity(typeof(Komandos));
+                StartActivity(typeof(TournamentTeamsActivity));
             };
 
             Statistika.Click += delegate
