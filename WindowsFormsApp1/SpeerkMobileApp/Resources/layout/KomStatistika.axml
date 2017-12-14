@@ -6,7 +6,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_blue_dark">
+
+        android:background="@drawable/Fiksavimas">
+
         <TextView
             android:text="Komandos pavadinimas:"
             android:textAppearance="?android:attr/textAppearanceLarge"
