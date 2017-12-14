@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
-        android:background="@android:color/darker_gray"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Visa Statistika"
-        android:textAlignment="center"
-        android:id="@+id/VisaStatistika"
-        android:layout_marginTop="30dip"
-        android:textColor="@android:color/black" />
-    <Button
-        android:background="@android:color/darker_gray"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Vienos komandos statistika"
-        android:textAlignment="center"
-        android:id="@+id/VienosKomandosStatistika"
-        android:layout_marginTop="10dip"
-        android:textColor="@android:color/black" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_dark">
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Visa Statistika"
+            android:textAlignment="center"
+            android:id="@+id/VisaStatistika"
+            android:layout_marginTop="30dip"
+            android:textColor="@android:color/black" />
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Vienos komandos statistika"
+            android:textAlignment="center"
+            android:id="@+id/VienosKomandosStatistika"
+            android:layout_marginTop="10dip"
+            android:textColor="@android:color/black" />
+      <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Grįžti atgal"
+            android:textAlignment="center"
+            android:id="@+id/GriztiAtgalVisaStatistika"
+            android:layout_marginTop="15dip"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</ScrollView>

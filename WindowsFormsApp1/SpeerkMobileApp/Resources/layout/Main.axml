@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px"
-    android:background="@android:color/holo_blue_dark">
-    <Button
-        android:background="@android:color/darker_gray"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:padding="30dp"
-        android:text="Pradėti"
-        android:textAlignment="center"
-        android:id="@+id/Pradeti"
-        android:layout_marginTop="180dip"
-        android:layout_marginLeft="135dip"
-        android:textColor="@android:color/black" />
-    <Button
-        android:text="Pradėti turnyrą"
-        android:layout_width="120.0dp"
-        android:layout_height="76.5dp"
-        android:id="@+id/BtnStartTournament"
-        android:layout_marginTop="19.0dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginLeft="133.5dp"
-        android:textColor="@android:color/black" />
-    <Button
-        android:background="@android:color/darker_gray"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:padding="20dp"
-        android:text="Statistika"
-        android:textAlignment="center"
-        android:id="@+id/Statistika"
-        android:layout_marginTop="20dip"
-        android:layout_marginLeft="135dip"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="0.0dp" />
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="@android:color/holo_blue_dark">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="121.0dp"
+            android:id="@+id/Kamuolys"
+            android:src="@drawable/Kamuolys"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="40dip" />
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="30dp"
+            android:text="Pradėti"
+            android:textAlignment="center"
+            android:id="@+id/Pradeti"
+            android:layout_marginTop="40dip"
+            android:layout_marginLeft="135dip"
+            android:textColor="@android:color/black" />
+        <Button
+            android:text="Pradėti turnyrą"
+            android:layout_width="120.0dp"
+            android:layout_height="76.5dp"
+            android:id="@+id/BtnStartTournament"
+            android:layout_marginTop="19.0dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginLeft="133.5dp"
+            android:textColor="@android:color/black" />
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="20dp"
+            android:text="Statistika"
+            android:textAlignment="center"
+            android:id="@+id/Statistika"
+            android:layout_marginTop="20dip"
+            android:layout_marginLeft="135dip"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="0.0dp" />
+    </LinearLayout>
+</ScrollView>

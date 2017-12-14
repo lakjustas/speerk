@@ -43,7 +43,15 @@ namespace SpeerkMobileApp
                 TextView txt_Null = FindViewById<TextView>(Resource.Id.TextNull);
                 txt_Null.Text = "Tokio komandos nėra!";
             }
-            
+
+            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgalSuvestosKomStatistika);
+            //GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
+
+            GriztiAtgal.Click += delegate
+            {
+                StartActivity(typeof(KomStatistika));
+            };
+
 
             // Create your application here
         }
@@ -53,5 +61,7 @@ namespace SpeerkMobileApp
             IWebServiceCall call = new WebServiceCall();
             return call.GET(name);
         }
+
+
     }
 }

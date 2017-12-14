@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:text="Komandos pavadinimas:"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="356.0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/KomandosPavadinimas"
-        android:layout_marginTop="30dp"
-        android:textColor="@android:color/background_light"
-        android:gravity="center"
-        android:includeFontPadding="false" />
-    <EditText
-        android:maxLength="30"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/IrasytasKomandosPavadinimas"
-        android:textColor="@android:color/background_light" />
-    <Button
-        android:background="@android:color/darker_gray"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Gauti statistiką"
-        android:textAlignment="center"
-        android:id="@+id/GautiStatistika"
-        android:layout_marginTop="10dip"
-        android:textColor="@android:color/black" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_dark">
+        <TextView
+            android:text="Komandos pavadinimas:"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="356.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/KomandosPavadinimas"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+        <EditText
+            android:maxLength="30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IrasytasKomandosPavadinimas"
+            android:textColor="@android:color/black" />
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Gauti statistiką"
+            android:textAlignment="center"
+            android:id="@+id/GautiStatistika"
+            android:layout_marginTop="10dip"
+            android:textColor="@android:color/black" />
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Grįžti atgal"
+            android:textAlignment="center"
+            android:id="@+id/GriztiAtgalKomStatistika"
+            android:layout_marginTop="15dip"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</ScrollView>

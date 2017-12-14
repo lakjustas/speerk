@@ -38,6 +38,13 @@ namespace SpeerkMobileApp
                     StartActivity(i);
                 }
             };
+
+            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgalKomStatistika);
+
+            GriztiAtgal.Click += delegate
+            {
+                StartActivity(typeof(VisaStatistika));
+            };
             // Create your application here
         }
     }

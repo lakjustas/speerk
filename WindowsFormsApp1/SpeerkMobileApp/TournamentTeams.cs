@@ -49,6 +49,13 @@ namespace SpeerkMobileApp
                 StartActivity(intent);
 
             };
+
+            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgalTurnyras);
+
+            GriztiAtgal.Click += delegate
+            {
+                StartActivity(typeof(MainActivity));
+            };
         }
     }
 }
