@@ -53,7 +53,7 @@ namespace SpeerkMobileApp
 
         public void randomize()
         {
-            teams = teams.OrderBy(a => Guid.NewGuid()).ToList();
+            TournamentModel.teams = TournamentModel.teams.OrderBy(a => Guid.NewGuid()).ToList();
         }
 
         public void startMatch()
