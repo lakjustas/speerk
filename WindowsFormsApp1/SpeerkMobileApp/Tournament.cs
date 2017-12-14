@@ -37,6 +37,7 @@ namespace SpeerkMobileApp
             {
 
                 TournamentModel.teams = Intent.GetStringArrayListExtra("names").ToList();
+                isTournament = true;
                 randomize();
                 TournamentModel.index = 0;
                 tournamentMaking();
@@ -57,36 +58,59 @@ namespace SpeerkMobileApp
 
         public void startMatch()
         {
+            if (TournamentModel.teams.Count == 1)
+            {
+                Toast.MakeText(Application.Context, "Turnyra laimejo " + TournamentModel.teams[0], ToastLength.Long).Show();
+                Intent i = new Intent(this, typeof(MainActivity));
+                //Finish();
+                isTournament = false;
+                StartActivity(i);
+                return;
+            }
+            else
+            {
+                Intent i = new Intent(this, typeof(Zaidimas));
 
-            Intent i = new Intent(this, typeof(Zaidimas));
+                i.PutExtra("Name", teamToPlayOne);
+                i.PutExtra("Name2", teamToPlayTwo);
+                i.PutExtra("tournament", isTournament);
 
-            i.PutExtra("Name", teamToPlayOne);
-            i.PutExtra("Name2", teamToPlayTwo);
-            i.PutExtra("tournament", isTournament);
-
-            StartActivity(i);
+                StartActivity(i);
+            }
+            
 
         }
 
         public void tournamentMaking()
         {
-            
+
+           
+
             if (TournamentModel.index < TournamentModel.teams.Count)
             {
                 teamToPlayOne = TournamentModel.teams[TournamentModel.index];
-
                 TournamentModel.index = TournamentModel.index + 1;
                 teamToPlayTwo = TournamentModel.teams[TournamentModel.index];
+                TournamentModel.index = TournamentModel.index + 1;
             }
             else
             {
+                startElimination();
+
+                if (TournamentModel.teams.Count == 1)
+                {
+                    
+                    return;
+                }
+
                 TournamentModel.index = 0;
 
                 teamToPlayOne = TournamentModel.teams[TournamentModel.index];
-
                 TournamentModel.index = TournamentModel.index + 1;
                 teamToPlayTwo = TournamentModel.teams[TournamentModel.index];
+                TournamentModel.index = TournamentModel.index + 1;
             }
+            
             startMatch();
 
         }
@@ -94,20 +118,39 @@ namespace SpeerkMobileApp
         {
             int scoreOne = Intent.GetIntExtra("scoreOne", 0);
             int scoreTwo = Intent.GetIntExtra("scoreTwo", 0);
-            if (scoreOne > scoreTwo)
+            string name = Intent.GetStringExtra("Name");
+            string name2 = Intent.GetStringExtra("Name2");
+            if (scoreOne < scoreTwo)
             {
-                TournamentModel.teams.RemoveAt(TournamentModel.index);
+                TournamentModel.forElimination.Add(name);
             }
-            else TournamentModel.teams.RemoveAt(TournamentModel.index-1);
-
-            if (TournamentModel.teams.Count == 1)
+            else if (scoreOne > scoreTwo)
             {
-                Console.WriteLine("tournament end! WON: " +  TournamentModel.teams[0].ToString());
-                return;
+                TournamentModel.forElimination.Add(name2);
             }
+            else rematch(name, name2);
+            
 
             tournamentMaking();
 
+        }
+        public void startElimination()
+        {
+            TournamentModel.teams.RemoveAll(x => TournamentModel.forElimination.Any(y => y == x));
+            TournamentModel.forElimination = new List<string>();
+
+            
+        }
+
+        public void rematch(string name, string name2)
+        {
+            Intent i = new Intent(this, typeof(Zaidimas));
+            TournamentModel.index = TournamentModel.index - 2;
+            i.PutExtra("Name", name);
+            i.PutExtra("Name2", name2);
+            i.PutExtra("tournament", isTournament);
+
+            StartActivity(i);
         }
     }
 }
