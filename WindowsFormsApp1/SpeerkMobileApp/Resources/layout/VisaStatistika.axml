@@ -6,7 +6,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:background="@drawable/Fiksavimas">
+
         <Button
             android:background="@android:color/darker_gray"
             android:layout_width="match_parent"
@@ -27,7 +29,9 @@
             android:id="@+id/VienosKomandosStatistika"
             android:layout_marginTop="10dip"
             android:textColor="@android:color/black" />
+
         <Button
+
             android:background="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -8,7 +8,9 @@
         android:layout_height="match_parent"
         android:minWidth="25px"
         android:minHeight="25px"
+
         android:background="@drawable/Fiksavimas">
+
         <TextView
             android:text="Suveskite komandas"
             android:textAppearance="?android:attr/textAppearanceLarge"
