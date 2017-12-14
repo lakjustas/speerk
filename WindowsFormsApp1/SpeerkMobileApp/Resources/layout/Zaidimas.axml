@@ -6,9 +6,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_blue_dark"
         android:minWidth="25px"
-        android:minHeight="25px">
+        android:minHeight="25px"
+        android:background="@drawable/Fiksavimas">
         <TextView
             android:text="Pirmoji komanda:"
             android:layout_width="356.0dp"
@@ -66,7 +66,7 @@
             android:textSize="20dp"
             android:gravity="center"
             android:includeFontPadding="false" />
-      <Button
+        <Button
             android:background="@android:color/darker_gray"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
