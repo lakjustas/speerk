@@ -39,5 +39,15 @@
             android:id="@+id/TeamStatsListView"
             android:layout_marginBottom="1.5dp"
             android:layout_marginTop="0.0dp" />
+      <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Grįžti atgal"
+            android:textAlignment="center"
+            android:id="@+id/GriztiAtgalSuvestosKomStatistika"
+            android:layout_marginTop="15dip"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 </ScrollView>

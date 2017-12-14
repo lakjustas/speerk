@@ -101,6 +101,13 @@ namespace SpeerkMobileApp
                 
             };
 
+            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgalZaidimas);
+
+            GriztiAtgal.Click += delegate
+            {
+                StartActivity(typeof(Komandos));
+            };
+
         }
     }
 }

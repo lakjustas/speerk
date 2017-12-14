@@ -9,6 +9,13 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:background="@android:color/holo_blue_dark">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="121.0dp"
+            android:id="@+id/Kamuolys"
+            android:src="@drawable/Kamuolys"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="40dip" />
         <Button
             android:background="@android:color/darker_gray"
             android:layout_height="wrap_content"
@@ -17,7 +24,7 @@
             android:text="Pradėti"
             android:textAlignment="center"
             android:id="@+id/Pradeti"
-            android:layout_marginTop="180dip"
+            android:layout_marginTop="40dip"
             android:layout_marginLeft="135dip"
             android:textColor="@android:color/black" />
         <Button

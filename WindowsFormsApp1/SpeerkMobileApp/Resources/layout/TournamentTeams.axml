@@ -2,74 +2,88 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:minWidth="25px"
-      android:minHeight="25px"
-      android:background="@android:color/holo_blue_dark">
-    <TextView
-        android:text="Suveskite komandas"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:gravity="center"
-        android:layout_marginBottom="41.0dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam1"
-        android:hint="1 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam2"
-        android:hint="2 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam3"
-        android:hint="3 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam4"
-        android:hint="4 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam5"
-        android:hint="5 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam6"
-        android:hint="6 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam7"
-        android:hint="7 Komanda"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/NameTeam8"
-        android:hint="8 Komanda"
-        android:gravity="center" />
-    <Button
-        android:text="Patvirtinti"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/BtnTeamNamesConfirm"
-        android:layout_marginTop="53.5dp" />
-  </LinearLayout>
+        android:layout_height="match_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background="@android:color/holo_blue_dark">
+        <TextView
+            android:text="Suveskite komandas"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:gravity="center"
+            android:layout_marginBottom="41.0dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam1"
+            android:hint="1 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam2"
+            android:hint="2 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam3"
+            android:hint="3 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam4"
+            android:hint="4 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam5"
+            android:hint="5 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam6"
+            android:hint="6 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam7"
+            android:hint="7 Komanda"
+            android:gravity="center" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NameTeam8"
+            android:hint="8 Komanda"
+            android:gravity="center" />
+        <Button
+            android:text="Patvirtinti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnTeamNamesConfirm"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+        <Button
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Grįžti atgal"
+            android:textAlignment="center"
+            android:id="@+id/GriztiAtgalTurnyras"
+            android:layout_marginTop="5dip"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
 </ScrollView>

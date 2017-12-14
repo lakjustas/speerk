@@ -30,8 +30,13 @@ namespace SpeerkMobileApp
             Button Issaugoti = FindViewById<Button>(Resource.Id.Issaugoti);
             Issaugoti.Click += new EventHandler(this.Issaugoti_Click);
 
-            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgal);
-            GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
+            Button GriztiAtgal = FindViewById<Button>(Resource.Id.GriztiAtgalKomandos);
+            //GriztiAtgal.Click += new EventHandler(this.GriztiAtgal_Click);
+
+            GriztiAtgal.Click += delegate
+            {
+                StartActivity(typeof(MainActivity));
+            };
         }
 
         private void Issaugoti_Click(object sender, EventArgs e)
@@ -67,17 +72,15 @@ namespace SpeerkMobileApp
                 
                 i.PutExtra("Name", txt_Name.Text.ToString());
                 i.PutExtra("Name2", txt_Name2.Text.ToString());
-
-                
-                 
+                                 
                 StartActivity(i);
             }
            
         }
 
-        private void GriztiAtgal_Click(object sender, EventArgs e)
+        /*private void GriztiAtgal_Click(object sender, EventArgs e)
         {
             Finish();
-        }
+        }*/
     }
 }

@@ -1573,7 +1573,10 @@ namespace SpeerkMobileApp
 			public const int background = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int notification_template_icon_bg = 2130837588;
+			public const int Kamuolys = 2130837588;
+			
+			// aapt resource value: 0x7f020055
+			public const int notification_template_icon_bg = 2130837589;
 			
 			static Drawable()
 			{
@@ -1594,20 +1597,38 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0058
 			public const int AntrosiosKomandosPavadinimas = 2131427416;
 			
-			// aapt resource value: 0x7f0b008d
-			public const int Baigti = 2131427469;
+			// aapt resource value: 0x7f0b0094
+			public const int Baigti = 2131427476;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int BtnStartTournament = 2131427427;
+			// aapt resource value: 0x7f0b0065
+			public const int BtnStartTournament = 2131427429;
 			
-			// aapt resource value: 0x7f0b0084
-			public const int BtnTeamNamesConfirm = 2131427460;
+			// aapt resource value: 0x7f0b0088
+			public const int BtnTeamNamesConfirm = 2131427464;
 			
 			// aapt resource value: 0x7f0b005d
 			public const int GautiStatistika = 2131427421;
 			
+			// aapt resource value: 0x7f0b0079
+			public const int GriztiAtgal = 2131427449;
+			
+			// aapt resource value: 0x7f0b005e
+			public const int GriztiAtgalKomStatistika = 2131427422;
+			
 			// aapt resource value: 0x7f0b005a
-			public const int GriztiAtgal = 2131427418;
+			public const int GriztiAtgalKomandos = 2131427418;
+			
+			// aapt resource value: 0x7f0b007e
+			public const int GriztiAtgalSuvestosKomStatistika = 2131427454;
+			
+			// aapt resource value: 0x7f0b0089
+			public const int GriztiAtgalTurnyras = 2131427465;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int GriztiAtgalVisaStatistika = 2131427468;
+			
+			// aapt resource value: 0x7f0b0093
+			public const int GriztiAtgalZaidimas = 2131427475;
 			
 			// aapt resource value: 0x7f0b005c
 			public const int IrasytasKomandosPavadinimas = 2131427420;
@@ -1615,47 +1636,50 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0059
 			public const int Issaugoti = 2131427417;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int Komanda = 2131427447;
+			// aapt resource value: 0x7f0b0063
+			public const int Kamuolys = 2131427427;
+			
+			// aapt resource value: 0x7f0b007a
+			public const int Komanda = 2131427450;
 			
 			// aapt resource value: 0x7f0b005b
 			public const int KomandosPavadinimas = 2131427419;
 			
-			// aapt resource value: 0x7f0b008a
-			public const int MygtukasAntrai = 2131427466;
+			// aapt resource value: 0x7f0b0090
+			public const int MygtukasAntrai = 2131427472;
 			
-			// aapt resource value: 0x7f0b0089
-			public const int MygtukasPirmai = 2131427465;
-			
-			// aapt resource value: 0x7f0b007c
-			public const int NameTeam1 = 2131427452;
-			
-			// aapt resource value: 0x7f0b007d
-			public const int NameTeam2 = 2131427453;
-			
-			// aapt resource value: 0x7f0b007e
-			public const int NameTeam3 = 2131427454;
-			
-			// aapt resource value: 0x7f0b007f
-			public const int NameTeam4 = 2131427455;
+			// aapt resource value: 0x7f0b008f
+			public const int MygtukasPirmai = 2131427471;
 			
 			// aapt resource value: 0x7f0b0080
-			public const int NameTeam5 = 2131427456;
+			public const int NameTeam1 = 2131427456;
 			
 			// aapt resource value: 0x7f0b0081
-			public const int NameTeam6 = 2131427457;
+			public const int NameTeam2 = 2131427457;
 			
 			// aapt resource value: 0x7f0b0082
-			public const int NameTeam7 = 2131427458;
+			public const int NameTeam3 = 2131427458;
 			
 			// aapt resource value: 0x7f0b0083
-			public const int NameTeam8 = 2131427459;
+			public const int NameTeam4 = 2131427459;
 			
-			// aapt resource value: 0x7f0b008c
-			public const int PavadinimasAntros = 2131427468;
+			// aapt resource value: 0x7f0b0084
+			public const int NameTeam5 = 2131427460;
 			
-			// aapt resource value: 0x7f0b0088
-			public const int PavadinimasPirmos = 2131427464;
+			// aapt resource value: 0x7f0b0085
+			public const int NameTeam6 = 2131427461;
+			
+			// aapt resource value: 0x7f0b0086
+			public const int NameTeam7 = 2131427462;
+			
+			// aapt resource value: 0x7f0b0087
+			public const int NameTeam8 = 2131427463;
+			
+			// aapt resource value: 0x7f0b0092
+			public const int PavadinimasAntros = 2131427474;
+			
+			// aapt resource value: 0x7f0b008e
+			public const int PavadinimasPirmos = 2131427470;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int PirmojiKomanda = 2131427412;
@@ -1663,41 +1687,41 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0055
 			public const int PirmosiosKomandosPavadinimas = 2131427413;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int Pradeti = 2131427426;
-			
-			// aapt resource value: 0x7f0b0076
-			public const int StatisticsListView = 2131427446;
-			
 			// aapt resource value: 0x7f0b0064
-			public const int Statistika = 2131427428;
+			public const int Pradeti = 2131427428;
 			
 			// aapt resource value: 0x7f0b0078
-			public const int SuvestaKomanda = 2131427448;
+			public const int StatisticsListView = 2131427448;
 			
-			// aapt resource value: 0x7f0b007a
-			public const int TeamStatsListView = 2131427450;
+			// aapt resource value: 0x7f0b0066
+			public const int Statistika = 2131427430;
 			
-			// aapt resource value: 0x7f0b0079
-			public const int TextNull = 2131427449;
+			// aapt resource value: 0x7f0b007b
+			public const int SuvestaKomanda = 2131427451;
+			
+			// aapt resource value: 0x7f0b007d
+			public const int TeamStatsListView = 2131427453;
+			
+			// aapt resource value: 0x7f0b007c
+			public const int TextNull = 2131427452;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int VS = 2131427414;
 			
-			// aapt resource value: 0x7f0b0086
-			public const int VienosKomandosStatistika = 2131427462;
-			
-			// aapt resource value: 0x7f0b0085
-			public const int VisaStatistika = 2131427461;
-			
 			// aapt resource value: 0x7f0b008b
-			public const int ZaidimasAntrojiKomanda = 2131427467;
+			public const int VienosKomandosStatistika = 2131427467;
 			
-			// aapt resource value: 0x7f0b0087
-			public const int ZaidimasPirmojiKomanda = 2131427463;
+			// aapt resource value: 0x7f0b008a
+			public const int VisaStatistika = 2131427466;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int action0 = 2131427429;
+			// aapt resource value: 0x7f0b0091
+			public const int ZaidimasAntrojiKomanda = 2131427473;
+			
+			// aapt resource value: 0x7f0b008d
+			public const int ZaidimasPirmojiKomanda = 2131427469;
+			
+			// aapt resource value: 0x7f0b0067
+			public const int action0 = 2131427431;
 			
 			// aapt resource value: 0x7f0b0045
 			public const int action_bar = 2131427397;
@@ -1723,8 +1747,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0046
 			public const int action_context_bar = 2131427398;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int action_divider = 2131427433;
+			// aapt resource value: 0x7f0b006b
+			public const int action_divider = 2131427435;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1747,8 +1771,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0013
 			public const int add = 2131427347;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int add_btn = 2131427425;
+			// aapt resource value: 0x7f0b0062
+			public const int add_btn = 2131427426;
 			
 			// aapt resource value: 0x7f0b0033
 			public const int alertTitle = 2131427379;
@@ -1765,14 +1789,14 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b002e
 			public const int buttonPanel = 2131427374;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int cancel_action = 2131427430;
+			// aapt resource value: 0x7f0b0068
+			public const int cancel_action = 2131427432;
 			
 			// aapt resource value: 0x7f0b003c
 			public const int checkbox = 2131427388;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int chronometer = 2131427436;
+			// aapt resource value: 0x7f0b006e
+			public const int chronometer = 2131427438;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int collapseActionView = 2131427358;
@@ -1801,8 +1825,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b001b
 			public const int end = 2131427355;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int end_padder = 2131427441;
+			// aapt resource value: 0x7f0b0073
+			public const int end_padder = 2131427443;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int expand_activities_button = 2131427368;
@@ -1825,17 +1849,17 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0029
 			public const int image = 2131427369;
 			
+			// aapt resource value: 0x7f0b0072
+			public const int info = 2131427442;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int layout = 2131427423;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int line1 = 2131427436;
+			
 			// aapt resource value: 0x7f0b0070
-			public const int info = 2131427440;
-			
-			// aapt resource value: 0x7f0b005e
-			public const int layout = 2131427422;
-			
-			// aapt resource value: 0x7f0b006a
-			public const int line1 = 2131427434;
-			
-			// aapt resource value: 0x7f0b006e
-			public const int line3 = 2131427438;
+			public const int line3 = 2131427440;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int listMode = 2131427337;
@@ -1843,8 +1867,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b002b
 			public const int list_item = 2131427371;
 			
-			// aapt resource value: 0x7f0b0068
-			public const int media_actions = 2131427432;
+			// aapt resource value: 0x7f0b006a
+			public const int media_actions = 2131427434;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int middle = 2131427356;
@@ -1861,8 +1885,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b000a
 			public const int normal = 2131427338;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int number_counter = 2131427424;
+			// aapt resource value: 0x7f0b0061
+			public const int number_counter = 2131427425;
 			
 			// aapt resource value: 0x7f0b0030
 			public const int parentPanel = 2131427376;
@@ -1948,8 +1972,8 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0018
 			public const int src_over = 2131427352;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int status_bar_latest_event_content = 2131427431;
+			// aapt resource value: 0x7f0b0069
+			public const int status_bar_latest_event_content = 2131427433;
 			
 			// aapt resource value: 0x7f0b003f
 			public const int submenuarrow = 2131427391;
@@ -1957,38 +1981,38 @@ namespace SpeerkMobileApp
 			// aapt resource value: 0x7f0b0050
 			public const int submit_area = 2131427408;
 			
-			// aapt resource value: 0x7f0b005f
-			public const int subtract_btn = 2131427423;
+			// aapt resource value: 0x7f0b0060
+			public const int subtract_btn = 2131427424;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
+			// aapt resource value: 0x7f0b0071
+			public const int text = 2131427441;
+			
 			// aapt resource value: 0x7f0b006f
-			public const int text = 2131427439;
-			
-			// aapt resource value: 0x7f0b006d
-			public const int text2 = 2131427437;
-			
-			// aapt resource value: 0x7f0b0072
-			public const int textName1 = 2131427442;
-			
-			// aapt resource value: 0x7f0b0075
-			public const int textName2 = 2131427445;
-			
-			// aapt resource value: 0x7f0b0073
-			public const int textScore1 = 2131427443;
+			public const int text2 = 2131427439;
 			
 			// aapt resource value: 0x7f0b0074
-			public const int textScore2 = 2131427444;
+			public const int textName1 = 2131427444;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int textName2 = 2131427447;
+			
+			// aapt resource value: 0x7f0b0075
+			public const int textScore1 = 2131427445;
+			
+			// aapt resource value: 0x7f0b0076
+			public const int textScore2 = 2131427446;
 			
 			// aapt resource value: 0x7f0b0037
 			public const int textSpacerNoButtons = 2131427383;
 			
-			// aapt resource value: 0x7f0b007b
-			public const int textView1 = 2131427451;
+			// aapt resource value: 0x7f0b007f
+			public const int textView1 = 2131427455;
 			
-			// aapt resource value: 0x7f0b006b
-			public const int time = 2131427435;
+			// aapt resource value: 0x7f0b006d
+			public const int time = 2131427437;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int title = 2131427373;
